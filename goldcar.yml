@@ -1,0 +1,44 @@
+goldcar.es:
+  dns:
+    domain_type: A
+    expected: ['52.210.130.28', '52.208.144.236']
+  http:
+    status_code: 301
+    redirect: https://www.goldcar.es/
+  https:
+    status_code: 301
+    redirect: https://www.goldcar.es/
+
+
+www.goldcar.es:
+  dns:
+    domain_type: CNAME
+    expected: ['k8pii.x.incapdns.net.']
+  http:
+    status_code: 301
+    redirect: https://www.goldcar.es/
+  https:
+    status_code: 200
+    text: Ver lista completa de oficinas Goldcar
+
+www.goldcar.com:
+  dns:
+    domain_type: CNAME
+    expected: ['goldcarcom.aws.goldcar.ws.']
+  http:
+    status_code: 301
+    redirect: https://www.goldcar.es/en/
+  https:
+    status_code: 301
+    redirect: https://www.goldcar.es/en/
+
+goldcar.com:
+  dns:
+    domain_type: A
+    expected: ['52.212.105.167', '52.51.179.76']
+  http:
+    status_code: 301
+    redirect: https://www.goldcar.es/en/
+  https:
+    status_code: 301
+    redirect: https://www.goldcar.es/en/
