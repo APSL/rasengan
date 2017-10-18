@@ -32,7 +32,7 @@ www.goldcar.com:
     status_code: 301
     redirect: https://www.goldcar.es/en/
   http_root:
-    path: /loquesea/
+    path: /any_path/
     status_code: 301
     redirect: https://www.goldcar.es/en/
 
@@ -47,7 +47,7 @@ goldcar.com:
     status_code: 301
     redirect: https://www.goldcar.es/en/
   http_root:
-    path: /loquesea/
+    path: /any_path/
     status_code: 301
     redirect: https://www.goldcar.es/en/
 
@@ -59,7 +59,7 @@ www.goldcar.co.uk:
     status_code: 301
     redirect: https://www.goldcar.es/en/
   http_root:
-    path: /loquesea/
+    path: /any_path/
     status_code: 301
     redirect: https://www.goldcar.es/en/
 
@@ -71,7 +71,7 @@ goldcar.co.uk:
     status_code: 301
     redirect: https://www.goldcar.es/en/
   http_root:
-    path: /loquesea/
+    path: /any_path/
     status_code: 301
     redirect: https://www.goldcar.es/en/
 
@@ -83,7 +83,7 @@ www.goldcar.com.mt:
     status_code: 301
     redirect: https://www.goldcar.es/en/
   http_root:
-    path: /loquesea/
+    path: /any_path/
     status_code: 301
     redirect: https://www.goldcar.es/en/
 
@@ -95,19 +95,19 @@ goldcar.com.mt:
     status_code: 301
     redirect: https://www.goldcar.es/en/
   http_root:
-    path: /loquesea/
+    path: /any_path/
     status_code: 301
     redirect: https://www.goldcar.es/en/
 
 www.goldcar.ro:
   dns:
-    domain_type: CNAME
-    expected: ['gcfrontend.vpc.aws.goldcar.ws.']
+    domain_type: A
+    expected: ['52.210.130.28', '52.208.144.236']
   http:
     status_code: 301
     redirect: https://www.goldcar.es/en/
   http_root:
-    path: /loquesea/
+    path: /any_path/
     status_code: 301
     redirect: https://www.goldcar.es/en/
 
@@ -119,7 +119,7 @@ goldcar.ro:
     status_code: 301
     redirect: https://www.goldcar.es/en/
   http_root:
-    path: /loquesea/
+    path: /any_path/
     status_code: 301
     redirect: https://www.goldcar.es/en/
 
@@ -131,7 +131,7 @@ www.gold-carrental.com:
     status_code: 301
     redirect: https://www.goldcar.es/en/
   http_root:
-    path: /loquesea/
+    path: /any_path/
     status_code: 301
     redirect: https://www.goldcar.es/en/
 
@@ -143,7 +143,7 @@ gold-carrental.com:
     status_code: 301
     redirect: https://www.goldcar.es/en/
   http_root:
-    path: /loquesea/
+    path: /any_path/
     status_code: 301
     redirect: https://www.goldcar.es/en/
 
@@ -155,7 +155,7 @@ www.goldcar.de:
     status_code: 301
     redirect: https://www.goldcar.es/de/
   http_root:
-    path: /loquesea/
+    path: /any_path/
     status_code: 301
     redirect: https://www.goldcar.es/de/
 
@@ -167,7 +167,7 @@ goldcar.de:
     status_code: 301
     redirect: https://www.goldcar.es/de/
   http_root:
-    path: /loquesea/
+    path: /any_path/
     status_code: 301
     redirect: https://www.goldcar.es/de/
 
@@ -179,7 +179,7 @@ www.goldcar.it:
     status_code: 301
     redirect: https://www.goldcar.es/it/
   http_root:
-    path: /loquesea/
+    path: /any_path/
     status_code: 301
     redirect: https://www.goldcar.es/it/
 
@@ -191,7 +191,7 @@ goldcar.it:
     status_code: 301
     redirect: https://www.goldcar.es/it/
   http_root:
-    path: /loquesea/
+    path: /any_path/
     status_code: 301
     redirect: https://www.goldcar.es/it/
 
@@ -204,7 +204,7 @@ www.goldcarrental.it:
       status_code: 301
       redirect: https://www.goldcar.es/it/
     http_root:
-      path: /loquesea/
+      path: /any_path/
       status_code: 301
       redirect: https://www.goldcar.es/it/
 
@@ -216,7 +216,7 @@ goldcarrental.it:
     status_code: 301
     redirect: https://www.goldcar.es/it/
   http_root:
-    path: /loquesea/
+    path: /any_path/
     status_code: 301
     redirect: https://www.goldcar.es/it/
 
@@ -228,7 +228,7 @@ www.goldcarental.it:
       status_code: 301
       redirect: https://www.goldcar.es/it/
     http_root:
-      path: /loquesea/
+      path: /any_path/
       status_code: 301
       redirect: https://www.goldcar.es/it/
 
@@ -240,19 +240,19 @@ goldcarental.it:
     status_code: 301
     redirect: https://www.goldcar.es/it/
   http_root:
-    path: /loquesea/
+    path: /any_path/
     status_code: 301
     redirect: https://www.goldcar.es/it/
 
 www.goldcaritaly.it:
     dns:
-      domain_type: CNAME
-      expected: ['gcfrontend.vpc.aws.goldcar.ws.']
+      domain_type: A
+      expected: ['52.210.130.28', '52.208.144.236']
     http:
       status_code: 301
       redirect: https://www.goldcar.es/it/
     http_root:
-      path: /loquesea/
+      path: /any_path/
       status_code: 301
       redirect: https://www.goldcar.es/it/
 
@@ -264,7 +264,7 @@ goldcaritaly.it:
     status_code: 301
     redirect: https://www.goldcar.es/it/
   http_root:
-    path: /loquesea/
+    path: /any_path/
     status_code: 301
     redirect: https://www.goldcar.es/it/
 
@@ -276,7 +276,7 @@ www.goldcar.pt:
       status_code: 301
       redirect: https://www.goldcar.es/pt/
     http_root:
-      path: /loquesea/
+      path: /any_path/
       status_code: 301
       redirect: https://www.goldcar.es/pt/
 goldcar.pt:
@@ -287,7 +287,7 @@ goldcar.pt:
     status_code: 301
     redirect: https://www.goldcar.es/pt/
   http_root:
-    path: /loquesea/
+    path: /any_path/
     status_code: 301
     redirect: https://www.goldcar.es/pt/
 
@@ -299,7 +299,7 @@ www.goldcar.fr:
       status_code: 301
       redirect: https://www.goldcar.es/fr/
     http_root:
-      path: /loquesea/
+      path: /any_path/
       status_code: 301
       redirect: https://www.goldcar.es/fr/
 goldcar.fr:
@@ -310,7 +310,7 @@ goldcar.fr:
       status_code: 301
       redirect: https://www.goldcar.es/fr/
     http_root:
-      path: /loquesea/
+      path: /any_path/
       status_code: 301
       redirect: https://www.goldcar.es/fr/
 www.mygoldcar.fr:
@@ -321,7 +321,7 @@ www.mygoldcar.fr:
       status_code: 301
       redirect: https://www.goldcar.es/fr/
     http_root:
-      path: /loquesea/
+      path: /any_path/
       status_code: 301
       redirect: https://www.goldcar.es/fr/
 mygoldcar.fr:
@@ -332,7 +332,7 @@ mygoldcar.fr:
       status_code: 301
       redirect: https://www.goldcar.es/fr/
     http_root:
-      path: /loquesea/
+      path: /any_path/
       status_code: 301
       redirect: https://www.goldcar.es/fr/
 
@@ -344,7 +344,7 @@ www.goldcar.ma:
       status_code: 301
       redirect: https://www.goldcar.es/en/
     http_root:
-      path: /loquesea/
+      path: /any_path/
       status_code: 301
       redirect: https://www.goldcar.es/en/
 
@@ -356,7 +356,7 @@ goldcar.ma:
       status_code: 301
       redirect: https://www.goldcar.es/en/
     http_root:
-      path: /loquesea/
+      path: /any_path/
       status_code: 301
       redirect: https://www.goldcar.es/en/
 
@@ -368,7 +368,7 @@ www.goldcar.gr:
       status_code: 301
       redirect: https://www.goldcar.es/gr/
     http_root:
-      path: /loquesea/
+      path: /any_path/
       status_code: 301
       redirect: https://www.goldcar.es/gr/
 
@@ -380,7 +380,7 @@ goldcar.gr:
       status_code: 301
       redirect: https://www.goldcar.es/gr/
     http_root:
-      path: /loquesea/
+      path: /any_path/
       status_code: 301
       redirect: https://www.goldcar.es/gr/
 
@@ -392,7 +392,7 @@ www.goldcarrental.com:
       status_code: 301
       redirect: https://www.goldcar.es/
     http_root:
-      path: /loquesea/
+      path: /any_path/
       status_code: 301
       redirect: https://www.goldcar.es/
 goldcarrental.com:
@@ -403,7 +403,7 @@ goldcarrental.com:
       status_code: 301
       redirect: https://www.goldcar.es/
     http_root:
-      path: /loquesea/
+      path: /any_path/
       status_code: 301
       redirect: https://www.goldcar.es/
 www.goldcarsales.com:
@@ -414,7 +414,7 @@ www.goldcarsales.com:
         status_code: 301
         redirect: https://www.goldcar.es/
       http_root:
-        path: /loquesea/
+        path: /any_path/
         status_code: 301
         redirect: https://www.goldcar.es/
 goldcarsales.com:
@@ -425,18 +425,18 @@ goldcarsales.com:
       status_code: 301
       redirect: https://www.goldcar.es/
     http_root:
-      path: /loquesea/
+      path: /any_path/
       status_code: 301
       redirect: https://www.goldcar.es/
 www.goldcarsales.es:
     dns:
-      domain_type: A
-      expected: ['52.210.130.28', '52.208.144.236']
+      domain_type: CNAME
+      expected: ['gcfrontend.vpc.aws.goldcar.ws.']
     http:
       status_code: 301
       redirect: https://www.goldcar.es/
     http_root:
-      path: /loquesea/
+      path: /any_path/
       status_code: 301
       redirect: https://www.goldcar.es/
 goldcarsales.es:
@@ -447,7 +447,7 @@ goldcarsales.es:
       status_code: 301
       redirect: https://www.goldcar.es/
     http_root:
-      path: /loquesea/
+      path: /any_path/
       status_code: 301
       redirect: https://www.goldcar.es/
 www.alquilerdecochesbaratos.com.es:
@@ -458,7 +458,7 @@ www.alquilerdecochesbaratos.com.es:
       status_code: 301
       redirect: https://www.goldcar.es/
     http_root:
-      path: /loquesea/
+      path: /any_path/
       status_code: 301
       redirect: https://www.goldcar.es/
 alquilerdecochesbaratos.com.es:
@@ -469,7 +469,7 @@ alquilerdecochesbaratos.com.es:
       status_code: 301
       redirect: https://www.goldcar.es/
     http_root:
-      path: /loquesea/
+      path: /any_path/
       status_code: 301
       redirect: https://www.goldcar.es/
 goldcar.be:
@@ -480,17 +480,17 @@ goldcar.be:
         status_code: 301
         redirect: https://www.goldcar.es/fr/
       http_root:
-        path: /loquesea/
+        path: /any_path/
         status_code: 301
         redirect: https://www.goldcar.es/fr/
 www.goldcar.be:
     dns:
-      domain_type: CNAME
-      expected: ['gcfrontend.vpc.aws.goldcar.ws.']
+        domain_type: A
+        expected: ['52.210.130.28', '52.208.144.236']
     http:
       status_code: 301
       redirect: https://www.goldcar.es/fr/
     http_root:
-      path: /loquesea/
+      path: /any_path/
       status_code: 301
       redirect: https://www.goldcar.es/fr/

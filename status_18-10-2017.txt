@@ -1,0 +1,298 @@
+[34mwww.goldcarrental.com[0m
+DNS Check - [32mOK -> result: [u'52.208.144.236', u'52.210.130.28'][0m
+Redirect Status Code for http://www.goldcarrental.com - [32mOK -> result: 301[0m
+Redirect Location for http://www.goldcarrental.com - [32mOK -> result: https://www.goldcar.es/[0m
+Redirect Status Code for http://www.goldcarrental.com/any_path/ - [32mOK -> result: 301[0m
+Redirect Location for http://www.goldcarrental.com/any_path/ - [31mKO -> expected: https://www.goldcar.es/ and get: https://www.goldcar.es/any_path/[0m
+
+[34mmygoldcar.fr[0m
+DNS Check - [32mOK -> result: [u'52.208.144.236', u'52.210.130.28'][0m
+Redirect Status Code for http://mygoldcar.fr - [32mOK -> result: 301[0m
+Redirect Location for http://mygoldcar.fr - [32mOK -> result: https://www.goldcar.es/fr/[0m
+Redirect Status Code for http://mygoldcar.fr/any_path/ - [32mOK -> result: 301[0m
+Redirect Location for http://mygoldcar.fr/any_path/ - [32mOK -> result: https://www.goldcar.es/fr/[0m
+
+[34mwww.goldcar.it[0m
+DNS Check - [32mOK -> result: [u'52.208.144.236', u'52.210.130.28'][0m
+Redirect Status Code for http://www.goldcar.it - [32mOK -> result: 301[0m
+Redirect Location for http://www.goldcar.it - [32mOK -> result: https://www.goldcar.es/it/[0m
+Redirect Status Code for http://www.goldcar.it/any_path/ - [32mOK -> result: 301[0m
+Redirect Location for http://www.goldcar.it/any_path/ - [32mOK -> result: https://www.goldcar.es/it/[0m
+
+[34mgoldcarrental.it[0m
+DNS Check - [32mOK -> result: [u'52.208.144.236', u'52.210.130.28'][0m
+Redirect Status Code for http://goldcarrental.it - [32mOK -> result: 301[0m
+Redirect Location for http://goldcarrental.it - [32mOK -> result: https://www.goldcar.es/it/[0m
+Redirect Status Code for http://goldcarrental.it/any_path/ - [32mOK -> result: 301[0m
+Redirect Location for http://goldcarrental.it/any_path/ - [32mOK -> result: https://www.goldcar.es/it/[0m
+
+[34mwww.goldcar.co.uk[0m
+DNS Check - [32mOK -> result: [u'52.208.144.236', u'52.210.130.28'][0m
+Redirect Status Code for http://www.goldcar.co.uk - [32mOK -> result: 301[0m
+Redirect Location for http://www.goldcar.co.uk - [32mOK -> result: https://www.goldcar.es/en/[0m
+Redirect Status Code for http://www.goldcar.co.uk/any_path/ - [32mOK -> result: 301[0m
+Redirect Location for http://www.goldcar.co.uk/any_path/ - [32mOK -> result: https://www.goldcar.es/en/[0m
+
+[34mgoldcar.de[0m
+DNS Check - [32mOK -> result: [u'52.208.144.236', u'52.210.130.28'][0m
+Redirect Status Code for http://goldcar.de - [32mOK -> result: 301[0m
+Redirect Location for http://goldcar.de - [32mOK -> result: https://www.goldcar.es/de/[0m
+Redirect Status Code for http://goldcar.de/any_path/ - [32mOK -> result: 301[0m
+Redirect Location for http://goldcar.de/any_path/ - [32mOK -> result: https://www.goldcar.es/de/[0m
+
+[34mgoldcarsales.es[0m
+DNS Check - [32mOK -> result: [u'52.208.144.236', u'52.210.130.28'][0m
+Redirect Status Code for http://goldcarsales.es - [32mOK -> result: 301[0m
+Redirect Location for http://goldcarsales.es - [32mOK -> result: https://www.goldcar.es/[0m
+Redirect Status Code for http://goldcarsales.es/any_path/ - [32mOK -> result: 301[0m
+Redirect Location for http://goldcarsales.es/any_path/ - [31mKO -> expected: https://www.goldcar.es/ and get: https://www.goldcar.es/any_path/[0m
+
+[34mgoldcar.com.mt[0m
+DNS Check - [32mOK -> result: [u'52.208.144.236', u'52.210.130.28'][0m
+Redirect Status Code for http://goldcar.com.mt - [32mOK -> result: 301[0m
+Redirect Location for http://goldcar.com.mt - [32mOK -> result: https://www.goldcar.es/en/[0m
+Redirect Status Code for http://goldcar.com.mt/any_path/ - [32mOK -> result: 301[0m
+Redirect Location for http://goldcar.com.mt/any_path/ - [32mOK -> result: https://www.goldcar.es/en/[0m
+
+[34mwww.alquilerdecochesbaratos.com.es[0m
+DNS Check - [32mOK -> result: ['gcfrontend.vpc.aws.goldcar.ws.'][0m
+Redirect Status Code for http://www.alquilerdecochesbaratos.com.es - [32mOK -> result: 301[0m
+Redirect Location for http://www.alquilerdecochesbaratos.com.es - [32mOK -> result: https://www.goldcar.es/[0m
+Redirect Status Code for http://www.alquilerdecochesbaratos.com.es/any_path/ - [32mOK -> result: 301[0m
+Redirect Location for http://www.alquilerdecochesbaratos.com.es/any_path/ - [31mKO -> expected: https://www.goldcar.es/ and get: https://www.goldcar.es/any_path/[0m
+
+[34mgoldcarental.it[0m
+DNS Check - [32mOK -> result: [u'52.208.144.236', u'52.210.130.28'][0m
+Redirect Status Code for http://goldcarental.it - [32mOK -> result: 301[0m
+Redirect Location for http://goldcarental.it - [32mOK -> result: https://www.goldcar.es/it/[0m
+Redirect Status Code for http://goldcarental.it/any_path/ - [32mOK -> result: 301[0m
+Redirect Location for http://goldcarental.it/any_path/ - [32mOK -> result: https://www.goldcar.es/it/[0m
+
+[34mwww.goldcar.ma[0m
+DNS Check - [32mOK -> result: [u'52.208.144.236', u'52.210.130.28'][0m
+Redirect Status Code for http://www.goldcar.ma - [32mOK -> result: 301[0m
+Redirect Location for http://www.goldcar.ma - [31mKO -> expected: https://www.goldcar.es/en/ and get: https://www.goldcar.es/fr/[0m
+Redirect Status Code for http://www.goldcar.ma/any_path/ - [32mOK -> result: 301[0m
+Redirect Location for http://www.goldcar.ma/any_path/ - [31mKO -> expected: https://www.goldcar.es/en/ and get: https://www.goldcar.es/fr/[0m
+
+[34mwww.goldcar.de[0m
+DNS Check - [32mOK -> result: ['gcfrontend.vpc.aws.goldcar.ws.'][0m
+Redirect Status Code for http://www.goldcar.de - [32mOK -> result: 301[0m
+Redirect Location for http://www.goldcar.de - [32mOK -> result: https://www.goldcar.es/de/[0m
+Redirect Status Code for http://www.goldcar.de/any_path/ - [32mOK -> result: 301[0m
+Redirect Location for http://www.goldcar.de/any_path/ - [32mOK -> result: https://www.goldcar.es/de/[0m
+
+[34mwww.goldcar.com.mt[0m
+DNS Check - [32mOK -> result: [u'52.208.144.236', u'52.210.130.28'][0m
+Redirect Status Code for http://www.goldcar.com.mt - [32mOK -> result: 301[0m
+Redirect Location for http://www.goldcar.com.mt - [32mOK -> result: https://www.goldcar.es/en/[0m
+Redirect Status Code for http://www.goldcar.com.mt/any_path/ - [32mOK -> result: 301[0m
+Redirect Location for http://www.goldcar.com.mt/any_path/ - [32mOK -> result: https://www.goldcar.es/en/[0m
+
+[34mgold-carrental.com[0m
+DNS Check - [32mOK -> result: [u'52.208.144.236', u'52.210.130.28'][0m
+Redirect Status Code for http://gold-carrental.com - [32mOK -> result: 301[0m
+Redirect Location for http://gold-carrental.com - [32mOK -> result: https://www.goldcar.es/en/[0m
+Redirect Status Code for http://gold-carrental.com/any_path/ - [32mOK -> result: 301[0m
+Redirect Location for http://gold-carrental.com/any_path/ - [32mOK -> result: https://www.goldcar.es/en/[0m
+
+[34mgoldcar.gr[0m
+DNS Check - [32mOK -> result: [u'52.208.144.236', u'52.210.130.28'][0m
+Redirect Status Code for http://goldcar.gr - [32mOK -> result: 301[0m
+Redirect Location for http://goldcar.gr - [32mOK -> result: https://www.goldcar.es/gr/[0m
+Redirect Status Code for http://goldcar.gr/any_path/ - [32mOK -> result: 301[0m
+Redirect Location for http://goldcar.gr/any_path/ - [32mOK -> result: https://www.goldcar.es/gr/[0m
+
+[34mwww.goldcar.fr[0m
+DNS Check - [32mOK -> result: ['gcfrontend.vpc.aws.goldcar.ws.'][0m
+Redirect Status Code for http://www.goldcar.fr - [32mOK -> result: 301[0m
+Redirect Location for http://www.goldcar.fr - [32mOK -> result: https://www.goldcar.es/fr/[0m
+Redirect Status Code for http://www.goldcar.fr/any_path/ - [32mOK -> result: 301[0m
+Redirect Location for http://www.goldcar.fr/any_path/ - [32mOK -> result: https://www.goldcar.es/fr/[0m
+
+[34mgoldcar.com[0m
+DNS Check - [32mOK -> result: [u'52.212.105.167', u'52.51.179.76'][0m
+Redirect Status Code for http://goldcar.com - [32mOK -> result: 301[0m
+Redirect Location for http://goldcar.com - [32mOK -> result: https://www.goldcar.es/en/[0m
+Redirect Status Code for https://goldcar.com - [32mOK -> result: 301[0m
+Redirect Location for https://goldcar.com - [32mOK -> result: https://www.goldcar.es/en/[0m
+Redirect Status Code for http://goldcar.com/any_path/ - [32mOK -> result: 301[0m
+Redirect Location for http://goldcar.com/any_path/ - [32mOK -> result: https://www.goldcar.es/en/[0m
+
+[34mgoldcarrental.com[0m
+DNS Check - [32mOK -> result: [u'52.208.144.236', u'52.210.130.28'][0m
+Redirect Status Code for http://goldcarrental.com - [32mOK -> result: 301[0m
+Redirect Location for http://goldcarrental.com - [32mOK -> result: https://www.goldcar.es/[0m
+Redirect Status Code for http://goldcarrental.com/any_path/ - [32mOK -> result: 301[0m
+Redirect Location for http://goldcarrental.com/any_path/ - [31mKO -> expected: https://www.goldcar.es/ and get: https://www.goldcar.es/any_path/[0m
+
+[34mgoldcar.fr[0m
+DNS Check - [32mOK -> result: [u'52.208.144.236', u'52.210.130.28'][0m
+Redirect Status Code for http://goldcar.fr - [32mOK -> result: 301[0m
+Redirect Location for http://goldcar.fr - [32mOK -> result: https://www.goldcar.es/fr/[0m
+Redirect Status Code for http://goldcar.fr/any_path/ - [32mOK -> result: 301[0m
+Redirect Location for http://goldcar.fr/any_path/ - [32mOK -> result: https://www.goldcar.es/fr/[0m
+
+[34mwww.goldcar.be[0m
+DNS Check - [32mOK -> result: [u'52.208.144.236', u'52.210.130.28'][0m
+Redirect Status Code for http://www.goldcar.be - [32mOK -> result: 301[0m
+Redirect Location for http://www.goldcar.be - [32mOK -> result: https://www.goldcar.es/fr/[0m
+Redirect Status Code for http://www.goldcar.be/any_path/ - [32mOK -> result: 301[0m
+Redirect Location for http://www.goldcar.be/any_path/ - [32mOK -> result: https://www.goldcar.es/fr/[0m
+
+[34mwww.mygoldcar.fr[0m
+DNS Check - [32mOK -> result: ['gcfrontend.vpc.aws.goldcar.ws.'][0m
+Redirect Status Code for http://www.mygoldcar.fr - [32mOK -> result: 301[0m
+Redirect Location for http://www.mygoldcar.fr - [32mOK -> result: https://www.goldcar.es/fr/[0m
+Redirect Status Code for http://www.mygoldcar.fr/any_path/ - [32mOK -> result: 301[0m
+Redirect Location for http://www.mygoldcar.fr/any_path/ - [32mOK -> result: https://www.goldcar.es/fr/[0m
+
+[34mgoldcaritaly.it[0m
+DNS Check - [32mOK -> result: [u'52.208.144.236', u'52.210.130.28'][0m
+Redirect Status Code for http://goldcaritaly.it - [32mOK -> result: 301[0m
+Redirect Location for http://goldcaritaly.it - [32mOK -> result: https://www.goldcar.es/it/[0m
+Redirect Status Code for http://goldcaritaly.it/any_path/ - [32mOK -> result: 301[0m
+Redirect Location for http://goldcaritaly.it/any_path/ - [32mOK -> result: https://www.goldcar.es/it/[0m
+
+[34malquilerdecochesbaratos.com.es[0m
+DNS Check - [32mOK -> result: [u'52.208.144.236', u'52.210.130.28'][0m
+Redirect Status Code for http://alquilerdecochesbaratos.com.es - [32mOK -> result: 301[0m
+Redirect Location for http://alquilerdecochesbaratos.com.es - [32mOK -> result: https://www.goldcar.es/[0m
+Redirect Status Code for http://alquilerdecochesbaratos.com.es/any_path/ - [32mOK -> result: 301[0m
+Redirect Location for http://alquilerdecochesbaratos.com.es/any_path/ - [31mKO -> expected: https://www.goldcar.es/ and get: https://www.goldcar.es/any_path/[0m
+
+[34mwww.gold-carrental.com[0m
+DNS Check - [32mOK -> result: [u'52.208.144.236', u'52.210.130.28'][0m
+Redirect Status Code for http://www.gold-carrental.com - [32mOK -> result: 301[0m
+Redirect Location for http://www.gold-carrental.com - [32mOK -> result: https://www.goldcar.es/en/[0m
+Redirect Status Code for http://www.gold-carrental.com/any_path/ - [32mOK -> result: 301[0m
+Redirect Location for http://www.gold-carrental.com/any_path/ - [32mOK -> result: https://www.goldcar.es/en/[0m
+
+[34mwww.goldcarental.it[0m
+DNS Check - [32mOK -> result: ['gcfrontend.vpc.aws.goldcar.ws.'][0m
+Redirect Status Code for http://www.goldcarental.it - [32mOK -> result: 301[0m
+Redirect Location for http://www.goldcarental.it - [32mOK -> result: https://www.goldcar.es/it/[0m
+Redirect Status Code for http://www.goldcarental.it/any_path/ - [32mOK -> result: 301[0m
+Redirect Location for http://www.goldcarental.it/any_path/ - [32mOK -> result: https://www.goldcar.es/it/[0m
+
+[34mwww.goldcarsales.com[0m
+DNS Check - [32mOK -> result: [u'52.208.144.236', u'52.210.130.28'][0m
+Redirect Status Code for http://www.goldcarsales.com - [32mOK -> result: 301[0m
+Redirect Location for http://www.goldcarsales.com - [32mOK -> result: https://www.goldcar.es/[0m
+Redirect Status Code for http://www.goldcarsales.com/any_path/ - [32mOK -> result: 301[0m
+Redirect Location for http://www.goldcarsales.com/any_path/ - [31mKO -> expected: https://www.goldcar.es/ and get: https://www.goldcar.es/any_path/[0m
+
+[34mwww.goldcar.ro[0m
+DNS Check - [32mOK -> result: [u'52.208.144.236', u'52.210.130.28'][0m
+Redirect Status Code for http://www.goldcar.ro - [32mOK -> result: 301[0m
+Redirect Location for http://www.goldcar.ro - [32mOK -> result: https://www.goldcar.es/en/[0m
+Redirect Status Code for http://www.goldcar.ro/any_path/ - [32mOK -> result: 301[0m
+Redirect Location for http://www.goldcar.ro/any_path/ - [32mOK -> result: https://www.goldcar.es/en/[0m
+
+[34mwww.goldcar.pt[0m
+DNS Check - [32mOK -> result: ['gcfrontend.vpc.aws.goldcar.ws.'][0m
+Redirect Status Code for http://www.goldcar.pt - [32mOK -> result: 301[0m
+Redirect Location for http://www.goldcar.pt - [32mOK -> result: https://www.goldcar.es/pt/[0m
+Redirect Status Code for http://www.goldcar.pt/any_path/ - [32mOK -> result: 301[0m
+Redirect Location for http://www.goldcar.pt/any_path/ - [32mOK -> result: https://www.goldcar.es/pt/[0m
+
+[34mgoldcar.be[0m
+DNS Check - [32mOK -> result: [u'52.208.144.236', u'52.210.130.28'][0m
+Redirect Status Code for http://goldcar.be - [32mOK -> result: 301[0m
+Redirect Location for http://goldcar.be - [32mOK -> result: https://www.goldcar.es/fr/[0m
+Redirect Status Code for http://goldcar.be/any_path/ - [32mOK -> result: 301[0m
+Redirect Location for http://goldcar.be/any_path/ - [32mOK -> result: https://www.goldcar.es/fr/[0m
+
+[34mgoldcarsales.com[0m
+DNS Check - [32mOK -> result: [u'52.208.144.236', u'52.210.130.28'][0m
+Redirect Status Code for http://goldcarsales.com - [32mOK -> result: 301[0m
+Redirect Location for http://goldcarsales.com - [32mOK -> result: https://www.goldcar.es/[0m
+Redirect Status Code for http://goldcarsales.com/any_path/ - [32mOK -> result: 301[0m
+Redirect Location for http://goldcarsales.com/any_path/ - [31mKO -> expected: https://www.goldcar.es/ and get: https://www.goldcar.es/any_path/[0m
+
+[34mgoldcar.ro[0m
+DNS Check - [32mOK -> result: [u'52.208.144.236', u'52.210.130.28'][0m
+Redirect Status Code for http://goldcar.ro - [32mOK -> result: 301[0m
+Redirect Location for http://goldcar.ro - [32mOK -> result: https://www.goldcar.es/en/[0m
+Redirect Status Code for http://goldcar.ro/any_path/ - [32mOK -> result: 301[0m
+Redirect Location for http://goldcar.ro/any_path/ - [32mOK -> result: https://www.goldcar.es/en/[0m
+
+[34mwww.goldcaritaly.it[0m
+DNS Check - [32mOK -> result: [u'52.208.144.236', u'52.210.130.28'][0m
+Redirect Status Code for http://www.goldcaritaly.it - [32mOK -> result: 301[0m
+Redirect Location for http://www.goldcaritaly.it - [32mOK -> result: https://www.goldcar.es/it/[0m
+Redirect Status Code for http://www.goldcaritaly.it/any_path/ - [32mOK -> result: 301[0m
+Redirect Location for http://www.goldcaritaly.it/any_path/ - [32mOK -> result: https://www.goldcar.es/it/[0m
+
+[34mgoldcar.it[0m
+DNS Check - [32mOK -> result: [u'52.208.144.236', u'52.210.130.28'][0m
+Redirect Status Code for http://goldcar.it - [32mOK -> result: 301[0m
+Redirect Location for http://goldcar.it - [32mOK -> result: https://www.goldcar.es/it/[0m
+Redirect Status Code for http://goldcar.it/any_path/ - [32mOK -> result: 301[0m
+Redirect Location for http://goldcar.it/any_path/ - [32mOK -> result: https://www.goldcar.es/it/[0m
+
+[34mwww.goldcar.gr[0m
+DNS Check - [32mOK -> result: [u'52.208.144.236', u'52.210.130.28'][0m
+Redirect Status Code for http://www.goldcar.gr - [32mOK -> result: 301[0m
+Redirect Location for http://www.goldcar.gr - [32mOK -> result: https://www.goldcar.es/gr/[0m
+Redirect Status Code for http://www.goldcar.gr/any_path/ - [32mOK -> result: 301[0m
+Redirect Location for http://www.goldcar.gr/any_path/ - [32mOK -> result: https://www.goldcar.es/gr/[0m
+
+[34mwww.goldcar.es[0m
+DNS Check - [32mOK -> result: ['k8pii.x.incapdns.net.'][0m
+Redirect Status Code for http://www.goldcar.es - [32mOK -> result: 301[0m
+Redirect Location for http://www.goldcar.es - [32mOK -> result: https://www.goldcar.es/[0m
+Redirect Status Code for https://www.goldcar.es - [32mOK -> result: 200[0m
+Page content - [32mOK -> Exists the phrase: Ver lista completa de oficinas Goldcar[0m
+
+[34mgoldcar.ma[0m
+DNS Check - [32mOK -> result: [u'52.208.144.236', u'52.210.130.28'][0m
+Redirect Status Code for http://goldcar.ma - [32mOK -> result: 301[0m
+Redirect Location for http://goldcar.ma - [31mKO -> expected: https://www.goldcar.es/en/ and get: https://www.goldcar.es/fr/[0m
+Redirect Status Code for http://goldcar.ma/any_path/ - [32mOK -> result: 301[0m
+Redirect Location for http://goldcar.ma/any_path/ - [31mKO -> expected: https://www.goldcar.es/en/ and get: https://www.goldcar.es/fr/[0m
+
+[34mgoldcar.co.uk[0m
+DNS Check - [32mOK -> result: [u'52.208.144.236', u'52.210.130.28'][0m
+Redirect Status Code for http://goldcar.co.uk - [32mOK -> result: 301[0m
+Redirect Location for http://goldcar.co.uk - [32mOK -> result: https://www.goldcar.es/en/[0m
+Redirect Status Code for http://goldcar.co.uk/any_path/ - [32mOK -> result: 301[0m
+Redirect Location for http://goldcar.co.uk/any_path/ - [32mOK -> result: https://www.goldcar.es/en/[0m
+
+[34mgoldcar.pt[0m
+DNS Check - [32mOK -> result: [u'52.208.144.236', u'52.210.130.28'][0m
+Redirect Status Code for http://goldcar.pt - [32mOK -> result: 301[0m
+Redirect Location for http://goldcar.pt - [32mOK -> result: https://www.goldcar.es/pt/[0m
+Redirect Status Code for http://goldcar.pt/any_path/ - [32mOK -> result: 301[0m
+Redirect Location for http://goldcar.pt/any_path/ - [32mOK -> result: https://www.goldcar.es/pt/[0m
+
+[34mwww.goldcarrental.it[0m
+DNS Check - [32mOK -> result: ['gcfrontend.vpc.aws.goldcar.ws.'][0m
+Redirect Status Code for http://www.goldcarrental.it - [32mOK -> result: 301[0m
+Redirect Location for http://www.goldcarrental.it - [32mOK -> result: https://www.goldcar.es/it/[0m
+Redirect Status Code for http://www.goldcarrental.it/any_path/ - [32mOK -> result: 301[0m
+Redirect Location for http://www.goldcarrental.it/any_path/ - [32mOK -> result: https://www.goldcar.es/it/[0m
+
+[34mgoldcar.es[0m
+DNS Check - [32mOK -> result: [u'52.208.144.236', u'52.210.130.28'][0m
+Redirect Status Code for http://goldcar.es - [32mOK -> result: 301[0m
+Redirect Location for http://goldcar.es - [32mOK -> result: https://www.goldcar.es/[0m
+Redirect Status Code for https://goldcar.es - [32mOK -> result: 301[0m
+Redirect Location for https://goldcar.es - [32mOK -> result: https://www.goldcar.es/[0m
+
+[34mwww.goldcar.com[0m
+DNS Check - [32mOK -> result: ['goldcarcom.aws.goldcar.ws.'][0m
+Redirect Status Code for http://www.goldcar.com - [32mOK -> result: 301[0m
+Redirect Location for http://www.goldcar.com - [32mOK -> result: https://www.goldcar.es/en/[0m
+Redirect Status Code for https://www.goldcar.com - [32mOK -> result: 301[0m
+Redirect Location for https://www.goldcar.com - [32mOK -> result: https://www.goldcar.es/en/[0m
+Redirect Status Code for http://www.goldcar.com/any_path/ - [32mOK -> result: 301[0m
+Redirect Location for http://www.goldcar.com/any_path/ - [32mOK -> result: https://www.goldcar.es/en/[0m
+
+[34mwww.goldcarsales.es[0m
+DNS Check - [32mOK -> result: ['gcfrontend.vpc.aws.goldcar.ws.'][0m
+Redirect Status Code for http://www.goldcarsales.es - [32mOK -> result: 301[0m
+Redirect Location for http://www.goldcarsales.es - [32mOK -> result: https://www.goldcar.es/[0m
+Redirect Status Code for http://www.goldcarsales.es/any_path/ - [32mOK -> result: 301[0m
+Redirect Location for http://www.goldcarsales.es/any_path/ - [31mKO -> expected: https://www.goldcar.es/ and get: https://www.goldcar.es/any_path/[0m
+

@@ -1,0 +1,297 @@
+www.goldcarrental.com
+DNS Check - OK -> result: [u'52.208.144.236', u'52.210.130.28']
+Redirect Status Code for http://www.goldcarrental.com - OK -> result: 301
+Redirect Location for http://www.goldcarrental.com - OK -> result: https://www.goldcar.es/
+Redirect Status Code for http://www.goldcarrental.com/any_path/ - OK -> result: 301
+Redirect Location for http://www.goldcarrental.com/any_path/ - KO -> expected: https://www.goldcar.es/ and get: https://www.goldcar.es/any_path/
+
+mygoldcar.fr
+DNS Check - OK -> result: [u'52.208.144.236', u'52.210.130.28']
+Redirect Status Code for http://mygoldcar.fr - OK -> result: 301
+Redirect Location for http://mygoldcar.fr - OK -> result: https://www.goldcar.es/fr/
+Redirect Status Code for http://mygoldcar.fr/any_path/ - OK -> result: 301
+Redirect Location for http://mygoldcar.fr/any_path/ - OK -> result: https://www.goldcar.es/fr/
+
+www.goldcar.it
+DNS Check - OK -> result: [u'52.208.144.236', u'52.210.130.28']
+Redirect Status Code for http://www.goldcar.it - OK -> result: 301
+Redirect Location for http://www.goldcar.it - OK -> result: https://www.goldcar.es/it/
+Redirect Status Code for http://www.goldcar.it/any_path/ - OK -> result: 301
+Redirect Location for http://www.goldcar.it/any_path/ - OK -> result: https://www.goldcar.es/it/
+
+goldcarrental.it
+DNS Check - OK -> result: [u'52.208.144.236', u'52.210.130.28']
+Redirect Status Code for http://goldcarrental.it - OK -> result: 301
+Redirect Location for http://goldcarrental.it - OK -> result: https://www.goldcar.es/it/
+Redirect Status Code for http://goldcarrental.it/any_path/ - OK -> result: 301
+Redirect Location for http://goldcarrental.it/any_path/ - OK -> result: https://www.goldcar.es/it/
+
+www.goldcar.co.uk
+DNS Check - OK -> result: [u'52.208.144.236', u'52.210.130.28']
+Redirect Status Code for http://www.goldcar.co.uk - OK -> result: 301
+Redirect Location for http://www.goldcar.co.uk - OK -> result: https://www.goldcar.es/en/
+Redirect Status Code for http://www.goldcar.co.uk/any_path/ - OK -> result: 301
+Redirect Location for http://www.goldcar.co.uk/any_path/ - OK -> result: https://www.goldcar.es/en/
+
+goldcar.de
+DNS Check - OK -> result: [u'52.208.144.236', u'52.210.130.28']
+Redirect Status Code for http://goldcar.de - OK -> result: 301
+Redirect Location for http://goldcar.de - OK -> result: https://www.goldcar.es/de/
+Redirect Status Code for http://goldcar.de/any_path/ - OK -> result: 301
+Redirect Location for http://goldcar.de/any_path/ - OK -> result: https://www.goldcar.es/de/
+
+goldcarsales.es
+DNS Check - OK -> result: [u'52.208.144.236', u'52.210.130.28']
+Redirect Status Code for http://goldcarsales.es - OK -> result: 301
+Redirect Location for http://goldcarsales.es - OK -> result: https://www.goldcar.es/
+Redirect Status Code for http://goldcarsales.es/any_path/ - OK -> result: 301
+Redirect Location for http://goldcarsales.es/any_path/ - KO -> expected: https://www.goldcar.es/ and get: https://www.goldcar.es/any_path/
+
+goldcar.com.mt
+DNS Check - OK -> result: [u'52.208.144.236', u'52.210.130.28']
+Redirect Status Code for http://goldcar.com.mt - OK -> result: 301
+Redirect Location for http://goldcar.com.mt - OK -> result: https://www.goldcar.es/en/
+Redirect Status Code for http://goldcar.com.mt/any_path/ - OK -> result: 301
+Redirect Location for http://goldcar.com.mt/any_path/ - OK -> result: https://www.goldcar.es/en/
+
+www.alquilerdecochesbaratos.com.es
+DNS Check - OK -> result: ['gcfrontend.vpc.aws.goldcar.ws.']
+Redirect Status Code for http://www.alquilerdecochesbaratos.com.es - OK -> result: 301
+Redirect Location for http://www.alquilerdecochesbaratos.com.es - OK -> result: https://www.goldcar.es/
+Redirect Status Code for http://www.alquilerdecochesbaratos.com.es/any_path/ - OK -> result: 301
+Redirect Location for http://www.alquilerdecochesbaratos.com.es/any_path/ - KO -> expected: https://www.goldcar.es/ and get: https://www.goldcar.es/any_path/
+
+goldcarental.it
+DNS Check - OK -> result: [u'52.208.144.236', u'52.210.130.28']
+Redirect Status Code for http://goldcarental.it - OK -> result: 301
+Redirect Location for http://goldcarental.it - OK -> result: https://www.goldcar.es/it/
+Redirect Status Code for http://goldcarental.it/any_path/ - OK -> result: 301
+Redirect Location for http://goldcarental.it/any_path/ - OK -> result: https://www.goldcar.es/it/
+
+www.goldcar.ma
+DNS Check - OK -> result: [u'52.208.144.236', u'52.210.130.28']
+Redirect Status Code for http://www.goldcar.ma - OK -> result: 301
+Redirect Location for http://www.goldcar.ma - KO -> expected: https://www.goldcar.es/en/ and get: https://www.goldcar.es/fr/
+Redirect Status Code for http://www.goldcar.ma/any_path/ - OK -> result: 301
+Redirect Location for http://www.goldcar.ma/any_path/ - KO -> expected: https://www.goldcar.es/en/ and get: https://www.goldcar.es/fr/
+
+www.goldcar.de
+DNS Check - OK -> result: ['gcfrontend.vpc.aws.goldcar.ws.']
+Redirect Status Code for http://www.goldcar.de - OK -> result: 301
+Redirect Location for http://www.goldcar.de - OK -> result: https://www.goldcar.es/de/
+Redirect Status Code for http://www.goldcar.de/any_path/ - OK -> result: 301
+Redirect Location for http://www.goldcar.de/any_path/ - OK -> result: https://www.goldcar.es/de/
+
+www.goldcar.com.mt
+DNS Check - OK -> result: [u'52.208.144.236', u'52.210.130.28']
+Redirect Status Code for http://www.goldcar.com.mt - OK -> result: 301
+Redirect Location for http://www.goldcar.com.mt - OK -> result: https://www.goldcar.es/en/
+Redirect Status Code for http://www.goldcar.com.mt/any_path/ - OK -> result: 301
+Redirect Location for http://www.goldcar.com.mt/any_path/ - OK -> result: https://www.goldcar.es/en/
+
+gold-carrental.com
+DNS Check - OK -> result: [u'52.208.144.236', u'52.210.130.28']
+Redirect Status Code for http://gold-carrental.com - OK -> result: 301
+Redirect Location for http://gold-carrental.com - OK -> result: https://www.goldcar.es/en/
+Redirect Status Code for http://gold-carrental.com/any_path/ - OK -> result: 301
+Redirect Location for http://gold-carrental.com/any_path/ - OK -> result: https://www.goldcar.es/en/
+
+goldcar.gr
+DNS Check - OK -> result: [u'52.208.144.236', u'52.210.130.28']
+Redirect Status Code for http://goldcar.gr - OK -> result: 301
+Redirect Location for http://goldcar.gr - OK -> result: https://www.goldcar.es/gr/
+Redirect Status Code for http://goldcar.gr/any_path/ - OK -> result: 301
+Redirect Location for http://goldcar.gr/any_path/ - OK -> result: https://www.goldcar.es/gr/
+
+www.goldcar.fr
+DNS Check - OK -> result: ['gcfrontend.vpc.aws.goldcar.ws.']
+Redirect Status Code for http://www.goldcar.fr - OK -> result: 301
+Redirect Location for http://www.goldcar.fr - OK -> result: https://www.goldcar.es/fr/
+Redirect Status Code for http://www.goldcar.fr/any_path/ - OK -> result: 301
+Redirect Location for http://www.goldcar.fr/any_path/ - OK -> result: https://www.goldcar.es/fr/
+
+goldcar.com
+DNS Check - OK -> result: [u'52.212.105.167', u'52.51.179.76']
+Redirect Status Code for http://goldcar.com - OK -> result: 301
+Redirect Location for http://goldcar.com - OK -> result: https://www.goldcar.es/en/
+Redirect Status Code for https://goldcar.com - OK -> result: 301
+Redirect Location for https://goldcar.com - OK -> result: https://www.goldcar.es/en/
+Redirect Status Code for http://goldcar.com/any_path/ - OK -> result: 301
+Redirect Location for http://goldcar.com/any_path/ - OK -> result: https://www.goldcar.es/en/
+
+goldcarrental.com
+DNS Check - OK -> result: [u'52.208.144.236', u'52.210.130.28']
+Redirect Status Code for http://goldcarrental.com - OK -> result: 301
+Redirect Location for http://goldcarrental.com - OK -> result: https://www.goldcar.es/
+Redirect Status Code for http://goldcarrental.com/any_path/ - OK -> result: 301
+Redirect Location for http://goldcarrental.com/any_path/ - KO -> expected: https://www.goldcar.es/ and get: https://www.goldcar.es/any_path/
+
+goldcar.fr
+DNS Check - OK -> result: [u'52.208.144.236', u'52.210.130.28']
+Redirect Status Code for http://goldcar.fr - OK -> result: 301
+Redirect Location for http://goldcar.fr - OK -> result: https://www.goldcar.es/fr/
+Redirect Status Code for http://goldcar.fr/any_path/ - OK -> result: 301
+Redirect Location for http://goldcar.fr/any_path/ - OK -> result: https://www.goldcar.es/fr/
+
+www.goldcar.be
+DNS Check - OK -> result: [u'52.208.144.236', u'52.210.130.28']
+Redirect Status Code for http://www.goldcar.be - OK -> result: 301
+Redirect Location for http://www.goldcar.be - OK -> result: https://www.goldcar.es/fr/
+Redirect Status Code for http://www.goldcar.be/any_path/ - OK -> result: 301
+Redirect Location for http://www.goldcar.be/any_path/ - OK -> result: https://www.goldcar.es/fr/
+
+www.mygoldcar.fr
+DNS Check - OK -> result: ['gcfrontend.vpc.aws.goldcar.ws.']
+Redirect Status Code for http://www.mygoldcar.fr - OK -> result: 301
+Redirect Location for http://www.mygoldcar.fr - OK -> result: https://www.goldcar.es/fr/
+Redirect Status Code for http://www.mygoldcar.fr/any_path/ - OK -> result: 301
+Redirect Location for http://www.mygoldcar.fr/any_path/ - OK -> result: https://www.goldcar.es/fr/
+
+goldcaritaly.it
+DNS Check - OK -> result: [u'52.208.144.236', u'52.210.130.28']
+Redirect Status Code for http://goldcaritaly.it - OK -> result: 301
+Redirect Location for http://goldcaritaly.it - OK -> result: https://www.goldcar.es/it/
+Redirect Status Code for http://goldcaritaly.it/any_path/ - OK -> result: 301
+Redirect Location for http://goldcaritaly.it/any_path/ - OK -> result: https://www.goldcar.es/it/
+
+alquilerdecochesbaratos.com.es
+DNS Check - OK -> result: [u'52.208.144.236', u'52.210.130.28']
+Redirect Status Code for http://alquilerdecochesbaratos.com.es - OK -> result: 301
+Redirect Location for http://alquilerdecochesbaratos.com.es - OK -> result: https://www.goldcar.es/
+Redirect Status Code for http://alquilerdecochesbaratos.com.es/any_path/ - OK -> result: 301
+Redirect Location for http://alquilerdecochesbaratos.com.es/any_path/ - KO -> expected: https://www.goldcar.es/ and get: https://www.goldcar.es/any_path/
+
+www.gold-carrental.com
+DNS Check - OK -> result: [u'52.208.144.236', u'52.210.130.28']
+Redirect Status Code for http://www.gold-carrental.com - OK -> result: 301
+Redirect Location for http://www.gold-carrental.com - OK -> result: https://www.goldcar.es/en/
+Redirect Status Code for http://www.gold-carrental.com/any_path/ - OK -> result: 301
+Redirect Location for http://www.gold-carrental.com/any_path/ - OK -> result: https://www.goldcar.es/en/
+
+www.goldcarental.it
+DNS Check - OK -> result: ['gcfrontend.vpc.aws.goldcar.ws.']
+Redirect Status Code for http://www.goldcarental.it - OK -> result: 301
+Redirect Location for http://www.goldcarental.it - OK -> result: https://www.goldcar.es/it/
+Redirect Status Code for http://www.goldcarental.it/any_path/ - OK -> result: 301
+Redirect Location for http://www.goldcarental.it/any_path/ - OK -> result: https://www.goldcar.es/it/
+
+www.goldcarsales.com
+DNS Check - OK -> result: [u'52.208.144.236', u'52.210.130.28']
+Redirect Status Code for http://www.goldcarsales.com - OK -> result: 301
+Redirect Location for http://www.goldcarsales.com - OK -> result: https://www.goldcar.es/
+Redirect Status Code for http://www.goldcarsales.com/any_path/ - OK -> result: 301
+Redirect Location for http://www.goldcarsales.com/any_path/ - KO -> expected: https://www.goldcar.es/ and get: https://www.goldcar.es/any_path/
+
+www.goldcar.ro
+DNS Check - OK -> result: [u'52.208.144.236', u'52.210.130.28']
+Redirect Status Code for http://www.goldcar.ro - OK -> result: 301
+Redirect Location for http://www.goldcar.ro - OK -> result: https://www.goldcar.es/en/
+Redirect Status Code for http://www.goldcar.ro/any_path/ - OK -> result: 301
+Redirect Location for http://www.goldcar.ro/any_path/ - OK -> result: https://www.goldcar.es/en/
+
+www.goldcar.pt
+DNS Check - OK -> result: ['gcfrontend.vpc.aws.goldcar.ws.']
+Redirect Status Code for http://www.goldcar.pt - OK -> result: 301
+Redirect Location for http://www.goldcar.pt - OK -> result: https://www.goldcar.es/pt/
+Redirect Status Code for http://www.goldcar.pt/any_path/ - OK -> result: 301
+Redirect Location for http://www.goldcar.pt/any_path/ - OK -> result: https://www.goldcar.es/pt/
+
+goldcar.be
+DNS Check - OK -> result: [u'52.208.144.236', u'52.210.130.28']
+Redirect Status Code for http://goldcar.be - OK -> result: 301
+Redirect Location for http://goldcar.be - OK -> result: https://www.goldcar.es/fr/
+Redirect Status Code for http://goldcar.be/any_path/ - OK -> result: 301
+Redirect Location for http://goldcar.be/any_path/ - OK -> result: https://www.goldcar.es/fr/
+
+goldcarsales.com
+DNS Check - OK -> result: [u'52.208.144.236', u'52.210.130.28']
+Redirect Status Code for http://goldcarsales.com - OK -> result: 301
+Redirect Location for http://goldcarsales.com - OK -> result: https://www.goldcar.es/
+Redirect Status Code for http://goldcarsales.com/any_path/ - OK -> result: 301
+Redirect Location for http://goldcarsales.com/any_path/ - KO -> expected: https://www.goldcar.es/ and get: https://www.goldcar.es/any_path/
+
+goldcar.ro
+DNS Check - OK -> result: [u'52.208.144.236', u'52.210.130.28']
+Redirect Status Code for http://goldcar.ro - OK -> result: 301
+Redirect Location for http://goldcar.ro - OK -> result: https://www.goldcar.es/en/
+Redirect Status Code for http://goldcar.ro/any_path/ - OK -> result: 301
+Redirect Location for http://goldcar.ro/any_path/ - OK -> result: https://www.goldcar.es/en/
+
+www.goldcaritaly.it
+DNS Check - OK -> result: [u'52.208.144.236', u'52.210.130.28']
+Redirect Status Code for http://www.goldcaritaly.it - OK -> result: 301
+Redirect Location for http://www.goldcaritaly.it - OK -> result: https://www.goldcar.es/it/
+Redirect Status Code for http://www.goldcaritaly.it/any_path/ - OK -> result: 301
+Redirect Location for http://www.goldcaritaly.it/any_path/ - OK -> result: https://www.goldcar.es/it/
+
+goldcar.it
+DNS Check - OK -> result: [u'52.208.144.236', u'52.210.130.28']
+Redirect Status Code for http://goldcar.it - OK -> result: 301
+Redirect Location for http://goldcar.it - OK -> result: https://www.goldcar.es/it/
+Redirect Status Code for http://goldcar.it/any_path/ - OK -> result: 301
+Redirect Location for http://goldcar.it/any_path/ - OK -> result: https://www.goldcar.es/it/
+
+www.goldcar.gr
+DNS Check - OK -> result: [u'52.208.144.236', u'52.210.130.28']
+Redirect Status Code for http://www.goldcar.gr - OK -> result: 301
+Redirect Location for http://www.goldcar.gr - OK -> result: https://www.goldcar.es/gr/
+Redirect Status Code for http://www.goldcar.gr/any_path/ - OK -> result: 301
+Redirect Location for http://www.goldcar.gr/any_path/ - OK -> result: https://www.goldcar.es/gr/
+
+www.goldcar.es
+DNS Check - OK -> result: ['k8pii.x.incapdns.net.']
+Redirect Status Code for http://www.goldcar.es - OK -> result: 301
+Redirect Location for http://www.goldcar.es - OK -> result: https://www.goldcar.es/
+Redirect Status Code for https://www.goldcar.es - OK -> result: 200
+Page content - OK -> Exists the phrase: Ver lista completa de oficinas Goldcar
+
+goldcar.ma
+DNS Check - OK -> result: [u'52.208.144.236', u'52.210.130.28']
+Redirect Status Code for http://goldcar.ma - OK -> result: 301
+Redirect Location for http://goldcar.ma - KO -> expected: https://www.goldcar.es/en/ and get: https://www.goldcar.es/fr/
+Redirect Status Code for http://goldcar.ma/any_path/ - OK -> result: 301
+Redirect Location for http://goldcar.ma/any_path/ - KO -> expected: https://www.goldcar.es/en/ and get: https://www.goldcar.es/fr/
+
+goldcar.co.uk
+DNS Check - OK -> result: [u'52.208.144.236', u'52.210.130.28']
+Redirect Status Code for http://goldcar.co.uk - OK -> result: 301
+Redirect Location for http://goldcar.co.uk - OK -> result: https://www.goldcar.es/en/
+Redirect Status Code for http://goldcar.co.uk/any_path/ - OK -> result: 301
+Redirect Location for http://goldcar.co.uk/any_path/ - OK -> result: https://www.goldcar.es/en/
+
+goldcar.pt
+DNS Check - OK -> result: [u'52.208.144.236', u'52.210.130.28']
+Redirect Status Code for http://goldcar.pt - OK -> result: 301
+Redirect Location for http://goldcar.pt - OK -> result: https://www.goldcar.es/pt/
+Redirect Status Code for http://goldcar.pt/any_path/ - OK -> result: 301
+Redirect Location for http://goldcar.pt/any_path/ - OK -> result: https://www.goldcar.es/pt/
+
+www.goldcarrental.it
+DNS Check - OK -> result: ['gcfrontend.vpc.aws.goldcar.ws.']
+Redirect Status Code for http://www.goldcarrental.it - OK -> result: 301
+Redirect Location for http://www.goldcarrental.it - OK -> result: https://www.goldcar.es/it/
+Redirect Status Code for http://www.goldcarrental.it/any_path/ - OK -> result: 301
+Redirect Location for http://www.goldcarrental.it/any_path/ - OK -> result: https://www.goldcar.es/it/
+
+goldcar.es
+DNS Check - OK -> result: [u'52.208.144.236', u'52.210.130.28']
+Redirect Status Code for http://goldcar.es - OK -> result: 301
+Redirect Location for http://goldcar.es - OK -> result: https://www.goldcar.es/
+Redirect Status Code for https://goldcar.es - OK -> result: 301
+Redirect Location for https://goldcar.es - OK -> result: https://www.goldcar.es/
+
+www.goldcar.com
+DNS Check - OK -> result: ['goldcarcom.aws.goldcar.ws.']
+Redirect Status Code for http://www.goldcar.com - OK -> result: 301
+Redirect Location for http://www.goldcar.com - OK -> result: https://www.goldcar.es/en/
+Redirect Status Code for https://www.goldcar.com - OK -> result: 301
+Redirect Location for https://www.goldcar.com - OK -> result: https://www.goldcar.es/en/
+Redirect Status Code for http://www.goldcar.com/any_path/ - OK -> result: 301
+Redirect Location for http://www.goldcar.com/any_path/ - OK -> result: https://www.goldcar.es/en/
+
+www.goldcarsales.es
+DNS Check - OK -> result: ['gcfrontend.vpc.aws.goldcar.ws.']
+Redirect Status Code for http://www.goldcarsales.es - OK -> result: 301
+Redirect Location for http://www.goldcarsales.es - OK -> result: https://www.goldcar.es/
+Redirect Status Code for http://www.goldcarsales.es/any_path/ - OK -> result: 301
+Redirect Location for http://www.goldcarsales.es/any_path/ - KO -> expected: https://www.goldcar.es/ and get: https://www.goldcar.es/any_path/
