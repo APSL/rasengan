@@ -2,6 +2,7 @@ backports.shutil-get-terminal-size==1.0.0
 certifi==2017.7.27.1
 chardet==3.0.4
 decorator==4.1.2
+dnspython==1.15.0
 enum34==1.1.6
 idna==2.6
 ipdb==0.10.3
