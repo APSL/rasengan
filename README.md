@@ -10,17 +10,25 @@ The exit of the execution is an error if any of the checks fails.
 
 # Usage example
 
-    (rasengan) $ rasengan --config=check.yml --domains=goldcar.com,www.goldcar.com --loglevel=INFO
-    19/10/2017 16:37 - ERROR - goldcar.com - DNS Check - KO -> expected: ['52.212.105.167'] and get: [u'52.212.105.167', u'52.51.179.76']
-    19/10/2017 16:37 - INFO - goldcar.com - Redirect Status Code for http://goldcar.com - OK -> result: 301
-    19/10/2017 16:37 - INFO - goldcar.com - Redirect Location for http://goldcar.com - OK -> result: https://www.goldcar.es/en/
-    19/10/2017 16:37 - INFO - goldcar.com - Redirect Status Code for https://goldcar.com - OK -> result: 301
-    19/10/2017 16:37 - INFO - goldcar.com - Redirect Location for https://goldcar.com - OK -> result: https://www.goldcar.es/en/
-    19/10/2017 16:37 - INFO - www.goldcar.com - DNS Check - OK -> result: ['goldcarcom.aws.goldcar.ws.']
-    19/10/2017 16:37 - INFO - www.goldcar.com - Redirect Status Code for http://www.goldcar.com - OK -> result: 301
-    19/10/2017 16:37 - INFO - www.goldcar.com - Redirect Location for http://www.goldcar.com - OK -> result: https://www.goldcar.es/en/
-    19/10/2017 16:37 - INFO - www.goldcar.com - Redirect Status Code for https://www.goldcar.com - OK -> result: 301
-    19/10/2017 16:37 - INFO - www.goldcar.com - Redirect Location for https://www.goldcar.com - OK -> result: https://www.goldcar.es/en/
+    (rasengan) $ rasengan --config=check.yml --loglevel=INFO
+    19/10/2017 16:49 - ERROR - goldcar.com - DNS Check - KO -> expected: ['52.212.105.167'] and get: [u'52.212.105.167', u'52.51.179.76']
+    19/10/2017 16:49 - INFO - goldcar.com - Redirect Status Code for http://goldcar.com - OK -> result: 301
+    19/10/2017 16:49 - INFO - goldcar.com - Redirect Location for http://goldcar.com - OK -> result: https://www.goldcar.es/en/
+    19/10/2017 16:49 - INFO - goldcar.com - Redirect Status Code for https://goldcar.com - OK -> result: 301
+    19/10/2017 16:49 - INFO - goldcar.com - Redirect Location for https://goldcar.com - OK -> result: https://www.goldcar.es/en/
+    19/10/2017 16:49 - INFO - goldcar.com - Redirect Status Code for http://goldcar.com/any_path/ - OK -> result: 301
+    19/10/2017 16:49 - INFO - goldcar.com - Redirect Location for http://goldcar.com/any_path/ - OK -> result: https://www.goldcar.es/en/
+    19/10/2017 16:49 - INFO - www.goldcar.es - Redirect Status Code for http://www.goldcar.es - OK -> result: 301
+    19/10/2017 16:49 - INFO - www.goldcar.es - Redirect Location for http://www.goldcar.es - OK -> result: https://www.goldcar.es/
+    19/10/2017 16:49 - INFO - www.goldcar.es - Redirect Status Code for https://www.goldcar.es - OK -> result: 200
+    19/10/2017 16:49 - INFO - www.goldcar.es - Page content - OK -> Exists the phrase: Alquiler de coches
+    19/10/2017 16:49 - INFO - www.goldcar.com - DNS Check - OK -> result: ['goldcarcom.aws.goldcar.ws.']
+    19/10/2017 16:49 - INFO - www.goldcar.com - Redirect Status Code for http://www.goldcar.com - OK -> result: 301
+    19/10/2017 16:49 - INFO - www.goldcar.com - Redirect Location for http://www.goldcar.com - OK -> result: https://www.goldcar.es/en/
+    19/10/2017 16:49 - INFO - www.goldcar.com - Redirect Status Code for https://www.goldcar.com - OK -> result: 301
+    19/10/2017 16:49 - INFO - www.goldcar.com - Redirect Location for https://www.goldcar.com - OK -> result: https://www.goldcar.es/en/
+    19/10/2017 16:49 - INFO - www.goldcar.com - Redirect Status Code for http://www.goldcar.com/any_path/ - OK -> result: 301
+    19/10/2017 16:49 - INFO - www.goldcar.com - Redirect Location for http://www.goldcar.com/any_path/ - OK -> result: https://www.goldcar.es/en/
     (rasengan) $ echo $?
     1
     (rasengan) $ rasengan --config=check.yml --domains=www.goldcar.com --loglevel=INFO

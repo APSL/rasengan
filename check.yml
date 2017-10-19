@@ -1,3 +1,11 @@
+www.goldcar.es:
+  http:
+    status_code: 301
+    redirect: https://www.goldcar.es/
+  https:
+    status_code: 200
+    text: Alquiler de coches
+
 www.goldcar.com:
   dns:
     domain_type: CNAME
