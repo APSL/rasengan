@@ -61,6 +61,14 @@ At this file you can specify the different for a domain:
 
 ### Basic Example
 
+    www.goldcar.es:
+      http:
+        status_code: 301
+        redirect: https://www.goldcar.es/
+      https:
+        status_code: 200
+        text: Alquiler de coches
+
     www.goldcar.com:
       dns:
         domain_type: CNAME
@@ -79,7 +87,7 @@ At this file you can specify the different for a domain:
     goldcar.com:
       dns:
         domain_type: A
-        expected: ['52.212.105.167', '52.51.179.76']
+        expected: ['52.212.105.167']
       http:
         status_code: 301
         redirect: https://www.goldcar.es/en/
