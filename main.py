@@ -1,42 +1,61 @@
 import yaml
 import requests
 import dns.resolver
-from termcolor import colored
 import sys
-
-debug = False
+import click
+import logging
+import Colorer
 
 # import ipdb; ipdb.set_trace()
 
+# create logger
+log = logging.getLogger('dns-redirect-checker')
+errors = 0
+
+def initiate_log(loglevel):
+    numeric_level = getattr(logging, loglevel.upper(), 10)
+    log.setLevel(numeric_level)
+    ch = logging.StreamHandler()
+    ch.setLevel(numeric_level)
+    formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s',
+                                  "%d/%m/%Y %H:%M")
+    ch.setFormatter(formatter)
+    log.addHandler(ch)
+
 def check(result, expected, title):
-    print_result = True
+    global errors
     if result == expected:
-        message = colored('OK -> result: {}'.format(result), 'green')
-        if not debug:
-            print_result = False
+        message = 'OK -> result: {}'.format(result)
+        log.info('{} - {}'.format(title, message))
+        return True
     else:
-        message = colored('KO -> expected: {} and get: {}'.format(expected, result), 'red')
-    if print_result:
-        print '{} - {}'.format(title, message)
+        message = 'KO -> expected: {} and get: {}'.format(expected, result)
+        log.error('{} - {}'.format(title, message))
+        errors += 1
+        return False
 
 def check_in(result, expected, title):
-    print_result = True
+    global errors
     if expected in result:
-        if not debug:
-            print_result = False
-        message = colored('OK -> Exists the phrase: {}'.format(expected), 'green')
+        message = 'OK -> Exists the phrase: {}'.format(expected)
+        log.info('{} - {}'.format(title, message))
+        return True
     else:
-        message = colored('KO -> Dont exists the phrase: {}'.format(expected), 'red')
-    if print_result:
-        print '{} - {}'.format(title, message)
+        message = 'KO -> Dont exists the phrase: {}'.format(expected)
+        errors += 1
+        log.error('{} - {}'.format(title, message))
+        return False
+
 
 def check_dns(domain, dns_dict):
+    global errors
     result = []
     try:
         anwsers = dns.resolver.query(domain, dns_dict['domain_type'])
     except:
         anwsers = []
         result = ['Not a correct domain_type definition']
+        errors += 1
 
     for rdata in anwsers:
         if dns_dict['domain_type'] == 'A':
@@ -44,50 +63,66 @@ def check_dns(domain, dns_dict):
         else:
             result.append(rdata.target.to_text())
     # result = socket.gethostbyname_ex(domain)[2]
-    check(sorted(result), sorted(dns_dict['expected']), 'DNS Check')
+    return check(sorted(result), sorted(dns_dict['expected']), '{} - DNS Check'.format(domain))
 
-def check_url(url, expected):
+def check_url(domain, url, expected):
+    global errors
     try:
         r = requests.get('{}'.format(url), allow_redirects=False)
     except:
-        print(colored('KO - Problem requesting {}'.format(url),'red'))
+        log.error('{} - KO - Problem requesting {}'.format(domain, url))
+        errors += 1
         return False
 
     # Check the status code expected
-    check(r.status_code, expected['status_code'], 'Redirect Status Code for {}'.format(url))
+    check(r.status_code, expected['status_code'], '{} - Redirect Status Code for {}'.format(domain, url))
 
     # If is a redirect check with the next Location
     if r.status_code in [301, 302]:
-        check(r.headers['Location'], expected['redirect'], 'Redirect Location for {}'.format(url))
+        check(r.headers['Location'], expected['redirect'], '{} - Redirect Location for {}'.format(domain, url))
 
     if expected['status_code'] == 200:
-        check_in(r.text, expected['text'], 'Page content')
+        check_in(r.text, expected['text'], '{} - Page content'.format(domain))
 
-with open("goldcar.yml", 'r') as ymlfile:
-    domains = yaml.safe_load(ymlfile)
 
-    for domain, d in domains.items():
+@click.command()
+@click.option('--config', default='check.yml', help='Name of file to check')
+@click.option('--domains', default='',
+    help='Check only this list of domain (comma separated)')
+@click.option('--loglevel', default='INFO', help='Log level')
+def main(config, domains, loglevel):
+    """Check all the domains in the file"""
+
+    initiate_log(loglevel)
+
+    selected_domains = [x.strip() for x in domains.split(',')]
+
+    with open(config, 'r') as ymlfile:
+        d_domains = yaml.safe_load(ymlfile)
+
         # Check only one domain if passed by argument in cli
-        if len(sys.argv) > 1:
-            if domain != sys.argv[1]:
+        for domain, d in d_domains.items():
+            if domains and (domain not in selected_domains):
                 continue
 
-        print(colored(domain,'blue'))
+            # expected DNS resolution
+            if 'dns' in d:
+                check_dns(domain, d['dns'])
 
-        # expected DNS resolution
-        if 'dns' in d:
-            check_dns(domain, d['dns'])
+            # redirect en http
+            if 'http' in d:
+                check_url(domain, 'http://{}'.format(domain), d['http'])
 
-        # redirect en http
-        if 'http' in d:
-            check_url('http://{}'.format(domain), d['http'])
+            # redirect en https
+            if 'https' in d:
+                check_url(domain, 'https://{}'.format(domain), d['https'])
 
-        # redirect en https
-        if 'https' in d:
-            check_url('https://{}'.format(domain), d['https'])
+            # redirect en http
+            if 'http_root' in d:
+                check_url(domain, 'http://{}{}'.format(domain, d['http_root']['path']), d['http_root'])
 
-        # redirect en http
-        if 'http_root' in d:
-            check_url('http://{}{}'.format(domain, d['http_root']['path']), d['http_root'])
+    if errors > 0:
+        sys.exit(1)
 
-        print
+if __name__ == '__main__':
+    main()

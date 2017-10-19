@@ -9,7 +9,6 @@ goldcar.es:
     status_code: 301
     redirect: https://www.goldcar.es/
 
-
 www.goldcar.es:
   dns:
     domain_type: CNAME
@@ -342,11 +341,11 @@ www.goldcar.ma:
       expected: ['52.210.130.28', '52.208.144.236']
     http:
       status_code: 301
-      redirect: https://www.goldcar.es/en/
+      redirect: https://www.goldcar.es/fr/
     http_root:
       path: /any_path/
       status_code: 301
-      redirect: https://www.goldcar.es/en/
+      redirect: https://www.goldcar.es/fr/
 
 goldcar.ma:
     dns:
@@ -354,11 +353,11 @@ goldcar.ma:
       expected: ['52.210.130.28', '52.208.144.236']
     http:
       status_code: 301
-      redirect: https://www.goldcar.es/en/
+      redirect: https://www.goldcar.es/fr/
     http_root:
       path: /any_path/
       status_code: 301
-      redirect: https://www.goldcar.es/en/
+      redirect: https://www.goldcar.es/fr/
 
 www.goldcar.gr:
     dns:
