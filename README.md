@@ -35,7 +35,7 @@ The exit of the execution is an error if any of the checks fails.
 
 # Install & configure
 
-To install `rasengan``:
+To install `rasengan`:
 
     pip install -U git+https://github.com/APSL/rasengan.git
 
