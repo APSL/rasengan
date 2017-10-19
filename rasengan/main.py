@@ -90,7 +90,7 @@ def check_url(domain, url, expected):
 @click.option('--domains', default='',
     help='Check only this list of domain (comma separated)')
 @click.option('--loglevel', default='INFO', help='Log level')
-def main(config, domains, loglevel):
+def rasengan(config, domains, loglevel):
     """Check all the domains in the file"""
 
     initiate_log(loglevel)
@@ -118,11 +118,11 @@ def main(config, domains, loglevel):
                 check_url(domain, 'https://{}'.format(domain), d['https'])
 
             # redirect en http
-            if 'http_root' in d:
-                check_url(domain, 'http://{}{}'.format(domain, d['http_root']['path']), d['http_root'])
+            if 'http_path' in d:
+                check_url(domain, 'http://{}{}'.format(domain, d['http_path']['path']), d['http_path'])
 
     if errors > 0:
         sys.exit(1)
 
 if __name__ == '__main__':
-    main()
+    rasengan()
