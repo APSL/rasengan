@@ -9,7 +9,7 @@ import Colorer
 # import ipdb; ipdb.set_trace()
 
 # create logger
-log = logging.getLogger('dns-redirect-checker')
+log = logging.getLogger('rasengan')
 errors = 0
 
 def initiate_log(loglevel):
@@ -86,7 +86,7 @@ def check_url(domain, url, expected):
 
 
 @click.command()
-@click.option('--config', default='check.yml', help='Name of file to check')
+@click.option('--config', default='rasengan.yml', help='Name of file to check')
 @click.option('--domains', default='',
     help='Check only this list of domain (comma separated)')
 @click.option('--loglevel', default='INFO', help='Log level')

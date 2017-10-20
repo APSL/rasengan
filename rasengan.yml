@@ -24,7 +24,7 @@ www.goldcar.com:
 goldcar.com:
   dns:
     domain_type: A
-    expected: ['52.212.105.167']
+    expected: ['52.212.105.167', '52.51.179.76']
   http:
     status_code: 301
     redirect: https://www.goldcar.es/en/
