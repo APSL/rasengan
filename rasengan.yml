@@ -17,9 +17,10 @@ www.goldcar.com:
     status_code: 301
     redirect: https://www.goldcar.es/en/
   http_path:
-    path: /any_path/
-    status_code: 301
-    redirect: https://www.goldcar.es/en/
+    any_path:
+      path: /any_path/
+      status_code: 301
+      redirect: https://www.goldcar.es/en/
 
 goldcar.com:
   dns:
@@ -32,6 +33,7 @@ goldcar.com:
     status_code: 301
     redirect: https://www.goldcar.es/en/
   http_path:
-    path: /any_path/
-    status_code: 301
-    redirect: https://www.goldcar.es/en/
+    any_path:
+      path: /any_path/
+      status_code: 301
+      redirect: https://www.goldcar.es/en/

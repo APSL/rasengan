@@ -119,7 +119,8 @@ def rasengan(config, domains, loglevel):
 
             # redirect en http
             if 'http_path' in d:
-                check_url(domain, 'http://{}{}'.format(domain, d['http_path']['path']), d['http_path'])
+                for label, d_path in d['http_path'].items():
+                    check_url(domain, 'http://{}{}'.format(domain, d_path['path']), d_path)
 
     if errors > 0:
         sys.exit(1)
