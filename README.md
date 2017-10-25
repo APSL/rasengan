@@ -57,7 +57,7 @@ At this file you can specify the different for a domain:
 | `dns`          | Check the DNS resolution, expect domain_type and result            |
 | `http`         | Request the domain from http, expect status_code, redirect or text |
 | `https`        | Request the domain from http, expect status_code, redirect or text |
-| `http_path`    | Request the domain from http with a path                           |
+| `http_path`    | Requests the domain from http with a path (multiple)               |
 
 ### Basic Example
 
@@ -80,9 +80,10 @@ At this file you can specify the different for a domain:
         status_code: 301
         redirect: https://www.goldcar.es/en/
       http_path:
-        path: /any_path/
-        status_code: 301
-        redirect: https://www.goldcar.es/en/
+        test1:
+          path: /any_path/
+          status_code: 301
+          redirect: https://www.goldcar.es/en/
 
     goldcar.com:
       dns:
@@ -95,9 +96,10 @@ At this file you can specify the different for a domain:
         status_code: 301
         redirect: https://www.goldcar.es/en/
       http_path:
-        path: /any_path/
-        status_code: 301
-        redirect: https://www.goldcar.es/en/
+        test1:
+          path: /any_path/
+          status_code: 301
+          redirect: https://www.goldcar.es/en/
 
 
 ### Future work
