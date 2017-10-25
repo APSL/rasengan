@@ -4,7 +4,7 @@ import dns.resolver
 import sys
 import click
 import logging
-import Colorer
+import rasengan.Colorer
 
 # import ipdb; ipdb.set_trace()
 
