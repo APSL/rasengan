@@ -60,8 +60,8 @@ m.goldcar.es:
         path: /ru/black-friday-2016
         status_code: 301
         redirect: https://www.goldcar.es/en/offers/black-friday/
-      black_sr:
-        path: /sr/black-friday-2016
+      black_se:
+        path: /se/black-friday-2016
         status_code: 301
         redirect: https://www.goldcar.es/en/offers/black-friday/
       black_tr:
@@ -115,9 +115,9 @@ www.goldcar.es:
       status_code: 301
       redirect: https://www.goldcar.es/
     partners_fr:
-      path: /partners/fr
+      path: /fr/partners
       status_code: 301
-      redirect: https://www.goldcar.es/fr
+      redirect: https://www.goldcar.es/fr/
     partners:
       path: /sv/partners
       status_code: 301
