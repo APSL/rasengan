@@ -1,3 +1,77 @@
+m.goldcar.es:
+    http_path:
+      club_no:
+        path: /no/club/index
+        status_code: 301
+        redirect: https://m.goldcar.es/no/club/
+      club_es:
+        path: /club/index
+        status_code: 301
+        redirect: https://m.goldcar.es/club/
+      club_en:
+        path: /en/facturacion/listarfacturas
+        status_code: 301
+        redirect: https://m.goldcar.es/en/facturacion/facturacionelectronica/
+      club_es:
+        path: /facturacion/listarfacturas
+        status_code: 301
+        redirect: https://m.goldcar.es/facturacion/facturacionelectronica/
+      black_es:
+        path: /black-friday-2016
+        status_code: 301
+        redirect: https://www.goldcar.es/ofertas/black-friday/
+      black_de:
+        path: /de/black-friday-2016
+        status_code: 301
+        redirect: https://www.goldcar.es/de/angebote/black-friday/
+      black_en:
+        path: /en/black-friday-2016
+        status_code: 301
+        redirect: https://www.goldcar.es/en/offers/black-friday/
+      black_fr:
+        path: /fr/black-friday-2016
+        status_code: 301
+        redirect: https://www.goldcar.es/fr/offres/black-friday/
+      black_gr:
+        path: /gr/black-friday-2016
+        status_code: 301
+        redirect: https://www.goldcar.es/en/offers/black-friday/
+      black_hr:
+        path: /hr/black-friday-2016
+        status_code: 301
+        redirect: https://www.goldcar.es/en/offers/black-friday/
+      black_it:
+        path: /it/black-friday-2016
+        status_code: 301
+        redirect: https://www.goldcar.es/it/offerte/black-friday/
+      black_:
+        path: /it/black-friday-2016
+        status_code: 301
+        redirect: https://www.goldcar.es/it/offerte/black-friday/
+      black_nl:
+        path: /nl/black-friday-2016
+        status_code: 301
+        redirect: https://www.goldcar.es/nl/aanbiedingen/black-friday/
+      black_pt:
+        path: /pt/black-friday-2016
+        status_code: 301
+        redirect: https://www.goldcar.es/pt/promocoes/black-friday/
+      black_ru:
+        path: /ru/black-friday-2016
+        status_code: 301
+        redirect: https://www.goldcar.es/en/offers/black-friday/
+      black_sr:
+        path: /sr/black-friday-2016
+        status_code: 301
+        redirect: https://www.goldcar.es/en/offers/black-friday/
+      black_tr:
+        path: /tr/black-friday-2016
+        status_code: 301
+        redirect: https://www.goldcar.es/en/offers/black-friday/
+      black_us:
+        path: /us/black-friday-2016
+        status_code: 301
+        redirect: https://www.goldcar.es/us/offers/black-friday/
 goldcar.es:
   dns:
     domain_type: A
@@ -19,6 +93,135 @@ www.goldcar.es:
   https:
     status_code: 200
     text: Ver lista completa de oficinas Goldcar
+  http_path:
+    club:
+      path: /club/index
+      status_code: 301
+      redirect: https://www.goldcar.es/club/
+    club_2:
+      path: /club/recuperarContrasenia
+      status_code: 301
+      redirect: https://www.goldcar.es/club/
+    facturacion:
+      path: /facturacion/listarfacturas
+      status_code: 301
+      redirect: https://www.goldcar.es/facturacion/facturacionelectronica/
+    preguntas_select:
+      path: /preguntas_select
+      status_code: 301
+      redirect: https://www.goldcar.es/
+    partners:
+      path: /partners
+      status_code: 301
+      redirect: https://www.goldcar.es/
+    partners_fr:
+      path: /partners/fr
+      status_code: 301
+      redirect: https://www.goldcar.es/fr
+    partners:
+      path: /sv/partners
+      status_code: 301
+      redirect: https://www.goldcar.es/se/
+    black_ar:
+      path: /ar/black-friday-2015
+      status_code: 301
+      redirect: https://www.goldcar.es/ar/ofertas/black-friday/
+    black_ar2:
+      path: /ar/black-friday-2016
+      status_code: 301
+      redirect: https://www.goldcar.es/ar/ofertas/black-friday/
+    black:
+      path: /black-friday
+      status_code: 301
+      redirect: https://www.goldcar.es/ofertas/black-friday/
+    black2:
+      path: /black-friday-2015
+      status_code: 301
+      redirect: https://www.goldcar.es/ofertas/black-friday/
+    black3:
+      path: /black-friday-2016
+      status_code: 301
+      redirect: https://www.goldcar.es/ofertas/black-friday/
+    black_de:
+      path: /de/black-friday-2016
+      status_code: 301
+      redirect: https://www.goldcar.es/de/angebote/black-friday/
+    black_en:
+      path: /en/black-friday-2015
+      status_code: 301
+      redirect: https://www.goldcar.es/en/offers/black-friday/
+    black_en_2:
+      path: /en/black-friday-2016
+      status_code: 301
+      redirect: https://www.goldcar.es/en/offers/black-friday/
+    black_fr:
+      path: /fr/black-friday-2016
+      status_code: 301
+      redirect: https://www.goldcar.es/fr/offres/black-friday/
+    black_gr:
+      path: /fr/black-friday-2016
+      status_code: 301
+      redirect: https://www.goldcar.es/
+    black_hr:
+      path: /hr/black-friday-2015
+      status_code: 301
+      redirect: https://www.goldcar.es/en/offers/black-friday/
+    black_gr:
+      path: /hr/black-friday-2016
+      status_code: 301
+      redirect: https://www.goldcar.es/en/offers/black-friday/
+    black_it:
+      path: /it/black-friday-2016
+      status_code: 301
+      redirect: https://www.goldcar.es/it/offerte/black-friday/
+    black_mx:
+      path: /mx/black-friday-2015
+      status_code: 301
+      redirect: https://www.goldcar.es/mx/ofertas/black-friday/
+    black_mx_2:
+      path: /mx/black-friday-2016
+      status_code: 301
+      redirect: https://www.goldcar.es/mx/ofertas/black-friday/
+    black_nl:
+      path: /nl/black-friday-2016
+      status_code: 301
+      redirect: https://www.goldcar.es/nl/aanbiedingen/black-friday/
+    black_no:
+      path: /no/black-friday-2015
+      status_code: 301
+      redirect: https://www.goldcar.es/en/offers/black-friday/
+    black_no_2:
+      path: /no/black-friday-2016
+      status_code: 301
+      redirect: https://www.goldcar.es/en/offers/black-friday/
+    black_pl:
+      path: /pl/black-friday-2016
+      status_code: 301
+      redirect: https://www.goldcar.es/en/offers/black-friday/
+    black_pt:
+      path: /pt/black-friday-2016
+      status_code: 301
+      redirect: https://www.goldcar.es/pt/promocoes/black-friday/
+    black_ru:
+      path: /ru/black-friday-2016
+      status_code: 301
+      redirect: https://www.goldcar.es/en/offers/black-friday/
+    black_se:
+      path: /se/black-friday-2016
+      status_code: 301
+      redirect: https://www.goldcar.es/en/offers/black-friday/
+    black_tr:
+      path: /tr/black-friday-2015
+      status_code: 301
+      redirect: https://www.goldcar.es/en/offers/black-friday/
+    black_tr:
+      path: /tr/black-friday-2016
+      status_code: 301
+      redirect: https://www.goldcar.es/en/offers/black-friday/
+    black_us:
+      path: /us/black-friday-2016
+      status_code: 301
+      redirect: https://www.goldcar.es/us/offers/black-friday/
 
 www.goldcar.com:
   dns:
@@ -31,9 +234,10 @@ www.goldcar.com:
     status_code: 301
     redirect: https://www.goldcar.es/en/
   http_path:
-    path: /any_path/
-    status_code: 301
-    redirect: https://www.goldcar.es/en/
+    en:
+      path: /any_path/
+      status_code: 301
+      redirect: https://www.goldcar.es/en/
 
 goldcar.com:
   dns:
@@ -46,9 +250,10 @@ goldcar.com:
     status_code: 301
     redirect: https://www.goldcar.es/en/
   http_path:
-    path: /any_path/
-    status_code: 301
-    redirect: https://www.goldcar.es/en/
+    en:
+      path: /any_path/
+      status_code: 301
+      redirect: https://www.goldcar.es/en/
 
 www.goldcar.co.uk:
   dns:
@@ -58,9 +263,10 @@ www.goldcar.co.uk:
     status_code: 301
     redirect: https://www.goldcar.es/en/
   http_path:
-    path: /any_path/
-    status_code: 301
-    redirect: https://www.goldcar.es/en/
+    en:
+      path: /any_path/
+      status_code: 301
+      redirect: https://www.goldcar.es/en/
 
 goldcar.co.uk:
   dns:
@@ -70,9 +276,10 @@ goldcar.co.uk:
     status_code: 301
     redirect: https://www.goldcar.es/en/
   http_path:
-    path: /any_path/
-    status_code: 301
-    redirect: https://www.goldcar.es/en/
+    en:
+      path: /any_path/
+      status_code: 301
+      redirect: https://www.goldcar.es/en/
 
 www.goldcar.com.mt:
   dns:
@@ -82,9 +289,10 @@ www.goldcar.com.mt:
     status_code: 301
     redirect: https://www.goldcar.es/en/
   http_path:
-    path: /any_path/
-    status_code: 301
-    redirect: https://www.goldcar.es/en/
+    en:
+      path: /any_path/
+      status_code: 301
+      redirect: https://www.goldcar.es/en/
 
 goldcar.com.mt:
   dns:
@@ -94,9 +302,10 @@ goldcar.com.mt:
     status_code: 301
     redirect: https://www.goldcar.es/en/
   http_path:
-    path: /any_path/
-    status_code: 301
-    redirect: https://www.goldcar.es/en/
+    en:
+      path: /any_path/
+      status_code: 301
+      redirect: https://www.goldcar.es/en/
 
 www.goldcar.ro:
   dns:
@@ -106,9 +315,10 @@ www.goldcar.ro:
     status_code: 301
     redirect: https://www.goldcar.es/en/
   http_path:
-    path: /any_path/
-    status_code: 301
-    redirect: https://www.goldcar.es/en/
+    en:
+      path: /any_path/
+      status_code: 301
+      redirect: https://www.goldcar.es/en/
 
 goldcar.ro:
   dns:
@@ -118,9 +328,10 @@ goldcar.ro:
     status_code: 301
     redirect: https://www.goldcar.es/en/
   http_path:
-    path: /any_path/
-    status_code: 301
-    redirect: https://www.goldcar.es/en/
+    en:
+      path: /any_path/
+      status_code: 301
+      redirect: https://www.goldcar.es/en/
 
 www.gold-carrental.com:
   dns:
@@ -130,9 +341,10 @@ www.gold-carrental.com:
     status_code: 301
     redirect: https://www.goldcar.es/en/
   http_path:
-    path: /any_path/
-    status_code: 301
-    redirect: https://www.goldcar.es/en/
+    en:
+      path: /any_path/
+      status_code: 301
+      redirect: https://www.goldcar.es/en/
 
 gold-carrental.com:
   dns:
@@ -142,9 +354,10 @@ gold-carrental.com:
     status_code: 301
     redirect: https://www.goldcar.es/en/
   http_path:
-    path: /any_path/
-    status_code: 301
-    redirect: https://www.goldcar.es/en/
+    en:
+      path: /any_path/
+      status_code: 301
+      redirect: https://www.goldcar.es/en/
 
 www.goldcar.de:
   dns:
@@ -154,9 +367,10 @@ www.goldcar.de:
     status_code: 301
     redirect: https://www.goldcar.es/de/
   http_path:
-    path: /any_path/
-    status_code: 301
-    redirect: https://www.goldcar.es/de/
+    de:
+      path: /any_path/
+      status_code: 301
+      redirect: https://www.goldcar.es/de/
 
 goldcar.de:
   dns:
@@ -166,9 +380,10 @@ goldcar.de:
     status_code: 301
     redirect: https://www.goldcar.es/de/
   http_path:
-    path: /any_path/
-    status_code: 301
-    redirect: https://www.goldcar.es/de/
+    de:
+      path: /any_path/
+      status_code: 301
+      redirect: https://www.goldcar.es/de/
 
 www.goldcar.it:
   dns:
@@ -178,9 +393,10 @@ www.goldcar.it:
     status_code: 301
     redirect: https://www.goldcar.es/it/
   http_path:
-    path: /any_path/
-    status_code: 301
-    redirect: https://www.goldcar.es/it/
+    any:
+      path: /any_path/
+      status_code: 301
+      redirect: https://www.goldcar.es/it/
 
 goldcar.it:
   dns:
@@ -190,9 +406,10 @@ goldcar.it:
     status_code: 301
     redirect: https://www.goldcar.es/it/
   http_path:
-    path: /any_path/
-    status_code: 301
-    redirect: https://www.goldcar.es/it/
+    any:
+      path: /any_path/
+      status_code: 301
+      redirect: https://www.goldcar.es/it/
 
 
 www.goldcarrental.it:
@@ -203,9 +420,10 @@ www.goldcarrental.it:
       status_code: 301
       redirect: https://www.goldcar.es/it/
     http_path:
-      path: /any_path/
-      status_code: 301
-      redirect: https://www.goldcar.es/it/
+      any:
+        path: /any_path/
+        status_code: 301
+        redirect: https://www.goldcar.es/it/
 
 goldcarrental.it:
   dns:
@@ -215,9 +433,10 @@ goldcarrental.it:
     status_code: 301
     redirect: https://www.goldcar.es/it/
   http_path:
-    path: /any_path/
-    status_code: 301
-    redirect: https://www.goldcar.es/it/
+    any:
+      path: /any_path/
+      status_code: 301
+      redirect: https://www.goldcar.es/it/
 
 www.goldcarental.it:
     dns:
@@ -227,9 +446,10 @@ www.goldcarental.it:
       status_code: 301
       redirect: https://www.goldcar.es/it/
     http_path:
-      path: /any_path/
-      status_code: 301
-      redirect: https://www.goldcar.es/it/
+      any:
+        path: /any_path/
+        status_code: 301
+        redirect: https://www.goldcar.es/it/
 
 goldcarental.it:
   dns:
@@ -239,9 +459,10 @@ goldcarental.it:
     status_code: 301
     redirect: https://www.goldcar.es/it/
   http_path:
-    path: /any_path/
-    status_code: 301
-    redirect: https://www.goldcar.es/it/
+    any:
+      path: /any_path/
+      status_code: 301
+      redirect: https://www.goldcar.es/it/
 
 www.goldcaritaly.it:
     dns:
@@ -251,9 +472,10 @@ www.goldcaritaly.it:
       status_code: 301
       redirect: https://www.goldcar.es/it/
     http_path:
-      path: /any_path/
-      status_code: 301
-      redirect: https://www.goldcar.es/it/
+      any:
+        path: /any_path/
+        status_code: 301
+        redirect: https://www.goldcar.es/it/
 
 goldcaritaly.it:
   dns:
@@ -263,9 +485,10 @@ goldcaritaly.it:
     status_code: 301
     redirect: https://www.goldcar.es/it/
   http_path:
-    path: /any_path/
-    status_code: 301
-    redirect: https://www.goldcar.es/it/
+    any:
+      path: /any_path/
+      status_code: 301
+      redirect: https://www.goldcar.es/it/
 
 www.goldcar.pt:
     dns:
@@ -275,9 +498,10 @@ www.goldcar.pt:
       status_code: 301
       redirect: https://www.goldcar.es/pt/
     http_path:
-      path: /any_path/
-      status_code: 301
-      redirect: https://www.goldcar.es/pt/
+      any:
+        path: /any_path/
+        status_code: 301
+        redirect: https://www.goldcar.es/pt/
 goldcar.pt:
   dns:
     domain_type: A
@@ -286,9 +510,10 @@ goldcar.pt:
     status_code: 301
     redirect: https://www.goldcar.es/pt/
   http_path:
-    path: /any_path/
-    status_code: 301
-    redirect: https://www.goldcar.es/pt/
+    any:
+      path: /any_path/
+      status_code: 301
+      redirect: https://www.goldcar.es/pt/
 
 www.goldcar.fr:
     dns:
@@ -298,9 +523,10 @@ www.goldcar.fr:
       status_code: 301
       redirect: https://www.goldcar.es/fr/
     http_path:
-      path: /any_path/
-      status_code: 301
-      redirect: https://www.goldcar.es/fr/
+      any:
+        path: /any_path/
+        status_code: 301
+        redirect: https://www.goldcar.es/fr/
 goldcar.fr:
     dns:
       domain_type: A
@@ -309,9 +535,10 @@ goldcar.fr:
       status_code: 301
       redirect: https://www.goldcar.es/fr/
     http_path:
-      path: /any_path/
-      status_code: 301
-      redirect: https://www.goldcar.es/fr/
+      any:
+        path: /any_path/
+        status_code: 301
+        redirect: https://www.goldcar.es/fr/
 www.mygoldcar.fr:
     dns:
       domain_type: CNAME
@@ -320,9 +547,10 @@ www.mygoldcar.fr:
       status_code: 301
       redirect: https://www.goldcar.es/fr/
     http_path:
-      path: /any_path/
-      status_code: 301
-      redirect: https://www.goldcar.es/fr/
+      any:
+        path: /any_path/
+        status_code: 301
+        redirect: https://www.goldcar.es/fr/
 mygoldcar.fr:
     dns:
       domain_type: A
@@ -331,9 +559,10 @@ mygoldcar.fr:
       status_code: 301
       redirect: https://www.goldcar.es/fr/
     http_path:
-      path: /any_path/
-      status_code: 301
-      redirect: https://www.goldcar.es/fr/
+      any:
+        path: /any_path/
+        status_code: 301
+        redirect: https://www.goldcar.es/fr/
 
 www.goldcar.ma:
     dns:
@@ -343,9 +572,10 @@ www.goldcar.ma:
       status_code: 301
       redirect: https://www.goldcar.es/fr/
     http_path:
-      path: /any_path/
-      status_code: 301
-      redirect: https://www.goldcar.es/fr/
+      any:
+        path: /any_path/
+        status_code: 301
+        redirect: https://www.goldcar.es/fr/
 
 goldcar.ma:
     dns:
@@ -355,9 +585,10 @@ goldcar.ma:
       status_code: 301
       redirect: https://www.goldcar.es/fr/
     http_path:
-      path: /any_path/
-      status_code: 301
-      redirect: https://www.goldcar.es/fr/
+      any:
+        path: /any_path/
+        status_code: 301
+        redirect: https://www.goldcar.es/fr/
 
 www.goldcar.gr:
     dns:
@@ -367,9 +598,10 @@ www.goldcar.gr:
       status_code: 301
       redirect: https://www.goldcar.es/gr/
     http_path:
-      path: /any_path/
-      status_code: 301
-      redirect: https://www.goldcar.es/gr/
+      any:
+        path: /any_path/
+        status_code: 301
+        redirect: https://www.goldcar.es/gr/
 
 goldcar.gr:
     dns:
@@ -379,9 +611,10 @@ goldcar.gr:
       status_code: 301
       redirect: https://www.goldcar.es/gr/
     http_path:
-      path: /any_path/
-      status_code: 301
-      redirect: https://www.goldcar.es/gr/
+      any:
+        path: /any_path/
+        status_code: 301
+        redirect: https://www.goldcar.es/gr/
 
 www.goldcarrental.com:
     dns:
@@ -391,9 +624,10 @@ www.goldcarrental.com:
       status_code: 301
       redirect: https://www.goldcar.es/
     http_path:
-      path: /any_path/
-      status_code: 301
-      redirect: https://www.goldcar.es/
+      any:
+        path: /any_path/
+        status_code: 301
+        redirect: https://www.goldcar.es/
 goldcarrental.com:
     dns:
       domain_type: A
@@ -402,9 +636,10 @@ goldcarrental.com:
       status_code: 301
       redirect: https://www.goldcar.es/
     http_path:
-      path: /any_path/
-      status_code: 301
-      redirect: https://www.goldcar.es/
+      any:
+        path: /any_path/
+        status_code: 301
+        redirect: https://www.goldcar.es/
 www.goldcarsales.com:
       dns:
         domain_type: A
@@ -413,9 +648,10 @@ www.goldcarsales.com:
         status_code: 301
         redirect: https://www.goldcar.es/
       http_path:
-        path: /any_path/
-        status_code: 301
-        redirect: https://www.goldcar.es/
+        any:
+          path: /any_path/
+          status_code: 301
+          redirect: https://www.goldcar.es/
 goldcarsales.com:
     dns:
       domain_type: A
@@ -424,9 +660,10 @@ goldcarsales.com:
       status_code: 301
       redirect: https://www.goldcar.es/
     http_path:
-      path: /any_path/
-      status_code: 301
-      redirect: https://www.goldcar.es/
+      any:
+        path: /any_path/
+        status_code: 301
+        redirect: https://www.goldcar.es/
 www.goldcarsales.es:
     dns:
       domain_type: CNAME
@@ -435,9 +672,10 @@ www.goldcarsales.es:
       status_code: 301
       redirect: https://www.goldcar.es/
     http_path:
-      path: /any_path/
-      status_code: 301
-      redirect: https://www.goldcar.es/
+      any:
+        path: /any_path/
+        status_code: 301
+        redirect: https://www.goldcar.es/
 goldcarsales.es:
     dns:
       domain_type: A
@@ -446,9 +684,10 @@ goldcarsales.es:
       status_code: 301
       redirect: https://www.goldcar.es/
     http_path:
-      path: /any_path/
-      status_code: 301
-      redirect: https://www.goldcar.es/
+      any:
+        path: /any_path/
+        status_code: 301
+        redirect: https://www.goldcar.es/
 www.alquilerdecochesbaratos.com.es:
     dns:
       domain_type: CNAME
@@ -457,9 +696,10 @@ www.alquilerdecochesbaratos.com.es:
       status_code: 301
       redirect: https://www.goldcar.es/
     http_path:
-      path: /any_path/
-      status_code: 301
-      redirect: https://www.goldcar.es/
+      any:
+        path: /any_path/
+        status_code: 301
+        redirect: https://www.goldcar.es/
 alquilerdecochesbaratos.com.es:
     dns:
       domain_type: A
@@ -468,9 +708,10 @@ alquilerdecochesbaratos.com.es:
       status_code: 301
       redirect: https://www.goldcar.es/
     http_path:
-      path: /any_path/
-      status_code: 301
-      redirect: https://www.goldcar.es/
+      any:
+        path: /any_path/
+        status_code: 301
+        redirect: https://www.goldcar.es/
 goldcar.be:
       dns:
         domain_type: A
@@ -479,9 +720,10 @@ goldcar.be:
         status_code: 301
         redirect: https://www.goldcar.es/fr/
       http_path:
-        path: /any_path/
-        status_code: 301
-        redirect: https://www.goldcar.es/fr/
+        any:
+          path: /any_path/
+          status_code: 301
+          redirect: https://www.goldcar.es/fr/
 www.goldcar.be:
     dns:
         domain_type: A
@@ -490,6 +732,7 @@ www.goldcar.be:
       status_code: 301
       redirect: https://www.goldcar.es/fr/
     http_path:
-      path: /any_path/
-      status_code: 301
-      redirect: https://www.goldcar.es/fr/
+      any:
+        path: /any_path/
+        status_code: 301
+        redirect: https://www.goldcar.es/fr/
