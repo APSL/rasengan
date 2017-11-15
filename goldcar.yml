@@ -95,9 +95,10 @@ www.goldcar.es:
     text: Ver lista completa de oficinas Goldcar
   http_path:
     club:
-      path: /club/index
-      status_code: 301
-      redirect: https://www.goldcar.es/club/
+      protocol: https
+      path: /club/
+      status_code: 200
+      text: Utiliza el Club Goldcar para conseguir
     club_2:
       path: /club/recuperarContrasenia
       status_code: 301
