@@ -11,11 +11,11 @@ m.goldcar.es:
       club_en:
         path: /en/facturacion/listarfacturas
         status_code: 301
-        redirect: https://m.goldcar.es/en/facturacion/facturacionelectronica/
+        redirect: https://www.goldcar.es/en/facturacion/listarfacturas
       club_es:
         path: /facturacion/listarfacturas
         status_code: 301
-        redirect: https://m.goldcar.es/facturacion/facturacionelectronica/
+        redirect: https://www.goldcar.es/facturacion/listarfacturas
       black_es:
         path: /black-friday-2016
         status_code: 301
