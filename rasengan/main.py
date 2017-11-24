@@ -68,7 +68,7 @@ def check_dns(domain, dns_dict):
 def check_url(domain, url, expected):
     global errors
     try:
-        r = requests.get('{}'.format(url), allow_redirects=False)
+        r = requests.get('{}'.format(url), allow_redirects=False, timeout=1)
     except:
         log.error('{} - KO - Problem requesting {}'.format(domain, url))
         errors += 1
@@ -107,20 +107,21 @@ def rasengan(config, domains, loglevel):
 
             # expected DNS resolution
             if 'dns' in d:
-                check_dns(domain, d['dns'])
+                dns_ok = check_dns(domain, d['dns'])
 
-            # redirect en http
-            if 'http' in d:
-                check_url(domain, 'http://{}'.format(domain), d['http'])
+            if dns_ok:
+                # redirect en http
+                if 'http' in d:
+                    check_url(domain, 'http://{}'.format(domain), d['http'])
 
-            # redirect en https
-            if 'https' in d:
-                check_url(domain, 'https://{}'.format(domain), d['https'])
+                # redirect en https
+                if 'https' in d:
+                    check_url(domain, 'https://{}'.format(domain), d['https'])
 
-            # redirect en http
-            if 'http_path' in d:
-                for label, d_path in d['http_path'].items():
-                    check_url(domain, '{}://{}{}'.format(d_path.get('protocol', 'http'), domain, d_path['path']), d_path)
+                # redirect en http
+                if 'http_path' in d:
+                    for label, d_path in d['http_path'].items():
+                        check_url(domain, '{}://{}{}'.format(d_path.get('protocol', 'http'), domain, d_path['path']), d_path)
 
     if errors > 0:
         sys.exit(1)

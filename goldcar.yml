@@ -75,7 +75,7 @@ m.goldcar.es:
 goldcar.es:
   dns:
     domain_type: A
-    expected: ['52.210.130.28', '52.208.144.236']
+    expected: ['52.213.76.45','34.250.252.109']
   http:
     status_code: 301
     redirect: https://www.goldcar.es/
@@ -107,10 +107,10 @@ www.goldcar.es:
       path: /facturacion/listarfacturas
       status_code: 301
       redirect: https://www.goldcar.es/facturacion/facturacionelectronica/
-    preguntas_select:
-      path: /preguntas_select
-      status_code: 301
-      redirect: https://www.goldcar.es/
+    # preguntas_select:
+    #   path: /preguntas_select
+    #   status_code: 301
+    #   redirect: https://www.goldcar.es/
     partners:
       path: /partners
       status_code: 301
@@ -259,7 +259,7 @@ goldcar.com:
 www.goldcar.co.uk:
   dns:
     domain_type: A
-    expected: ['52.210.130.28', '52.208.144.236']
+    expected: ['52.213.76.45','34.250.252.109']
   http:
     status_code: 301
     redirect: https://www.goldcar.es/en/
@@ -272,7 +272,7 @@ www.goldcar.co.uk:
 goldcar.co.uk:
   dns:
     domain_type: A
-    expected: ['52.210.130.28', '52.208.144.236']
+    expected: ['52.213.76.45','34.250.252.109']
   http:
     status_code: 301
     redirect: https://www.goldcar.es/en/
@@ -285,7 +285,7 @@ goldcar.co.uk:
 www.goldcar.com.mt:
   dns:
     domain_type: A
-    expected: ['52.210.130.28', '52.208.144.236']
+    expected: ['52.213.76.45','34.250.252.109']
   http:
     status_code: 301
     redirect: https://www.goldcar.es/en/
@@ -298,7 +298,7 @@ www.goldcar.com.mt:
 goldcar.com.mt:
   dns:
     domain_type: A
-    expected: ['52.210.130.28', '52.208.144.236']
+    expected: ['52.213.76.45','34.250.252.109']
   http:
     status_code: 301
     redirect: https://www.goldcar.es/en/
@@ -311,7 +311,7 @@ goldcar.com.mt:
 www.goldcar.ro:
   dns:
     domain_type: A
-    expected: ['52.210.130.28', '52.208.144.236']
+    expected: ['52.213.76.45','34.250.252.109']
   http:
     status_code: 301
     redirect: https://www.goldcar.es/en/
@@ -324,7 +324,7 @@ www.goldcar.ro:
 goldcar.ro:
   dns:
     domain_type: A
-    expected: ['52.210.130.28', '52.208.144.236']
+    expected: ['52.213.76.45','34.250.252.109']
   http:
     status_code: 301
     redirect: https://www.goldcar.es/en/
@@ -337,7 +337,7 @@ goldcar.ro:
 www.gold-carrental.com:
   dns:
     domain_type: A
-    expected: ['52.210.130.28', '52.208.144.236']
+    expected: ['52.213.76.45','34.250.252.109']
   http:
     status_code: 301
     redirect: https://www.goldcar.es/en/
@@ -350,7 +350,7 @@ www.gold-carrental.com:
 gold-carrental.com:
   dns:
     domain_type: A
-    expected: ['52.210.130.28', '52.208.144.236']
+    expected: ['52.213.76.45','34.250.252.109']
   http:
     status_code: 301
     redirect: https://www.goldcar.es/en/
@@ -376,7 +376,7 @@ www.goldcar.de:
 goldcar.de:
   dns:
     domain_type: A
-    expected: ['52.210.130.28', '52.208.144.236']
+    expected: ['52.213.76.45','34.250.252.109']
   http:
     status_code: 301
     redirect: https://www.goldcar.es/de/
@@ -389,7 +389,7 @@ goldcar.de:
 www.goldcar.it:
   dns:
     domain_type: A
-    expected: ['52.210.130.28', '52.208.144.236']
+    expected: ['52.213.76.45','34.250.252.109']
   http:
     status_code: 301
     redirect: https://www.goldcar.es/it/
@@ -402,7 +402,7 @@ www.goldcar.it:
 goldcar.it:
   dns:
     domain_type: A
-    expected: ['52.210.130.28', '52.208.144.236']
+    expected: ['52.213.76.45','34.250.252.109']
   http:
     status_code: 301
     redirect: https://www.goldcar.es/it/
@@ -429,7 +429,7 @@ www.goldcarrental.it:
 goldcarrental.it:
   dns:
     domain_type: A
-    expected: ['52.210.130.28', '52.208.144.236']
+    expected: ['52.213.76.45','34.250.252.109']
   http:
     status_code: 301
     redirect: https://www.goldcar.es/it/
@@ -455,7 +455,7 @@ www.goldcarental.it:
 goldcarental.it:
   dns:
     domain_type: A
-    expected: ['52.210.130.28', '52.208.144.236']
+    expected: ['52.213.76.45','34.250.252.109']
   http:
     status_code: 301
     redirect: https://www.goldcar.es/it/
@@ -468,7 +468,7 @@ goldcarental.it:
 www.goldcaritaly.it:
     dns:
       domain_type: A
-      expected: ['52.210.130.28', '52.208.144.236']
+      expected: ['52.213.76.45','34.250.252.109']
     http:
       status_code: 301
       redirect: https://www.goldcar.es/it/
@@ -481,7 +481,7 @@ www.goldcaritaly.it:
 goldcaritaly.it:
   dns:
     domain_type: A
-    expected: ['52.210.130.28', '52.208.144.236']
+    expected: ['52.213.76.45','34.250.252.109']
   http:
     status_code: 301
     redirect: https://www.goldcar.es/it/
@@ -506,7 +506,7 @@ www.goldcar.pt:
 goldcar.pt:
   dns:
     domain_type: A
-    expected: ['52.210.130.28', '52.208.144.236']
+    expected: ['52.213.76.45','34.250.252.109']
   http:
     status_code: 301
     redirect: https://www.goldcar.es/pt/
@@ -531,7 +531,7 @@ www.goldcar.fr:
 goldcar.fr:
     dns:
       domain_type: A
-      expected: ['52.210.130.28', '52.208.144.236']
+      expected: ['52.213.76.45','34.250.252.109']
     http:
       status_code: 301
       redirect: https://www.goldcar.es/fr/
@@ -555,7 +555,7 @@ www.mygoldcar.fr:
 mygoldcar.fr:
     dns:
       domain_type: A
-      expected: ['52.210.130.28', '52.208.144.236']
+      expected: ['52.213.76.45','34.250.252.109']
     http:
       status_code: 301
       redirect: https://www.goldcar.es/fr/
@@ -568,7 +568,7 @@ mygoldcar.fr:
 www.goldcar.ma:
     dns:
       domain_type: A
-      expected: ['52.210.130.28', '52.208.144.236']
+      expected: ['52.213.76.45','34.250.252.109']
     http:
       status_code: 301
       redirect: https://www.goldcar.es/fr/
@@ -581,7 +581,7 @@ www.goldcar.ma:
 goldcar.ma:
     dns:
       domain_type: A
-      expected: ['52.210.130.28', '52.208.144.236']
+      expected: ['52.213.76.45','34.250.252.109']
     http:
       status_code: 301
       redirect: https://www.goldcar.es/fr/
@@ -594,7 +594,7 @@ goldcar.ma:
 www.goldcar.gr:
     dns:
       domain_type: A
-      expected: ['52.210.130.28', '52.208.144.236']
+      expected: ['52.213.76.45','34.250.252.109']
     http:
       status_code: 301
       redirect: https://www.goldcar.es/gr/
@@ -607,7 +607,7 @@ www.goldcar.gr:
 goldcar.gr:
     dns:
       domain_type: A
-      expected: ['52.210.130.28', '52.208.144.236']
+      expected: ['52.213.76.45','34.250.252.109']
     http:
       status_code: 301
       redirect: https://www.goldcar.es/gr/
@@ -620,7 +620,7 @@ goldcar.gr:
 www.goldcarrental.com:
     dns:
       domain_type: A
-      expected: ['52.210.130.28', '52.208.144.236']
+      expected: ['52.213.76.45','34.250.252.109']
     http:
       status_code: 301
       redirect: https://www.goldcar.es/
@@ -632,7 +632,7 @@ www.goldcarrental.com:
 goldcarrental.com:
     dns:
       domain_type: A
-      expected: ['52.210.130.28', '52.208.144.236']
+      expected: ['52.213.76.45','34.250.252.109']
     http:
       status_code: 301
       redirect: https://www.goldcar.es/
@@ -644,7 +644,7 @@ goldcarrental.com:
 www.goldcarsales.com:
       dns:
         domain_type: A
-        expected: ['52.210.130.28', '52.208.144.236']
+        expected: ['52.213.76.45','34.250.252.109']
       http:
         status_code: 301
         redirect: https://www.goldcar.es/
@@ -656,7 +656,7 @@ www.goldcarsales.com:
 goldcarsales.com:
     dns:
       domain_type: A
-      expected: ['52.210.130.28', '52.208.144.236']
+      expected: ['52.213.76.45','34.250.252.109']
     http:
       status_code: 301
       redirect: https://www.goldcar.es/
@@ -680,7 +680,7 @@ www.goldcarsales.es:
 goldcarsales.es:
     dns:
       domain_type: A
-      expected: ['52.210.130.28', '52.208.144.236']
+      expected: ['52.213.76.45','34.250.252.109']
     http:
       status_code: 301
       redirect: https://www.goldcar.es/
@@ -704,7 +704,7 @@ www.alquilerdecochesbaratos.com.es:
 alquilerdecochesbaratos.com.es:
     dns:
       domain_type: A
-      expected: ['52.210.130.28', '52.208.144.236']
+      expected: ['52.213.76.45','34.250.252.109']
     http:
       status_code: 301
       redirect: https://www.goldcar.es/
@@ -716,7 +716,7 @@ alquilerdecochesbaratos.com.es:
 goldcar.be:
       dns:
         domain_type: A
-        expected: ['52.210.130.28', '52.208.144.236']
+        expected: ['52.213.76.45','34.250.252.109']
       http:
         status_code: 301
         redirect: https://www.goldcar.es/fr/
@@ -728,7 +728,7 @@ goldcar.be:
 www.goldcar.be:
     dns:
         domain_type: A
-        expected: ['52.210.130.28', '52.208.144.236']
+        expected: ['52.213.76.45','34.250.252.109']
     http:
       status_code: 301
       redirect: https://www.goldcar.es/fr/
