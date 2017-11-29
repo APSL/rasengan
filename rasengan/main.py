@@ -85,7 +85,7 @@ def check_url(domain, url, expected, user_agent=user_agent_desktop, timeout=1):
         return False
 
     # Check the status code expected
-    check(r.status_code, expected['status_code'], '{} - {} - Redirect Status Code for {}'.format(domain,text_mobile, url))
+    check(r.status_code, expected['status_code'], '{} - {} - Status Code for {}'.format(domain,text_mobile, url))
 
     # If is a redirect check with the next Location
     if expected['status_code'] in [301, 302]:
