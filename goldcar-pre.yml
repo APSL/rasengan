@@ -1,0 +1,344 @@
+gcmovil.pre.aws.goldcar.ws:
+  http_path:
+    club_en:
+      path: /en/facturacion/listarfacturas
+      status_code: 301
+      redirect: https://gcfrontend.pre.aws.goldcar.ws/en/facturacion/listarfacturas
+    club_es:
+      path: /facturacion/listarfacturas
+      status_code: 301
+      redirect: https://gcfrontend.pre.aws.goldcar.ws/facturacion/listarfacturas
+    black_es:
+      path: /black-friday-2016
+      status_code: 301
+      redirect: https://gcfrontend.pre.aws.goldcar.ws/ofertas/black-friday/
+    black_de:
+      path: /de/black-friday-2016
+      status_code: 301
+      redirect: https://gcfrontend.pre.aws.goldcar.ws/de/angebote/black-friday/
+    black_en:
+      path: /en/black-friday-2016
+      status_code: 301
+      redirect: https://gcfrontend.pre.aws.goldcar.ws/en/offers/black-friday/
+    black_fr:
+      path: /fr/black-friday-2016
+      status_code: 301
+      redirect: https://gcfrontend.pre.aws.goldcar.ws/fr/offres/black-friday/
+    black_gr:
+      path: /gr/black-friday-2016
+      status_code: 301
+      redirect: https://gcfrontend.pre.aws.goldcar.ws/en/offers/black-friday/
+    black_hr:
+      path: /hr/black-friday-2016
+      status_code: 301
+      redirect: https://gcfrontend.pre.aws.goldcar.ws/en/offers/black-friday/
+    black_it:
+      path: /it/black-friday-2016
+      status_code: 301
+      redirect: https://gcfrontend.pre.aws.goldcar.ws/it/offerte/black-friday/
+    black_:
+      path: /it/black-friday-2016
+      status_code: 301
+      redirect: https://gcfrontend.pre.aws.goldcar.ws/it/offerte/black-friday/
+    black_nl:
+      path: /nl/black-friday-2016
+      status_code: 301
+      redirect: https://gcfrontend.pre.aws.goldcar.ws/nl/aanbiedingen/black-friday/
+    black_pt:
+      path: /pt/black-friday-2016
+      status_code: 301
+      redirect: https://gcfrontend.pre.aws.goldcar.ws/pt/promocoes/black-friday/
+    black_ru:
+      path: /ru/black-friday-2016
+      status_code: 301
+      redirect: https://gcfrontend.pre.aws.goldcar.ws/en/offers/black-friday/
+    black_se:
+      path: /se/black-friday-2016
+      status_code: 301
+      redirect: https://gcfrontend.pre.aws.goldcar.ws/en/offers/black-friday/
+    black_tr:
+      path: /tr/black-friday-2016
+      status_code: 301
+      redirect: https://gcfrontend.pre.aws.goldcar.ws/en/offers/black-friday/
+    black_us:
+      path: /us/black-friday-2016
+      status_code: 301
+      redirect: https://gcfrontend.pre.aws.goldcar.ws/us/offers/black-friday/
+  http_path_from_mobile:
+    politica-privacidad:
+      path: /politica-privacidad/
+      status_code: 200
+      text: A efectos de lo dispuesto en la Ley
+    oficinas:
+      path: /oficinas/
+      status_code: 200
+      text: Goldcar dispone actualmente de
+    club:
+      path: /club/
+      status_code: 200
+      text: Queremos tratarte de la mejor manera posible
+    root:
+      path: /
+      status_code: 200
+      text: Nuestros clientes opinan de nosotros
+    tc:
+      path: /tc/
+      status_code: 200
+      text: Selecciona tu idioma y la oficina de recogida
+    buros:
+      path: /de/buros/
+      status_code: 200
+      text: Goldcar-Zweigstellen
+    offices:
+      path: /en/offices/
+      status_code: 200
+      text: Goldcar now has over 80 car hire offices located
+    bureaux:
+      path: /fr/bureaux/
+      status_code: 200
+      text: seau des agences Goldcar
+    grafeia:
+      path: /gr/grafeia/
+      status_code: 200
+      text: Goldcar
+    politika:
+      path: /hr/politika-privatnosti/
+      status_code: 200
+      text: U svrhu odredaba Organskog zakona
+    uredi:
+      path: /hr/uredi/
+      status_code: 200
+      text: Goldcar trenutno ima
+    uffici:
+      path: /it/uffici/
+      status_code: 200
+      text: Uffici Goldcar
+    filialen:
+      path: /nl/filialen/
+      status_code: 200
+      text: Netwerk van Goldcar kantoren
+    rental:
+      path: /ar/rental-alquiler-coches-baratos-girona-alquiler-coches-aeropuerto-girona.html
+      status_code: 200
+      text:  que se extiende desde la Gran
+    kontorer:
+      path: /no/kontorer/
+      status_code: 200
+      text: Goldcar tilbyr et nettverk med mer enn 80
+    biura:
+      path: /pl/biura/
+      status_code: 200
+      text: Obecnie Goldcar posiada ponad 80
+
+gcfrontend.pre.aws.goldcar.ws:
+  http:
+    status_code: 301
+    redirect: https://gcfrontend.pre.aws.goldcar.ws/
+  https:
+    status_code: 200
+    text: Ver lista completa de oficinas Goldcar
+  http_path:
+    club:
+      protocol: https
+      path: /club/
+      status_code: 200
+      text: Utiliza el Club Goldcar para conseguir
+    club_2:
+      path: /club/recuperarContrasenia
+      status_code: 301
+      redirect: https://gcfrontend.pre.aws.goldcar.ws/club/
+    facturacion:
+      path: /facturacion/listarfacturas
+      status_code: 301
+      redirect: https://gcfrontend.pre.aws.goldcar.ws/facturacion/facturacionelectronica/
+    # preguntas_select:
+    #   path: /preguntas_select
+    #   status_code: 301
+    #   redirect: https://gcfrontend.pre.aws.goldcar.ws/
+    partners:
+      path: /partners
+      status_code: 301
+      redirect: https://gcfrontend.pre.aws.goldcar.ws/
+    partners_fr:
+      path: /fr/partners
+      status_code: 301
+      redirect: https://gcfrontend.pre.aws.goldcar.ws/fr/
+    partners:
+      path: /sv/partners
+      status_code: 301
+      redirect: https://gcfrontend.pre.aws.goldcar.ws/se/
+    black_ar:
+      path: /ar/black-friday-2015
+      status_code: 301
+      redirect: https://gcfrontend.pre.aws.goldcar.ws/ar/ofertas/black-friday/
+    black_ar2:
+      path: /ar/black-friday-2016
+      status_code: 301
+      redirect: https://gcfrontend.pre.aws.goldcar.ws/ar/ofertas/black-friday/
+    black:
+      path: /black-friday
+      status_code: 301
+      redirect: https://gcfrontend.pre.aws.goldcar.ws/ofertas/black-friday/
+    black2:
+      path: /black-friday-2015
+      status_code: 301
+      redirect: https://gcfrontend.pre.aws.goldcar.ws/ofertas/black-friday/
+    black3:
+      path: /black-friday-2016
+      status_code: 301
+      redirect: https://gcfrontend.pre.aws.goldcar.ws/ofertas/black-friday/
+    black_de:
+      path: /de/black-friday-2016
+      status_code: 301
+      redirect: https://gcfrontend.pre.aws.goldcar.ws/de/angebote/black-friday/
+    black_en:
+      path: /en/black-friday-2015
+      status_code: 301
+      redirect: https://gcfrontend.pre.aws.goldcar.ws/en/offers/black-friday/
+    black_en_2:
+      path: /en/black-friday-2016
+      status_code: 301
+      redirect: https://gcfrontend.pre.aws.goldcar.ws/en/offers/black-friday/
+    black_fr:
+      path: /fr/black-friday-2016
+      status_code: 301
+      redirect: https://gcfrontend.pre.aws.goldcar.ws/fr/offres/black-friday/
+    black_gr:
+      path: /fr/black-friday-2016
+      status_code: 301
+      redirect: https://gcfrontend.pre.aws.goldcar.ws/
+    black_hr:
+      path: /hr/black-friday-2015
+      status_code: 301
+      redirect: https://gcfrontend.pre.aws.goldcar.ws/en/offers/black-friday/
+    black_gr:
+      path: /hr/black-friday-2016
+      status_code: 301
+      redirect: https://gcfrontend.pre.aws.goldcar.ws/en/offers/black-friday/
+    black_it:
+      path: /it/black-friday-2016
+      status_code: 301
+      redirect: https://gcfrontend.pre.aws.goldcar.ws/it/offerte/black-friday/
+    black_mx:
+      path: /mx/black-friday-2015
+      status_code: 301
+      redirect: https://gcfrontend.pre.aws.goldcar.ws/mx/ofertas/black-friday/
+    black_mx_2:
+      path: /mx/black-friday-2016
+      status_code: 301
+      redirect: https://gcfrontend.pre.aws.goldcar.ws/mx/ofertas/black-friday/
+    black_nl:
+      path: /nl/black-friday-2016
+      status_code: 301
+      redirect: https://gcfrontend.pre.aws.goldcar.ws/nl/aanbiedingen/black-friday/
+    black_no:
+      path: /no/black-friday-2015
+      status_code: 301
+      redirect: https://gcfrontend.pre.aws.goldcar.ws/en/offers/black-friday/
+    black_no_2:
+      path: /no/black-friday-2016
+      status_code: 301
+      redirect: https://gcfrontend.pre.aws.goldcar.ws/en/offers/black-friday/
+    black_pl:
+      path: /pl/black-friday-2016
+      status_code: 301
+      redirect: https://gcfrontend.pre.aws.goldcar.ws/en/offers/black-friday/
+    black_pt:
+      path: /pt/black-friday-2016
+      status_code: 301
+      redirect: https://gcfrontend.pre.aws.goldcar.ws/pt/promocoes/black-friday/
+    black_ru:
+      path: /ru/black-friday-2016
+      status_code: 301
+      redirect: https://gcfrontend.pre.aws.goldcar.ws/en/offers/black-friday/
+    black_se:
+      path: /se/black-friday-2016
+      status_code: 301
+      redirect: https://gcfrontend.pre.aws.goldcar.ws/en/offers/black-friday/
+    black_tr:
+      path: /tr/black-friday-2015
+      status_code: 301
+      redirect: https://gcfrontend.pre.aws.goldcar.ws/en/offers/black-friday/
+    black_tr:
+      path: /tr/black-friday-2016
+      status_code: 301
+      redirect: https://gcfrontend.pre.aws.goldcar.ws/en/offers/black-friday/
+    black_us:
+      path: /us/black-friday-2016
+      status_code: 301
+      redirect: https://gcfrontend.pre.aws.goldcar.ws/us/offers/black-friday/
+  http_path_from_mobile:
+    politica-privacidad:
+      path: /politica-privacidad
+      status_code: 302
+      redirect: https://gcmovil.pre.aws.goldcar.ws/politica-privacidad
+    oficinas:
+      path: /oficinas
+      status_code: 302
+      redirect: https://gcmovil.pre.aws.goldcar.ws/oficinas
+    club:
+      path: /club
+      status_code: 302
+      redirect: https://gcmovil.pre.aws.goldcar.ws/club
+    root:
+      path: /
+      status_code: 302
+      redirect: https://gcmovil.pre.aws.goldcar.ws/
+    tc:
+      path: /tc/
+      status_code: 302
+      redirect: https://gcmovil.pre.aws.goldcar.ws/tc/
+    buros:
+      path: /de/buros
+      status_code: 302
+      redirect: https://gcmovil.pre.aws.goldcar.ws/de/buros
+    offices:
+      path: /en/offices
+      status_code: 302
+      redirect: https://gcmovil.pre.aws.goldcar.ws/en/offices
+    bureaux:
+      path: /fr/bureaux
+      status_code: 302
+      redirect: https://gcmovil.pre.aws.goldcar.ws/fr/bureaux
+    grafeia:
+      path: /gr/grafeia
+      status_code: 302
+      redirect: https://gcmovil.pre.aws.goldcar.ws/gr/grafeia
+    politika:
+      path: /hr/politika-privatnosti/
+      status_code: 302
+      redirect: https://gcmovil.pre.aws.goldcar.ws/hr/politika-privatnosti/
+    uredi:
+      path: /hr/uredi
+      status_code: 302
+      redirect: https://gcmovil.pre.aws.goldcar.ws/hr/uredi
+    uffici:
+      path: /it/uffici
+      status_code: 302
+      redirect: https://gcmovil.pre.aws.goldcar.ws/it/uffici
+    filialen:
+      path: /nl/filialen
+      status_code: 302
+      redirect: https://gcmovil.pre.aws.goldcar.ws/nl/filialen
+    rental:
+      path: /ar/rental-alquiler-coches-baratos-girona-alquiler-coches-aeropuerto-girona.html
+      status_code: 302
+      redirect: https://gcmovil.pre.aws.goldcar.ws/ar/rental-alquiler-coches-baratos-girona-alquiler-coches-aeropuerto-girona.html
+    kontorer:
+      path: /no/kontorer
+      status_code: 302
+      redirect: https://gcmovil.pre.aws.goldcar.ws/no/kontorer
+    biura:
+      path: /pl/biura
+      status_code: 302
+      redirect: https://gcmovil.pre.aws.goldcar.ws/pl/biura
+
+en-gcfrontend.pre.aws.goldcar.ws:
+      http:
+        status_code: 301
+        redirect: https://gcfrontend.pre.aws.goldcar.ws/en/
+      http_path:
+        any:
+          path: /any_path/
+          status_code: 301
+          redirect: https://gcfrontend.pre.aws.goldcar.ws/en/

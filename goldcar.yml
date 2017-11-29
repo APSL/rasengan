@@ -8,11 +8,11 @@ m.goldcar.es:
         path: /club/index
         status_code: 301
         redirect: https://m.goldcar.es/club/
-      club_en:
+      facturacion_en:
         path: /en/facturacion/listarfacturas
         status_code: 301
         redirect: https://www.goldcar.es/en/facturacion/listarfacturas
-      club_es:
+      facturacion_es:
         path: /facturacion/listarfacturas
         status_code: 301
         redirect: https://www.goldcar.es/facturacion/listarfacturas

@@ -11,6 +11,8 @@ import rasengan.Colorer
 # create logger
 log = logging.getLogger('rasengan')
 errors = 0
+user_agent_mobile = "Mozilla/5.0 (Linux; Android 4.2.1; en-us; Nexus 5 Build/JOP40D) AppleWebKit/535.19 (KHTML, like Gecko; googleweblight) Chrome/38.0.1025.166 Mobile Safari/535.19"
+user_agent_desktop = "Mozilla/4.0 (compatible; MSIE 9.0; Windows NT 6.1)"
 
 def initiate_log(loglevel):
     numeric_level = getattr(logging, loglevel.upper(), 10)
@@ -65,24 +67,32 @@ def check_dns(domain, dns_dict):
     # result = socket.gethostbyname_ex(domain)[2]
     return check(sorted(result), sorted(dns_dict['expected']), '{} - DNS Check'.format(domain))
 
-def check_url(domain, url, expected):
+def check_url(domain, url, expected, user_agent=user_agent_desktop, timeout=1):
+
+    text_mobile = "(From Desktop)"
+    if user_agent == user_agent_mobile:
+        text_mobile = "(From Mobile)"
+
     global errors
     try:
-        r = requests.get('{}'.format(url), allow_redirects=False, timeout=1)
+        headers = {
+            'User-Agent': user_agent
+        }
+        r = requests.get('{}'.format(url), allow_redirects=False, headers=headers, timeout=timeout)
     except:
         log.error('{} - KO - Problem requesting {}'.format(domain, url))
         errors += 1
         return False
 
     # Check the status code expected
-    check(r.status_code, expected['status_code'], '{} - Redirect Status Code for {}'.format(domain, url))
+    check(r.status_code, expected['status_code'], '{} - {} - Redirect Status Code for {}'.format(domain,text_mobile, url))
 
     # If is a redirect check with the next Location
-    if r.status_code in [301, 302]:
-        check(r.headers['Location'], expected['redirect'], '{} - Redirect Location for {}'.format(domain, url))
+    if expected['status_code'] in [301, 302]:
+        check(r.headers['Location'], expected['redirect'], '{} - {} - Redirect Location for {}'.format(domain,text_mobile, url))
 
     if expected['status_code'] == 200:
-        check_in(r.text, expected['text'], '{} - Page content'.format(domain))
+        check_in(r.text, expected['text'], '{} - {} - Page content'.format(domain,text_mobile))
 
 
 @click.command()
@@ -105,11 +115,13 @@ def rasengan(config, domains, loglevel):
             if domains and (domain not in selected_domains):
                 continue
 
+            dns_exists = 'dns' in d
+            dns_ok = False
             # expected DNS resolution
-            if 'dns' in d:
+            if dns_exists:
                 dns_ok = check_dns(domain, d['dns'])
 
-            if dns_ok:
+            if not dns_exists or dns_ok:
                 # redirect en http
                 if 'http' in d:
                     check_url(domain, 'http://{}'.format(domain), d['http'])
@@ -122,6 +134,19 @@ def rasengan(config, domains, loglevel):
                 if 'http_path' in d:
                     for label, d_path in d['http_path'].items():
                         check_url(domain, '{}://{}{}'.format(d_path.get('protocol', 'http'), domain, d_path['path']), d_path)
+
+                # redirect en http from mobile
+                if 'http_from_mobile' in d:
+                    check_url(domain, 'http://{}'.format(domain), d['http_from_mobile'], user_agent=user_agent_mobile)
+
+                # redirect en https from mobile
+                if 'https_from_mobile' in d:
+                    check_url(domain, 'https://{}'.format(domain), d['https_from_mobile'], user_agent=user_agent_mobile)
+
+                # redirect en http
+                if 'http_path_from_mobile' in d:
+                    for label, d_path in d['http_path_from_mobile'].items():
+                        check_url(domain, '{}://{}{}'.format(d_path.get('protocol', 'https'), domain, d_path['path']), d_path, user_agent=user_agent_mobile)
 
     if errors > 0:
         sys.exit(1)
