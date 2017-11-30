@@ -20,7 +20,7 @@ www.goldcar.com:
     any_path:
       path: /any_path/
       status_code: 301
-      redirect: https://www.goldcar.es/es/
+      redirect: https://www.goldcar.es/en/
 
 goldcar.com:
   dns:
