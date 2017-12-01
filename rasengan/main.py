@@ -74,7 +74,7 @@ def check_dns(domain, dns_dict):
 def check_url(domain, url, data, timeout=1):
 
     user_agent = data.get('user_agent', 'desktop')
-    text_mobile = '(From {})'.format(user_agent)
+    text_from = '(From {})'.format(user_agent)
 
     global errors
     try:
@@ -88,14 +88,20 @@ def check_url(domain, url, data, timeout=1):
         return False
 
     # Check the status code expected
-    check(r.status_code, data['status_code'], '{} - {} - Status Code for {}'.format(domain,text_mobile, url))
+    check(r.status_code, data['status_code'], '{} - {} - Status Code for {}'.format(domain,text_from, url))
 
     # If is a redirect check with the next Location
     if data['status_code'] in [301, 302]:
-        check(r.headers['Location'], data['redirect'], '{} - {} - Redirect Location for {}'.format(domain,text_mobile, url))
+        if 'Location' in r.headers:
+            check(r.headers['Location'], data['redirect'], '{} - {} - Redirect Location for {}'.format(domain,text_from, url))
+        else:
+            message = 'KO -> Expect a redirect but not found it: {} - {}'.format(domain, url)
+            errors += 1
+            log.error('{}'.format(message))
+
 
     if data['status_code'] == 200:
-        check_in(r.text, data.get('text','<--NOTEXTDEFINED-->'), '{} - {} - Page content'.format(domain,text_mobile))
+        check_in(r.text, data.get('text','<--NOTEXTDEFINED-->'), '{} - {} - Page content'.format(domain,text_from))
 
 
 @click.command()
