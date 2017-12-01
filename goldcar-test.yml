@@ -613,3 +613,11 @@ en-gcfrontend.test.aws.goldcar.ws:
           path: /any_path/
           status_code: 301
           redirect: https://gcfrontend.test.aws.goldcar.ws/en/
+
+test-vpc-1786276184.eu-west-1.elb.amazonaws.com:
+      http:
+        status_code: 410
+      http_path:
+        any:
+          path: /any_path/
+          status_code: 410
