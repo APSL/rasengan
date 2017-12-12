@@ -12,7 +12,7 @@ INSTALL_REQUIRES = [
 
 setup(
     name='rasengan',
-    version='0.1.7',
+    version='0.1.8',
     include_package_data=True,
     packages=[
         'rasengan',
