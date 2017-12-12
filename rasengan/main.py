@@ -105,10 +105,10 @@ def check_url(domain, url, data, timeout=1):
 
 
 @click.command()
-@click.option('--config', default='rasengan.yml', help='Name of file to check')
-@click.option('--domains', default='',
+@click.option('--config', '-c', default='rasengan.yml', help='Name of file to check')
+@click.option('--domains', '-d', default='',
     help='Check only this list of domain (comma separated)')
-@click.option('--loglevel', default='INFO', help='Log level')
+@click.option('--loglevel', '-l', default='INFO', help='Log level')
 def rasengan(config, domains, loglevel):
     """Check all the domains in the file"""
 
