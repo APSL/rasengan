@@ -12,13 +12,14 @@ INSTALL_REQUIRES = [
 
 setup(
     name='rasengan',
-    version='0.1.8',
+    version='0.1.9',
     include_package_data=True,
     packages=[
         'rasengan',
     ],
     url=u"https://github.com/apsl/rasengan",
     license='GPLv3',
+    python_requires='>=3.4',
     install_requires=INSTALL_REQUIRES,
     entry_points="""
         [console_scripts]

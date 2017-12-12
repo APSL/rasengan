@@ -5,9 +5,8 @@ import sys
 import click
 import logging
 import rasengan.Colorer
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, wait
 # import ipdb; ipdb.set_trace()
-executor = ThreadPoolExecutor(max_workers=20)
 # create logger
 log = logging.getLogger('rasengan')
 errors = 0
@@ -109,10 +108,13 @@ def check_url(domain, url, data, timeout=1):
 @click.option('--domains', '-d', default='',
     help='Check only this list of domain (comma separated)')
 @click.option('--loglevel', '-l', default='INFO', help='Log level')
-def rasengan(config, domains, loglevel):
+
+@click.option('--workers', '-w', default=20, help='Number of threads to make the requests')
+def rasengan(config, domains, loglevel, workers):
     """Check all the domains in the file"""
 
     initiate_log(loglevel)
+    executor = ThreadPoolExecutor(max_workers=workers)
 
     selected_domains = [x.strip() for x in domains.split(',')]
 
@@ -161,6 +163,9 @@ def rasengan(config, domains, loglevel):
                             ),
                             d_path
                         )
+    
+    executor.shutdown(wait=True)
+
     if errors > 0:
         sys.exit(1)
 
