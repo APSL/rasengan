@@ -5,9 +5,9 @@ import sys
 import click
 import logging
 import rasengan.Colorer
-
+from concurrent.futures import ThreadPoolExecutor
 # import ipdb; ipdb.set_trace()
-
+executor = ThreadPoolExecutor(max_workers=20)
 # create logger
 log = logging.getLogger('rasengan')
 errors = 0
@@ -133,7 +133,8 @@ def rasengan(config, domains, loglevel):
             if not dns_exists or dns_ok:
                 # redirect en http
                 if 'http' in d:
-                    check_url(
+                    executor.submit(
+                        check_url, 
                         domain,
                         'http://{}'.format(domain),
                         d['http']
@@ -141,7 +142,8 @@ def rasengan(config, domains, loglevel):
 
                 # redirect en https
                 if 'https' in d:
-                    check_url(
+                    executor.submit(
+                        check_url,
                         domain,
                         'https://{}'.format(domain),
                         d['https']
@@ -150,15 +152,15 @@ def rasengan(config, domains, loglevel):
                 # redirect en http
                 if 'http_path' in d:
                     for label, d_path in d['http_path'].items():
-                        check_url(
+                        executor.submit(
+                            check_url,
                             domain,
                             '{}://{}{}'.format(
                                 d_path.get('protocol', 'http'),
                                 domain, d_path['path']
                             ),
-                             d_path
-                         )
-
+                            d_path
+                        )
     if errors > 0:
         sys.exit(1)
 
