@@ -100,7 +100,7 @@ def check_url(domain, url, data, timeout=1):
 
 
     if data['status_code'] == 200:
-        check_in(r.text, data.get('text','<--NOTEXTDEFINED-->'), '{} - {} - Page content'.format(domain,text_from))
+        check_in(r.text, data.get('text','<--NOTEXTDEFINED-->'), '{} - {} - Page content for {}'.format(domain,text_from, url))
 
 
 @click.command()
