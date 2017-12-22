@@ -5,9 +5,8 @@ import sys
 import click
 import logging
 import rasengan.Colorer
-
+from concurrent.futures import ThreadPoolExecutor, wait
 # import ipdb; ipdb.set_trace()
-
 # create logger
 log = logging.getLogger('rasengan')
 errors = 0
@@ -101,18 +100,21 @@ def check_url(domain, url, data, timeout=1):
 
 
     if data['status_code'] == 200:
-        check_in(r.text, data.get('text','<--NOTEXTDEFINED-->'), '{} - {} - Page content'.format(domain,text_from))
+        check_in(r.text, data.get('text','<--NOTEXTDEFINED-->'), '{} - {} - Page content for {}'.format(domain,text_from, url))
 
 
 @click.command()
-@click.option('--config', default='rasengan.yml', help='Name of file to check')
-@click.option('--domains', default='',
+@click.option('--config', '-c', default='rasengan.yml', help='Name of file to check')
+@click.option('--domains', '-d', default='',
     help='Check only this list of domain (comma separated)')
-@click.option('--loglevel', default='INFO', help='Log level')
-def rasengan(config, domains, loglevel):
+@click.option('--loglevel', '-l', default='INFO', help='Log level')
+
+@click.option('--workers', '-w', default=20, help='Number of threads to make the requests')
+def rasengan(config, domains, loglevel, workers):
     """Check all the domains in the file"""
 
     initiate_log(loglevel)
+    executor = ThreadPoolExecutor(max_workers=workers)
 
     selected_domains = [x.strip() for x in domains.split(',')]
 
@@ -131,9 +133,10 @@ def rasengan(config, domains, loglevel):
                 dns_ok = check_dns(domain, d['dns'])
 
             if not dns_exists or dns_ok:
-                # redirect en http
+                # # redirect en http
                 # if 'http' in d:
-                #     check_url(
+                #     executor.submit(
+                #         check_url, 
                 #         domain,
                 #         'http://{}'.format(domain),
                 #         d['http']
@@ -141,7 +144,8 @@ def rasengan(config, domains, loglevel):
 
                 # # redirect en https
                 # if 'https' in d:
-                #     check_url(
+                #     executor.submit(
+                #         check_url,
                 #         domain,
                 #         'https://{}'.format(domain),
                 #         d['https']
@@ -150,14 +154,17 @@ def rasengan(config, domains, loglevel):
                 # redirect en http
                 if 'http' in d:
                     for label, d_path in d['http'].items():
-                        check_url(
+                        executor.submit(
+                            check_url,
                             domain,
                             '{}://{}{}'.format(
                                 d_path.get('protocol', 'http'),
                                 domain, d_path['path']
                             ),
-                             d_path
-                         )
+                            d_path
+                        )
+    
+    executor.shutdown(wait=True)
 
     if errors > 0:
         sys.exit(1)

@@ -106,4 +106,3 @@ At this file you can specify the different for a domain:
 
     - Use a option to get output in check_mrpe format.
     - Improve the way to do requests and configure it in the file.
-    - Do the work in multi-thread, to do it faster.
