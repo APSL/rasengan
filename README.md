@@ -55,32 +55,34 @@ At this file you can specify the different for a domain:
 | Field          | Description                                                        |
 |----------------|--------------------------------------------------------------------|
 | `dns`          | Check the DNS resolution, expect domain_type and result            |
-| `http`         | Request the domain from http, expect status_code, redirect or text |
-| `https`        | Request the domain from http, expect status_code, redirect or text |
-| `http_path`    | Requests the domain from http with a path (multiple)               |
+| `http`         | Request the domain from http, expect status_code, redirect or text. The default value for protocol is https, and default path is '/' |
+
 
 ### Basic Example
 
     www.goldcar.es:
       http:
-        status_code: 301
-        redirect: https://www.goldcar.es/
-      https:
-        status_code: 200
-        text: Alquiler de coches
+        main: 
+          status_code: 301
+          protocol: http
+          redirect: https://www.goldcar.es/
+        main_https:
+          status_code: 200
+          text: Alquiler de coches
 
     www.goldcar.com:
       dns:
         domain_type: CNAME
         expected: ['goldcarcom.aws.goldcar.ws.']
       http:
-        status_code: 301
-        redirect: https://www.goldcar.es/en/
-      https:
-        status_code: 301
-        redirect: https://www.goldcar.es/en/
-      http_path:
-        test1:
+        main:
+          status_code: 301
+          protocol: http
+          redirect: https://www.goldcar.es/en/
+        main_https:
+          status_code: 301
+          redirect: https://www.goldcar.es/en/
+        any_path:
           path: /any_path/
           status_code: 301
           redirect: https://www.goldcar.es/en/
@@ -88,21 +90,22 @@ At this file you can specify the different for a domain:
     goldcar.com:
       dns:
         domain_type: A
-        expected: ['52.212.105.167']
+        expected: ['52.212.105.167', '52.51.179.76']
       http:
-        status_code: 301
-        redirect: https://www.goldcar.es/en/
-      https:
-        status_code: 301
-        redirect: https://www.goldcar.es/en/
-      http_path:
-        test1:
+        main:
+          status_code: 301
+          protocol: http
+          redirect: https://www.goldcar.es/en/
+        main_https:
+          status_code: 301
+          redirect: https://www.goldcar.es/en/
+        any_path:
           path: /any_path/
           status_code: 301
           redirect: https://www.goldcar.es/en/
 
 
+
 ### Future work
 
     - Use a option to get output in check_mrpe format.
-    - Improve the way to do requests and configure it in the file.

@@ -14,11 +14,11 @@ www.goldcar.com:
     expected: ['goldcarcom.aws.goldcar.ws.']
   http:
     main:
-      status_code: 301
+      status_code: 302
       protocol: http
       redirect: https://www.goldcar.es/en/
     main_https:
-      status_code: 301
+      status_code: 302
       redirect: https://www.goldcar.es/en/
     any_path:
       path: /any_path/

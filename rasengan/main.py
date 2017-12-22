@@ -17,6 +17,14 @@ user_agents = {
     'google_mobile': 'Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.96 Mobile Safari/537.36 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'
 }
 
+NAGIOS_CODES = {
+    'OK': 0,
+    'WARNING': 1,
+    'CRITICAL': 2,
+    'UNKNOWN': 3,
+    'DEPENDENT': 4
+}
+
 def initiate_log(loglevel):
     numeric_level = getattr(logging, loglevel.upper(), 10)
     log.setLevel(numeric_level)
@@ -115,12 +123,14 @@ def check_url(domain, data, timeout=1):
 @click.option('--domains', '-d', default='',
     help='Check only this list of domain (comma separated)')
 @click.option('--loglevel', '-l', default='INFO', help='Log level')
-
 @click.option('--workers', '-w', default=20, help='Number of threads to make the requests')
-def rasengan(config, domains, loglevel, workers):
+@click.option('--mrpe/--no-mrpe', default=False)
+def rasengan(config, domains, loglevel, workers, mrpe):
     """Check all the domains in the file"""
 
-    initiate_log(loglevel)
+    if not mrpe:
+        initiate_log(loglevel)
+
     executor = ThreadPoolExecutor(max_workers=workers)
 
     selected_domains = [x.strip() for x in domains.split(',')]
@@ -147,7 +157,13 @@ def rasengan(config, domains, loglevel, workers):
     executor.shutdown(wait=True)
 
     if errors > 0:
-        sys.exit(1)
+        if mrpe: 
+            print("Errores en los checks de rasengan: {}".format(errors))
+        sys.exit(NAGIOS_CODES['CRITICAL'])
+    else:
+        if mrpe:
+            print("Sin errores en los checks de rasengan.")
+        sys.exit(NAGIOS_CODES['OK'])
 
 if __name__ == '__main__':
     rasengan()
