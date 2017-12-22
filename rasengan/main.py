@@ -70,7 +70,14 @@ def check_dns(domain, dns_dict):
     # result = socket.gethostbyname_ex(domain)[2]
     return check(sorted(result), sorted(dns_dict['expected']), '{} - DNS Check'.format(domain))
 
-def check_url(domain, url, data, timeout=1):
+def check_url(domain, data, timeout=1):
+
+    # Montamos la URL con los valores por defecto (https y path a /)
+    url = '{}://{}{}'.format( 
+        data.get('protocol', 'https'),  
+        domain, 
+        data.get('path', '/')
+    )
 
     user_agent = data.get('user_agent', 'desktop')
     text_from = '(From {})'.format(user_agent)
@@ -133,36 +140,9 @@ def rasengan(config, domains, loglevel, workers):
                 dns_ok = check_dns(domain, d['dns'])
 
             if not dns_exists or dns_ok:
-                # # redirect en http
-                # if 'http' in d:
-                #     executor.submit(
-                #         check_url, 
-                #         domain,
-                #         'http://{}'.format(domain),
-                #         d['http']
-                #     )
-
-                # # redirect en https
-                # if 'https' in d:
-                #     executor.submit(
-                #         check_url,
-                #         domain,
-                #         'https://{}'.format(domain),
-                #         d['https']
-                #     )
-
-                # redirect en http
                 if 'http' in d:
                     for label, d_path in d['http'].items():
-                        executor.submit(
-                            check_url,
-                            domain,
-                            '{}://{}{}'.format(
-                                d_path.get('protocol', 'http'),
-                                domain, d_path['path']
-                            ),
-                            d_path
-                        )
+                        executor.submit( check_url, domain, d_path )
     
     executor.shutdown(wait=True)
 
