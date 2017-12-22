@@ -132,24 +132,24 @@ def rasengan(config, domains, loglevel):
 
             if not dns_exists or dns_ok:
                 # redirect en http
-                if 'http' in d:
-                    check_url(
-                        domain,
-                        'http://{}'.format(domain),
-                        d['http']
-                    )
+                # if 'http' in d:
+                #     check_url(
+                #         domain,
+                #         'http://{}'.format(domain),
+                #         d['http']
+                #     )
 
-                # redirect en https
-                if 'https' in d:
-                    check_url(
-                        domain,
-                        'https://{}'.format(domain),
-                        d['https']
-                    )
+                # # redirect en https
+                # if 'https' in d:
+                #     check_url(
+                #         domain,
+                #         'https://{}'.format(domain),
+                #         d['https']
+                #     )
 
                 # redirect en http
-                if 'http_path' in d:
-                    for label, d_path in d['http_path'].items():
+                if 'http' in d:
+                    for label, d_path in d['http'].items():
                         check_url(
                             domain,
                             '{}://{}{}'.format(
