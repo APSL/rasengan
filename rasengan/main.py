@@ -6,6 +6,8 @@ import click
 import logging
 import rasengan.Colorer
 from concurrent.futures import ThreadPoolExecutor, wait
+from rasengan.ssllabsscanner import resultsFromCache    
+
 # import ipdb; ipdb.set_trace()
 # create logger
 log = logging.getLogger('rasengan')
@@ -117,6 +119,15 @@ def check_url(domain, data, timeout=1):
     if data['status_code'] == 200:
         check_in(r.text, data.get('text','<--NOTEXTDEFINED-->'), '{} - {} - Page content for {}'.format(domain,text_from, url))
 
+def check_ssl(domain, data):
+    global errors
+    a = resultsFromCache(domain)
+    if a['status'] == 'READY':
+        grade = a['endpoints'][0]['grade']
+        check(data['grade'], grade, '{} - SSL Qualys grade'.format(domain))
+    elif a['status'] == 'IN_PROGRESS':
+        log.warning('{} - SSL Qualys grade - In progress'.format(domain))
+        
 
 @click.command()
 @click.option('--config', '-c', default='rasengan.yml', help='Name of file to check')
@@ -153,7 +164,8 @@ def rasengan(config, domains, loglevel, workers, mrpe):
                 if 'http' in d:
                     for label, d_path in d['http'].items():
                         executor.submit( check_url, domain, d_path )
-    
+                if 'ssl' in d:
+                    executor.submit( check_ssl, domain, d['ssl'])
     executor.shutdown(wait=True)
 
     if errors > 0:

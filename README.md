@@ -55,12 +55,14 @@ At this file you can specify the different for a domain:
 | Field          | Description                                                        |
 |----------------|--------------------------------------------------------------------|
 | `dns`          | Check the DNS resolution, expect domain_type and result            |
+| `ssl`          | Check the SSL status of the domainm (qualys test)                  |
 | `http`         | Request the domain from http, expect status_code, redirect or text. The default value for protocol is https, and default path is '/' |
 
 
 ### Basic Example
-
     www.goldcar.es:
+      ssl:
+        grade: A
       http:
         main: 
           status_code: 301
@@ -74,6 +76,8 @@ At this file you can specify the different for a domain:
       dns:
         domain_type: CNAME
         expected: ['goldcarcom.aws.goldcar.ws.']
+      ssl:
+        grade: A    
       http:
         main:
           status_code: 301
