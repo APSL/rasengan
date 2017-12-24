@@ -1,6 +1,7 @@
 www.goldcar.es:
   ssl:
     grade: A
+    days_to_expire: 10
   http:
     main: 
       status_code: 301
@@ -15,7 +16,8 @@ www.goldcar.com:
     domain_type: CNAME
     expected: ['goldcarcom.aws.goldcar.ws.']
   ssl:
-    grade: A    
+    grade: A
+    days_to_expire: 10
   http:
     main:
       status_code: 301

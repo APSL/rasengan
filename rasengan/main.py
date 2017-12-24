@@ -7,6 +7,9 @@ import logging
 import rasengan.Colorer
 from concurrent.futures import ThreadPoolExecutor, wait
 from rasengan.ssllabsscanner import resultsFromCache    
+import OpenSSL
+import ssl, socket
+from datetime import datetime
 
 # import ipdb; ipdb.set_trace()
 # create logger
@@ -119,15 +122,26 @@ def check_url(domain, data, timeout=1):
     if data['status_code'] == 200:
         check_in(r.text, data.get('text','<--NOTEXTDEFINED-->'), '{} - {} - Page content for {}'.format(domain,text_from, url))
 
-def check_ssl(domain, data):
+def check_qualys(domain, data):
     global errors
-    a = resultsFromCache(domain)
-    if a['status'] == 'READY':
-        grade = a['endpoints'][0]['grade']
-        check(data['grade'], grade, '{} - SSL Qualys grade'.format(domain))
-    elif a['status'] == 'IN_PROGRESS':
-        log.warning('{} - SSL Qualys grade - In progress'.format(domain))
-        
+    if data['grade']:
+        a = resultsFromCache(domain)
+        if a['status'] == 'READY':
+            grade = a['endpoints'][0]['grade']
+            check(data['grade'], grade, '{} - SSL Qualys grade'.format(domain))
+        elif a['status'] == 'IN_PROGRESS':
+            log.warning('{} - SSL Qualys grade - In progress'.format(domain))
+
+def check_ssl(domain, data):
+    if data['days_to_expire']:        
+        cert = ssl.get_server_certificate((domain, 443))
+        x509 = OpenSSL.crypto.load_certificate(OpenSSL.crypto.FILETYPE_PEM, cert)
+        date_cert = datetime.strptime(x509.get_notAfter().decode('ascii'),"%Y%m%d%H%M%SZ")
+        expire_in = date_cert - datetime.now()
+        if expire_in.days < data['days_to_expire']:
+            log.error('{} - SSL Expires at {} (< {})'.format(domain, date_cert, data['days_to_expire']))
+        else:
+            log.info('{} - SSL Expires at {}'.format(domain, date_cert))
 
 @click.command()
 @click.option('--config', '-c', default='rasengan.yml', help='Name of file to check')
@@ -165,7 +179,11 @@ def rasengan(config, domains, loglevel, workers, mrpe):
                     for label, d_path in d['http'].items():
                         executor.submit( check_url, domain, d_path )
                 if 'ssl' in d:
-                    executor.submit( check_ssl, domain, d['ssl'])
+                    if 'grade' in d['ssl']:
+                        executor.submit( check_qualys, domain, d['ssl'])
+                    if 'days_to_expire' in d['ssl']:
+                        executor.submit( check_ssl, domain, d['ssl'])
+                        
     executor.shutdown(wait=True)
 
     if errors > 0:
