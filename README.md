@@ -46,26 +46,18 @@ At this file you can specify the different for a domain:
 
 
 ### Basic Example
-    www.goldcar.com:
-      dns:
-        domain_type: CNAME
-        expected: 
-          - 'goldcarcom.aws.goldcar.ws.'
+    www.goldcar.es:
       ssl:
         grade: A
         days_to_expire: 10
       http:
-        main:
+        main: 
           status_code: 301
           protocol: http
-          redirect: https://www.goldcar.es/en/
+          redirect: https://www.goldcar.es/
         main_https:
-          status_code: 301
-          redirect: https://www.goldcar.es/en/
-        any_path:
-          path: /any_path/
-          status_code: 301
-          redirect: https://www.goldcar.es/en/
+          status_code: 200
+          text: Alquiler de coches
 
 # Usage example
 
