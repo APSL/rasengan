@@ -31,18 +31,18 @@ At this file you can specify the different for a domain:
 
 ## Usage
 
-  rasengan --help
-  Usage: rasengan [OPTIONS]
+    rasengan --help
+    Usage: rasengan [OPTIONS]
 
-    Check all the domains in the file
+      Check all the domains in the file
 
-  Options:
-    -c, --config TEXT      Name of file to check
-    -d, --domains TEXT     Check only this list of domain (comma separated)
-    -l, --loglevel TEXT    Log level
-    -w, --workers INTEGER  Number of threads to make the requests
-    --mrpe / --no-mrpe
-    --help                 Show this message and exit.
+    Options:
+      -c, --config TEXT      Name of file to check
+      -d, --domains TEXT     Check only this list of domain (comma separated)
+      -l, --loglevel TEXT    Log level
+      -w, --workers INTEGER  Number of threads to make the requests
+      --mrpe / --no-mrpe
+      --help                 Show this message and exit.
 
 
 ## Basic Example
