@@ -133,6 +133,7 @@ def check_qualys(domain, data):
             log.warning('{} - SSL Qualys grade - In progress'.format(domain))
 
 def check_ssl(domain, data):
+    global errors
     if data['days_to_expire']:        
         cert = ssl.get_server_certificate((domain, 443))
         x509 = OpenSSL.crypto.load_certificate(OpenSSL.crypto.FILETYPE_PEM, cert)
@@ -140,6 +141,7 @@ def check_ssl(domain, data):
         expire_in = date_cert - datetime.now()
         if expire_in.days < data['days_to_expire']:
             log.error('{} - SSL Expires at {} (< {})'.format(domain, date_cert, data['days_to_expire']))
+            errors += 1
         else:
             log.info('{} - SSL Expires at {}'.format(domain, date_cert))
 
