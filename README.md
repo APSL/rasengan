@@ -87,4 +87,7 @@ At this file you can specify the different for a domain:
   - [click](http://click.pocoo.org/5/), for manage the command-line options.
   - [requests](http://docs.python-requests.org/en/master/), for HTTP requests.
   - [pyyaml](https://github.com/yaml/pyyaml), for the manage the data syntax.
-  - [colorlog](https://github.com/borntyping/python-colorlog), for formatting terminal outputs
+  - [colorlog](https://github.com/borntyping/python-colorlog), for formatting terminal outputs.
+  - [dnspython](http://www.dnspython.org/), for manage the DNS queries.
+  - [pyOpenSSL](https://pypi.python.org/pypi/pyOpenSSL), for manage the ssl expiration checks.
+  - [SSL Qualys API](https://www.ssllabs.com/projects/ssllabs-apis/), for check the grade of security in SSL.
