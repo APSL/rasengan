@@ -4,16 +4,13 @@ import dns.resolver
 import sys
 import click
 import logging
-import rasengan.Colorer
 from concurrent.futures import ThreadPoolExecutor, wait
 from rasengan.ssllabsscanner import resultsFromCache    
 import OpenSSL
 import ssl, socket
 from datetime import datetime
+import colorlog
 
-# import ipdb; ipdb.set_trace()
-# create logger
-log = logging.getLogger('rasengan')
 errors = 0
 user_agents = {
     'mobile': 'Mozilla/5.0 (Linux; Android 4.2.1; en-us; Nexus 5 Build/JOP40D) AppleWebKit/535.19 (KHTML, like Gecko; googleweblight) Chrome/38.0.1025.166 Mobile Safari/535.19',
@@ -31,14 +28,30 @@ NAGIOS_CODES = {
 }
 
 def initiate_log(loglevel):
+    global log
+    handler = colorlog.StreamHandler()
+    formatter = colorlog.ColoredFormatter(
+        "%(asctime)s %(log_color)s%(levelname)-8s%(reset)s %(log_color)s%(message)s",
+        datefmt=None,
+        reset=True,
+        log_colors={
+            'DEBUG':    'cyan',
+            'INFO':     'green',
+            'WARNING':  'yellow',
+            'ERROR':    'red',
+            'CRITICAL': 'red,bg_white',
+        },
+        secondary_log_colors={},
+        style='%'
+    )
+    handler.setFormatter(formatter)
+    log = colorlog.getLogger('rasengan')
+    log.addHandler(handler)
+    
     numeric_level = getattr(logging, loglevel.upper(), 10)
     log.setLevel(numeric_level)
     ch = logging.StreamHandler()
     ch.setLevel(numeric_level)
-    formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s',
-                                  "%d/%m/%Y %H:%M")
-    ch.setFormatter(formatter)
-    log.addHandler(ch)
 
 def check(result, expected, title):
     global errors

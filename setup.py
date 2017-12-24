@@ -8,7 +8,8 @@ INSTALL_REQUIRES = [
     'PyYAML==3.12',
     'requests==2.18.4',
     'dnspython==1.15.0',
-    'pyOpenSSL==17.5.0'
+    'pyOpenSSL==17.5.0',
+    'colorlog==3.1.0'
 ]
 
 setup(
