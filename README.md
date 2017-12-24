@@ -45,7 +45,7 @@ At this file you can specify the different for a domain:
     --help                 Show this message and exit.
 
 
-### Basic Example
+## Basic Example
     www.goldcar.es:
       ssl:
         grade: A
@@ -59,7 +59,7 @@ At this file you can specify the different for a domain:
           status_code: 200
           text: Alquiler de coches
 
-# Usage example
+## Usage example
 
     $ rasengan -c rasengan.yml -l INFO --domains www.goldcar.com
     2017-12-24 02:34:32,371 INFO     www.goldcar.com - DNS Check - OK -> result: ['goldcarcom.aws.goldcar.ws.']
@@ -75,7 +75,7 @@ At this file you can specify the different for a domain:
     (rasengan) $ echo $?
     0
 
-### Future work
+## Future work
 
     - Use a option to get output in check_mrpe format. (in progress)
     - Count warnings too (now only errors)
