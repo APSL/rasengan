@@ -79,3 +79,12 @@ At this file you can specify the different for a domain:
 
     - Use a option to get output in check_mrpe format. (in progress)
     - Count warnings too (now only errors)
+
+## Acknowledgements
+  
+`rasengan` makes use of several open-source projects:
+
+  - [click](http://click.pocoo.org/5/), for manage the command-line options.
+  - [requests](http://docs.python-requests.org/en/master/), for HTTP requests.
+  - [pyyaml](https://github.com/yaml/pyyaml), for the manage the data syntax.
+  - [colorlog](https://github.com/borntyping/python-colorlog), for formatting terminal outputs
