@@ -1,10 +1,13 @@
 # Overview
 
-This tool, `rasengan`, is a CLI that get a list of domains configured in a yaml
-file and check it in a diferent ways:
+`rasengan`, is a command-line tool for automated testing of multiple kind of integrations tests for domains, with 
+a simple and flexible YAML definition syntax.
+The yaml file can contain multiple domains and we could check it in a diferent ways:
   - Check the DNS resolution
   - Check redirects
   - Check content
+  - Check SSL expiration date
+  - Check SSL Qualys grade
 
 The exit of the execution is an error if any of the checks fails.
 
