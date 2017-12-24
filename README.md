@@ -77,4 +77,5 @@ At this file you can specify the different for a domain:
 
 ### Future work
 
-    - Use a option to get output in check_mrpe format.
+    - Use a option to get output in check_mrpe format. (in progress)
+    - Count warnings too (now only errors)
