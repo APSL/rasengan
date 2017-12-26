@@ -1,3 +1,4 @@
+from .__init__ import __version__
 import yaml
 import requests
 import dns.resolver
@@ -11,7 +12,6 @@ import ssl, socket
 from datetime import datetime
 import colorlog
 
-version = '0.2.1'
 
 resume = {
     'oks': 0,
@@ -191,8 +191,8 @@ def rasengan(config, domains, loglevel, workers, mrpe):
         loaded = yaml.safe_load(ymlfile)
 
         # Check rasengan version defined in file
-        if loaded['version'] != version:
-            print('Rasegan version problem. Installed {} and expected {}'.format(version, loaded['version']))
+        if loaded['version'] != __version__:
+            print('Rasegan version problem. Installed {} and expected {}'.format(__version__, loaded['version']))
             sys.exit(NAGIOS_CODES['CRITICAL'])            
 
         # Check only one domain if passed by argument in cli

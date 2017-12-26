@@ -1,8 +1,36 @@
 # -*- coding: utf-8 -*-
 
-from sys import version_info
-from setuptools import setup
-from rasengan.main import version
+import os
+import re
+import codecs
+
+try:
+    from setuptools import setup, find_packages
+except ImportError:
+    from distutils.core import setup
+
+def get_version(package):
+    """
+    Return package version as listed in `__version__` in `init.py`.
+    """
+    init_py = codecs.open(os.path.join(package, '__init__.py'), encoding='utf-8').read()
+    return re.search("^__version__ = ['\"]([^'\"]+)['\"]", init_py, re.MULTILINE).group(1)
+
+
+def get_author(package):
+    """
+    Return package author as listed in `__author__` in `init.py`.
+    """
+    init_py = codecs.open(os.path.join(package, '__init__.py'), encoding='utf-8').read()
+    return re.search("^__author__ = ['\"]([^'\"]+)['\"]", init_py, re.MULTILINE).group(1)
+
+
+def get_email(package):
+    """
+    Return package email as listed in `__email__` in `init.py`.
+    """
+    init_py = codecs.open(os.path.join(package, '__init__.py'), encoding='utf-8').read()
+    return re.search("^__email__ = ['\"]([^'\"]+)['\"]", init_py, re.MULTILINE).group(1)
 
 INSTALL_REQUIRES = [
     'click==6.7',
@@ -15,7 +43,7 @@ INSTALL_REQUIRES = [
 
 setup(
     name='rasengan',
-    version=version,
+    version=get_version('rasengan'),
     include_package_data=True,
     packages=[
         'rasengan',
@@ -28,8 +56,8 @@ setup(
         [console_scripts]
         rasengan=rasengan.main:rasengan
     """,
-    author=u"Edu Herraiz",
-    author_email=u"eherraiz@apsl.net",
+    author=get_author('rasengan'),
+    author_email=get_email('rasengan'),
     description="""
     A tool to check if a list of domains configured in a yaml file
     have the redirections and DNS in a correct state.
