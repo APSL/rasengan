@@ -170,12 +170,12 @@ def check_ssl(domain, data):
             log.info('{} - SSL Expires at {}'.format(domain, date_cert))
 
 @click.command()
-@click.option('--config', '-c', default='rasengan.yml', help='Name of file to check')
+@click.option('--config', '-c', default='rasengan.yml', help='Name of file to check. Default rasengan.yml')
 @click.option('--domains', '-d', default='',
     help='Check only this list of domain (comma separated)')
-@click.option('--loglevel', '-l', default='INFO', help='Log level')
-@click.option('--workers', '-w', default=20, help='Number of threads to make the requests')
-@click.option('--mrpe/--no-mrpe', default=False, help='MRPE output (disable logging options)')
+@click.option('--loglevel', '-l', default='INFO', help='Log level. Default INFO.')
+@click.option('--workers', '-w', default=20, help='Number of threads to make the requests. Default 20.')
+@click.option('--mrpe/--no-mrpe', default=False, help='MRPE output (disable logging options). Default false. An if True disable loglevel.')
 def rasengan(config, domains, loglevel, workers, mrpe):
     """Check all the domains in the file"""
 

@@ -1,4 +1,4 @@
-# Overview
+## Overview
 
 `rasengan`, is a command-line tool for automated testing of multiple kind of integrations tests for domains, with 
 a simple and flexible YAML definition syntax.
@@ -13,7 +13,7 @@ The exit of the execution is an error if any of the checks fails.
 You can use a mrpe parameter to get MRPE simple and resume output.  
 
 
-# Install & configure
+## Install & configure
 
 To install `rasengan`:
 
@@ -30,6 +30,22 @@ At this file you can specify the different for a domain:
 | `ssl`          | Check the SSL status of the domain qualys test and expire date     |
 | `http`         | Request the domain from http, expect status_code, redirect or text. The default value for protocol is https, and default path is '/' |
 
+
+## Options in plugins
+
+    dns:
+      domain_type: CNAME, A or another type of expected resolution in the domain.
+      expected: list of IPs or domains expected in the result.
+    ssl:
+      grade: Qualys test expected grade.
+      days_to_expire: expiration days limit warning in the https certificate for the domain. 
+    http: 
+      status_code: 200, 301, 302, 404, etc. Status code in the http request.
+      protocol: http or https, do the request over different http protocol. Default https.
+      redirect: expected redirect URL when you configure status code in 301 or 302. 
+      text: check text in the result page when you expect 200 code.  
+
+
 ## Usage
 
     rasengan --help
@@ -38,11 +54,11 @@ At this file you can specify the different for a domain:
       Check all the domains in the file
 
     Options:
-      -c, --config TEXT      Name of file to check
+      -c, --config TEXT      Name of file to check. Default rasengan.yml
       -d, --domains TEXT     Check only this list of domain (comma separated)
-      -l, --loglevel TEXT    Log level
-      -w, --workers INTEGER  Number of threads to make the requests
-      --mrpe / --no-mrpe     MRPE output (disable logging options)
+      -l, --loglevel TEXT    Log level. Default INFO
+      -w, --workers INTEGER  Number of threads to make the requests. Default 20.
+      --mrpe / --no-mrpe     MRPE output (disable logging options). Default False, and if True disable loglevel.
       --help                 Show this message and exit.
 
 
@@ -84,8 +100,8 @@ At this file you can specify the different for a domain:
 
 ## Future work
 
-    - Use a option to get output in check_mrpe format. (in progress)
-    - Count warnings too (now only errors)
+    - Integrate tavern to check APIs
+    - Check http with authentication
 
 ## Acknowledgements
   
