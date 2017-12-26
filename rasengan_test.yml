@@ -2,7 +2,6 @@ version: 0.2.3
 domains:
   www.apsl.net:
     ssl:
-      grade: F
       days_to_expire: 10
     dns:
       domain_type: CNAME

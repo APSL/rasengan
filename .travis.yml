@@ -8,8 +8,8 @@ cache:
   - pip
 script:
   - pip install .
-  - rasengan
-  - rasengan --mrpe
+  - rasengan -c rasengan_test.yml
+  - rasengan -c rasengan_test.yml --mrpe
 deploy:
   provider: pypi
   user: apsl
