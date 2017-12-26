@@ -18,7 +18,7 @@ You can use a mrpe parameter to get MRPE simple and resume output.
 
 To install `rasengan`:
 
-    pip install -U git+https://github.com/APSL/rasengan.git
+    pip install rasengan
 
 
 ## rasengan.yml
@@ -34,18 +34,18 @@ At this file you can specify the different for a domain:
 
 ## Options in plugins
 
-    dns:
-      domain_type: CNAME, A or another type of expected resolution in the domain.
-      expected: list of IPs or domains expected in the result.
-    ssl:
-      grade: Qualys test expected grade.
-      days_to_expire: expiration days limit warning in the https certificate for the domain. 
-    http: 
-      status_code: 200, 301, 302, 404, etc. Status code in the http request.
-      protocol: http or https, do the request over different http protocol. Default https.
-      redirect: expected redirect URL when you configure status code in 301 or 302. 
-      text: check text in the result page when you expect 200 code.
-      user_agent: use a custom user_agent for the request or stored one from keys: mobile, desktop, google_desktop, google_mobile.
+  * dns:
+    - domain_type: CNAME, A or another type of expected resolution in the domain.
+    - expected: list of IPs or domains expected in the result.
+  * ssl:
+    - grade: Qualys test expected grade.
+    - days_to_expire: expiration days limit warning in the https certificate for the domain. 
+  * http: 
+    - status_code: 200, 301, 302, 404, etc. Status code in the http request.
+    - protocol: http or https, do the request over different http protocol. Default https.
+    - redirect: expected redirect URL when you configure status code in 301 or 302. 
+    - text: check text in the result page when you expect 200 code.
+    - user_agent: use a custom user_agent for the request or stored one from keys: mobile, desktop, google_desktop, google_mobile.
 
 
 ## Usage
