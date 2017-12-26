@@ -1,0 +1,22 @@
+sudo: false
+language: python
+matrix:
+  include:
+  - python: 3.5
+    env: TOXENV=py35
+cache:
+  - pip
+script:
+  - pip install .
+  - rasengan
+  - rasengan --mrpe
+deploy:
+  provider: pypi
+  user: apsl
+  password:
+    secure: h8dURTGR/RWIFzKkBEdH/+LjqKa79Efm2hLbYXjDHqJJaAFk9gQBKFPl3imVuWj0CYGlXRZDIZdaIef0MWe1qeczdYm6Td6pbCbsIi0/KvciRVX5WcVGJRSz1zb2HKCstRIwQ+CD1QmiWQHyVqzbN1sMTTr/UIfLvApVYBx+9Ah5hajbrmXUiOjFhO9ECGX6+Pu4TPXDBLCd2DZrzRKaW8Pm1yjLiIw5TcVfEplYlsERwvDm89vnHc/HHWnIEnDPLG7CwrVsIHyUcvQ3lrGZ/1SZIyc54A8FqBPqXi5uVM5QExWXnk+0l9Cz52UtTQP71BrOScZf3IQnaUcj5mYBdFtqawFhyNXcmueMHCJDRsW9rJBxbdsxYzACndPCHw8ohEogVOv1T/WPC0DbMCR3SwPZnCG6kNGDQKWDqW80dcjkgW/2uBEz4Zka8a7a8uHNDOvfL+Hs26ZiVJ+CxlIt/IBpu+fTah8SOc8/ez75yLPvsDxwm6BtZGvZYX1AW6RudTvDEzzk/RQkVH09XY8P9zsKh5wAlmGdaAe6nnrIa/mFr4ZO3grRgscSSECxaecmbuJ2QLqlefPURJHf5p/+fnMkSYjiBRzivhfQ7vi2FJU2Ed38nwui+AES0k1j4uxcLlxz0w/ir8Etx9EMGhLVw2H1Iv6t2nCgsaHzMnz3w94=
+  distributions: sdist bdist_wheel
+  on:
+    tags: true
+    branch: master
+    python: 3.5

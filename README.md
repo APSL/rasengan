@@ -16,7 +16,9 @@ You can use a mrpe parameter to get MRPE simple and resume output.
 
 ## Install & configure
 
-To install `rasengan`:
+`rasengan` is developed and tested with a python 3 version. We require >3.4 to install it.
+
+To install `rasengan` we can use the PyPI package:
 
     pip install rasengan
 
@@ -40,7 +42,7 @@ At this file you can specify the different for a domain:
   * **ssl**:
     - *grade*: Qualys test expected grade.
     - *days_to_expire*: expiration days limit warning in the https certificate for the domain. 
-  * http: 
+  * **http**: 
     - *status_code*: 200, 301, 302, 404, etc. Status code in the http request.
     - *protocol*: http or https, do the request over different http protocol. Default https.
     - *redirect*: expected redirect URL when you configure status code in 301 or 302. 
