@@ -33,3 +33,11 @@ domains:
         protocol: https
         status_code: 301
         redirect: https://www.apsl.net/
+  auth-demo.aerobatic.io:
+    http:
+      test_auth:
+        status_code: 200
+        path: /protected-standard/
+        auth_username: aerobatic
+        auth_password: aerobatic
+        text: Hi, we've been expecting you!

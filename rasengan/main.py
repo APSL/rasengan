@@ -123,11 +123,17 @@ def check_url(domain, data, timeout=1):
         ua = user_agent
         text_from = '[{}]'.format(ua)
 
+    auth_username = data.get('auth_username', '')
+    auth_password = data.get('auth_password', '')
+    auth = False
+    if auth_username:
+        auth = (auth_username, auth_password)
+
     try:
         headers = {
             'User-Agent': ua 
         }
-        r = requests.get('{}'.format(url), allow_redirects=False, headers=headers, timeout=timeout)
+        r = requests.get('{}'.format(url), allow_redirects=False, headers=headers, timeout=timeout, auth=auth)
     except:
         log.error('{} - KO - Problem requesting {}'.format(domain, url))
         resume['errors'] += 1
