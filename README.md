@@ -72,7 +72,7 @@ At this file you can specify the different for a domain:
         dns:
           domain_type: CNAME
           expected: 
-            - 'k8pii.x.incapdns.net.'
+            - k8pii.x.incapdns.net.
         http:
           main: 
             status_code: 301
@@ -102,7 +102,8 @@ At this file you can specify the different for a domain:
 
     - Integrate tavern to check APIs
     - Check http with authentication
-    - Check http response time 
+    - Check http response time
+    - Manage and show exceptions ocurred in Future threads
 
 ## Acknowledgements
   
