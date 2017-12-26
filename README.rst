@@ -104,7 +104,7 @@ Basic Example
 
 ::
 
-    version: 0.2.2
+    version: 0.2.5
     domains:
       www.apsl.net:
         ssl:
