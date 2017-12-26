@@ -63,7 +63,7 @@ At this file you can specify the different for a domain:
 
 
 ## Basic Example
-    version: 0.2.1
+    version: 0.2.2
     domains:
       www.goldcar.es:
         ssl:
@@ -102,6 +102,7 @@ At this file you can specify the different for a domain:
 
     - Integrate tavern to check APIs
     - Check http with authentication
+    - Check http response time 
 
 ## Acknowledgements
   
