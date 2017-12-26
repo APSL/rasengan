@@ -11,7 +11,16 @@ import ssl, socket
 from datetime import datetime
 import colorlog
 
-errors = 0
+version = '0.2.1'
+
+resume = {
+    'oks': 0,
+    'errors': 0,
+    'warnings': 0,
+    'domains_warning': [],
+    'domains_error': []
+}
+
 user_agents = {
     'mobile': 'Mozilla/5.0 (Linux; Android 4.2.1; en-us; Nexus 5 Build/JOP40D) AppleWebKit/535.19 (KHTML, like Gecko; googleweblight) Chrome/38.0.1025.166 Mobile Safari/535.19',
     'desktop': 'Mozilla/4.0 (compatible; MSIE 9.0; Windows NT 6.1)',
@@ -53,48 +62,49 @@ def initiate_log(loglevel):
     ch = logging.StreamHandler()
     ch.setLevel(numeric_level)
 
-def check(result, expected, title):
-    global errors
+def check(result, expected, title, domain):
     if result == expected:
         message = 'OK -> result: {}'.format(result)
         log.info('{} - {}'.format(title, message))
+        resume['oks'] += 1
         return True
     else:
         message = 'KO -> expected: {} and get: {}'.format(expected, result)
         log.error('{} - {}'.format(title, message))
-        errors += 1
+        resume['errors'] += 1
+        resume['domains_error'].append(domain)
         return False
 
-def check_in(result, expected, title):
-    global errors
+def check_in(result, expected, title, domain):
     if expected in result:
         message = 'OK -> Exists the phrase: {}'.format(expected)
         log.info('{} - {}'.format(title, message))
+        resume.oks += 1
         return True
     else:
         message = 'KO -> Dont exists the phrase: {}'.format(expected)
-        errors += 1
+        resume['errors'] += 1
+        resume['domains_error'].append(domain)
         log.error('{} - {}'.format(title, message))
         return False
 
 
 def check_dns(domain, dns_dict):
-    global errors
     result = []
     try:
         anwsers = dns.resolver.query(domain, dns_dict['domain_type'])
     except:
         anwsers = []
         result = ['Not a correct domain_type definition']
-        errors += 1
-
+        resume['errors'] += 1
+        resume['domains_error'].append(domain)
     for rdata in anwsers:
         if dns_dict['domain_type'] == 'A':
             result.append(rdata.address)
         else:
             result.append(rdata.target.to_text())
     # result = socket.gethostbyname_ex(domain)[2]
-    return check(sorted(result), sorted(dns_dict['expected']), '{} - DNS Check'.format(domain))
+    return check(sorted(result), sorted(dns_dict['expected']), '{} - DNS Check'.format(domain), domain)
 
 def check_url(domain, data, timeout=1):
 
@@ -108,7 +118,6 @@ def check_url(domain, data, timeout=1):
     user_agent = data.get('user_agent', 'desktop')
     text_from = '(From {})'.format(user_agent)
 
-    global errors
     try:
         headers = {
             'User-Agent': user_agents[user_agent]
@@ -116,37 +125,38 @@ def check_url(domain, data, timeout=1):
         r = requests.get('{}'.format(url), allow_redirects=False, headers=headers, timeout=timeout)
     except:
         log.error('{} - KO - Problem requesting {}'.format(domain, url))
-        errors += 1
+        resume['errors'] += 1
+        resume['domains_error'].append(domain)
         return False
 
     # Check the status code expected
-    check(r.status_code, data['status_code'], '{} - {} - Status Code for {}'.format(domain,text_from, url))
+    check(r.status_code, data['status_code'], '{} - {} - Status Code for {}'.format(domain,text_from, url), domain)
 
     # If is a redirect check with the next Location
     if data['status_code'] in [301, 302]:
         if 'Location' in r.headers:
-            check(r.headers['Location'], data['redirect'], '{} - {} - Redirect Location for {}'.format(domain,text_from, url))
+            check(r.headers['Location'], data['redirect'], '{} - {} - Redirect Location for {}'.format(domain,text_from, url), domain)
         else:
             message = 'KO -> Expect a redirect but not found it: {} - {}'.format(domain, url)
-            errors += 1
+            resume['errors'] += 1
+            resume['domains_error'].append(domain)
             log.error('{}'.format(message))
 
-
     if data['status_code'] == 200:
-        check_in(r.text, data.get('text','<--NOTEXTDEFINED-->'), '{} - {} - Page content for {}'.format(domain,text_from, url))
+        check_in(r.text, data.get('text','<--NOTEXTDEFINED-->'), '{} - {} - Page content for {}'.format(domain,text_from, url), domain)
 
 def check_qualys(domain, data):
-    global errors
     if data['grade']:
         a = resultsFromCache(domain)
         if a['status'] == 'READY':
             grade = a['endpoints'][0]['grade']
-            check(data['grade'], grade, '{} - SSL Qualys grade'.format(domain))
+            check(data['grade'], grade, '{} - SSL Qualys grade'.format(domain), domain)
         elif a['status'] == 'IN_PROGRESS':
+            resume['warnings'] += 1
+            resume['domains_warning'].append(domain)
             log.warning('{} - SSL Qualys grade - In progress'.format(domain))
 
 def check_ssl(domain, data):
-    global errors
     if data['days_to_expire']:        
         cert = ssl.get_server_certificate((domain, 443))
         x509 = OpenSSL.crypto.load_certificate(OpenSSL.crypto.FILETYPE_PEM, cert)
@@ -154,7 +164,8 @@ def check_ssl(domain, data):
         expire_in = date_cert - datetime.now()
         if expire_in.days < data['days_to_expire']:
             log.error('{} - SSL Expires at {} (< {})'.format(domain, date_cert, data['days_to_expire']))
-            errors += 1
+            resume['errors'] += 1
+            resume['domains_error'].append(domain)
         else:
             log.info('{} - SSL Expires at {}'.format(domain, date_cert))
 
@@ -164,22 +175,28 @@ def check_ssl(domain, data):
     help='Check only this list of domain (comma separated)')
 @click.option('--loglevel', '-l', default='INFO', help='Log level')
 @click.option('--workers', '-w', default=20, help='Number of threads to make the requests')
-@click.option('--mrpe/--no-mrpe', default=False)
+@click.option('--mrpe/--no-mrpe', default=False, help='MRPE output (disable logging options)')
 def rasengan(config, domains, loglevel, workers, mrpe):
     """Check all the domains in the file"""
 
-    if not mrpe:
-        initiate_log(loglevel)
+    if mrpe:
+        loglevel = 'CRITICAL'
+    initiate_log(loglevel)
 
     executor = ThreadPoolExecutor(max_workers=workers)
 
     selected_domains = [x.strip() for x in domains.split(',')]
 
     with open(config, 'r') as ymlfile:
-        d_domains = yaml.safe_load(ymlfile)
+        loaded = yaml.safe_load(ymlfile)
+
+        # Check rasengan version defined in file
+        if loaded['version'] != version:
+            print('Rasegan version problem. Installed {} and expected {}'.format(version, loaded['version']))
+            sys.exit(NAGIOS_CODES['CRITICAL'])            
 
         # Check only one domain if passed by argument in cli
-        for domain, d in d_domains.items():
+        for domain, d in loaded['domains'].items():
             if domains and (domain not in selected_domains):
                 continue
 
@@ -201,14 +218,28 @@ def rasengan(config, domains, loglevel, workers, mrpe):
                         
     executor.shutdown(wait=True)
 
-    if errors > 0:
-        if mrpe: 
-            print("Errores en los checks de rasengan: {}".format(errors))
+    message = 'Checks OK: {}'.format(resume['oks'])
+    message += " -- "
+
+    if resume['errors'] > 0:
+        message_error = "Errors: {}, domains: {}".format(resume['errors'], ', '.join(resume['domains_error']))
+        message += message_error
+        message += " -- "
+    
+    if resume['warnings'] > 0:
+        message_warning = "Warnings: {}, domains: {}".format(resume['warning'], ', '.join(resume['domains_warnings']))
+        message += message_warning
+        
+    if mrpe: 
+        print(message)
+
+    if resume['errors'] > 0:
         sys.exit(NAGIOS_CODES['CRITICAL'])
-    else:
-        if mrpe:
-            print("Sin errores en los checks de rasengan.")
-        sys.exit(NAGIOS_CODES['OK'])
+
+    if resume['warnings'] > 0:
+        sys.exit(NAGIOS_CODES['WARNING'])
+
+    sys.exit(NAGIOS_CODES['OK'])
 
 if __name__ == '__main__':
     rasengan()

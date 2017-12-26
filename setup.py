@@ -2,6 +2,7 @@
 
 from sys import version_info
 from setuptools import setup
+from rasengan.main import version
 
 INSTALL_REQUIRES = [
     'click==6.7',
@@ -14,7 +15,7 @@ INSTALL_REQUIRES = [
 
 setup(
     name='rasengan',
-    version='0.2.0',
+    version=version,
     include_package_data=True,
     packages=[
         'rasengan',

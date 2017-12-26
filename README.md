@@ -10,6 +10,7 @@ The yaml file can contain multiple domains and we could check it in a diferent w
   - Check SSL Qualys grade
 
 The exit of the execution is an error if any of the checks fails.
+You can use a mrpe parameter to get MRPE simple and resume output.  
 
 
 # Install & configure
@@ -41,7 +42,7 @@ At this file you can specify the different for a domain:
       -d, --domains TEXT     Check only this list of domain (comma separated)
       -l, --loglevel TEXT    Log level
       -w, --workers INTEGER  Number of threads to make the requests
-      --mrpe / --no-mrpe
+      --mrpe / --no-mrpe     MRPE output (disable logging options)
       --help                 Show this message and exit.
 
 
@@ -50,6 +51,10 @@ At this file you can specify the different for a domain:
       ssl:
         grade: A
         days_to_expire: 10
+      dns:
+        domain_type: CNAME
+        expected: 
+          - 'k8pii.x.incapdns.net.'
       http:
         main: 
           status_code: 301

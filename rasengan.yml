@@ -1,52 +1,58 @@
-www.goldcar.es:
-  ssl:
-    grade: A
-    days_to_expire: 10
-  http:
-    main: 
-      status_code: 301
-      protocol: http
-      redirect: https://www.goldcar.es/
-    main_https:
-      status_code: 200
-      text: Alquiler de coches
+version: 0.2.1
+domains:
+  www.goldcar.es:
+    ssl:
+      grade: A
+      days_to_expire: 10
+    dns:
+      domain_type: CNAME
+      expected: 
+        - k8pii.x.incapdns.net.
+    http:
+      main: 
+        status_code: 301
+        protocol: http
+        redirect: https://www.goldcar.es/
+      main_https:
+        status_code: 200
+        text: Alquiler de coches
 
-www.goldcar.com:
-  dns:
-    domain_type: CNAME
-    expected: 
-      - 'goldcarcom.aws.goldcar.ws.'
-  ssl:
-    grade: A
-    days_to_expire: 10
-  http:
-    main:
-      status_code: 301
-      protocol: http
-      redirect: https://www.goldcar.es/en/
-    main_https:
-      status_code: 301
-      redirect: https://www.goldcar.es/en/
-    any_path:
-      path: /any_path/
-      status_code: 301
-      redirect: https://www.goldcar.es/en/
+  www.goldcar.com:
+    dns:
+      domain_type: CNAME
+      expected: 
+        - goldcarcom.aws.goldcar.ws.
+    ssl:
+      grade: A
+      days_to_expire: 10
+    http:
+      main:
+        status_code: 301
+        protocol: http
+        redirect: https://www.goldcar.es/en/
+      main_https:
+        status_code: 301
+        redirect: https://www.goldcar.es/en/
+      any_path:
+        path: /any_path/
+        status_code: 301
+        redirect: https://www.goldcar.es/en/
 
-goldcar.com:
-  dns:
-    domain_type: A
-    expected: 
-      - '52.212.105.167'
-      - '52.51.179.76'
-  http:
-    main:
-      status_code: 301
-      protocol: http
-      redirect: https://www.goldcar.es/en/
-    main_https:
-      status_code: 301
-      redirect: https://www.goldcar.es/en/
-    any_path:
-      path: /any_path/
-      status_code: 301
-      redirect: https://www.goldcar.es/en/
+  goldcar.com:
+    dns:
+      domain_type: A
+      expected: 
+        - 52.212.105.167
+        - 52.51.179.76
+    http:
+      main:
+        status_code: 301
+        protocol: http
+        redirect: https://www.goldcar.es/en/
+      main_https:
+        status_code: 301
+        redirect: https://www.goldcar.es/en/
+      any_path:
+        path: /any_path/
+        status_code: 301
+        redirect: https://www.goldcar.es/en/
