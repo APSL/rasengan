@@ -47,22 +47,24 @@ At this file you can specify the different for a domain:
 
 
 ## Basic Example
-    www.goldcar.es:
-      ssl:
-        grade: A
-        days_to_expire: 10
-      dns:
-        domain_type: CNAME
-        expected: 
-          - 'k8pii.x.incapdns.net.'
-      http:
-        main: 
-          status_code: 301
-          protocol: http
-          redirect: https://www.goldcar.es/
-        main_https:
-          status_code: 200
-          text: Alquiler de coches
+    version: 0.2.1
+    domains:
+      www.goldcar.es:
+        ssl:
+          grade: A
+          days_to_expire: 10
+        dns:
+          domain_type: CNAME
+          expected: 
+            - 'k8pii.x.incapdns.net.'
+        http:
+          main: 
+            status_code: 301
+            protocol: http
+            redirect: https://www.goldcar.es/
+          main_https:
+            status_code: 200
+            text: Alquiler de coches
 
 ## Usage example
 
