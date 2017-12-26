@@ -58,6 +58,7 @@ setup(
     """,
     author=get_author('rasengan'),
     author_email=get_email('rasengan'),
+    long_description=codecs.open(os.path.join(os.path.dirname(__file__), 'README.md'), encoding='utf-8').read(),
     description="""
     A tool to check if a list of domains configured in a yaml file
     have the redirections and DNS in a correct state.
