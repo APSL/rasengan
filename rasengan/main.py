@@ -227,7 +227,7 @@ def rasengan(config, domains, loglevel, workers, mrpe):
         message += " -- "
     
     if resume['warnings'] > 0:
-        message_warning = "Warnings: {}, domains: {}".format(resume['warning'], ', '.join(resume['domains_warnings']))
+        message_warning = "Warnings: {}, domains: {}".format(resume['warnings'], ', '.join(resume['domains_warnings']))
         message += message_warning
         
     if mrpe: 
