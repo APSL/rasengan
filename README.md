@@ -34,24 +34,24 @@ At this file you can specify the different for a domain:
 
 ## Options in plugins
 
-  * dns:
-    - domain_type: CNAME, A or another type of expected resolution in the domain.
-    - expected: list of IPs or domains expected in the result.
-  * ssl:
-    - grade: Qualys test expected grade.
-    - days_to_expire: expiration days limit warning in the https certificate for the domain. 
+  * **dns**:
+    - *domain_type*: CNAME, A or another type of expected resolution in the domain.
+    - *expected*: list of IPs or domains expected in the result.
+  * **ssl**:
+    - *grade*: Qualys test expected grade.
+    - *days_to_expire*: expiration days limit warning in the https certificate for the domain. 
   * http: 
-    - status_code: 200, 301, 302, 404, etc. Status code in the http request.
-    - protocol: http or https, do the request over different http protocol. Default https.
-    - redirect: expected redirect URL when you configure status code in 301 or 302. 
-    - path: The url path to check in the domain. Default is '/'. 
-    - text: check text in the result page when you expect 200 code.
-    - user_agent: use a custom user_agent for the request or stored one from keys: mobile, desktop, google_desktop, google_mobile.
+    - *status_code*: 200, 301, 302, 404, etc. Status code in the http request.
+    - *protocol*: http or https, do the request over different http protocol. Default https.
+    - *redirect*: expected redirect URL when you configure status code in 301 or 302. 
+    - *path*: The url path to check in the domain. Default is '/'. 
+    - *text*: check text in the result page when you expect 200 code.
+    - *user_agent*: use a custom user_agent for the request or stored one from keys: mobile, desktop, google_desktop, google_mobile.
 
 
 ## Usage
 
-    rasengan --help
+    $ rasengan --help
     Usage: rasengan [OPTIONS]
 
       Check all the domains in the file
