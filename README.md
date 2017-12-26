@@ -4,8 +4,9 @@
 a simple and flexible YAML definition syntax.
 The yaml file can contain multiple domains and we could check it in a diferent ways:
   - Check the DNS resolution
-  - Check redirects
-  - Check content
+  - Check redirects, status code and expected URL in the redirect
+  - Check http requests and the content text
+  - Check http using different user-agents
   - Check SSL expiration date
   - Check SSL Qualys grade
 
@@ -43,7 +44,8 @@ At this file you can specify the different for a domain:
       status_code: 200, 301, 302, 404, etc. Status code in the http request.
       protocol: http or https, do the request over different http protocol. Default https.
       redirect: expected redirect URL when you configure status code in 301 or 302. 
-      text: check text in the result page when you expect 200 code.  
+      text: check text in the result page when you expect 200 code.
+      user_agent: use a custom user_agent for the request or stored one from keys: mobile, desktop, google_desktop, google_mobile.
 
 
 ## Usage
@@ -65,38 +67,66 @@ At this file you can specify the different for a domain:
 ## Basic Example
     version: 0.2.2
     domains:
-      www.goldcar.es:
+      www.apsl.net:
         ssl:
-          grade: A
+          grade: F
           days_to_expire: 10
         dns:
           domain_type: CNAME
           expected: 
-            - k8pii.x.incapdns.net.
+            - apsl.net.
         http:
           main: 
             status_code: 301
             protocol: http
-            redirect: https://www.goldcar.es/
+            redirect: https://www.apsl.net/
           main_https:
             status_code: 200
-            text: Alquiler de coches
+            text: Expertos en desarrollos web
+          mobile:
+            status_code: 200
+            user_agent: mobile
+            text: Expertos en desarrollos web           
+      apsl.net:
+        dns:
+          domain_type: A
+          expected: 
+            - 148.251.84.231
+        http:
+          main_redirect:        
+            protocol: http
+            status_code: 301
+            redirect: https://www.apsl.net/
+          https_redirect:
+            protocol: https
+            status_code: 301
+            redirect: https://www.apsl.net/
+
 
 ## Usage example
 
-    $ rasengan -c rasengan.yml -l INFO --domains www.goldcar.com
-    2017-12-24 02:34:32,371 INFO     www.goldcar.com - DNS Check - OK -> result: ['goldcarcom.aws.goldcar.ws.']
-    2017-12-24 02:34:32,630 INFO     www.goldcar.com - (From desktop) - Status Code for http://www.goldcar.com/ - OK -> result: 301
-    2017-12-24 02:34:32,630 INFO     www.goldcar.com - (From desktop) - Redirect Location for http://www.goldcar.com/ - OK -> result: https://www.goldcar.es/en/
-    2017-12-24 02:34:32,810 INFO     www.goldcar.com - SSL Expires at 2019-06-07 16:24:21
-    2017-12-24 02:34:32,880 INFO     www.goldcar.com - (From desktop) - Status Code for https://www.goldcar.com/ - OK -> result: 301
-    2017-12-24 02:34:32,881 INFO     www.goldcar.com - (From desktop) - Redirect Location for https://www.goldcar.com/ - OK -> result: https://www.goldcar.es/en/
-    2017-12-24 02:34:32,884 INFO     www.goldcar.com - (From desktop) - Status Code for https://www.goldcar.com/any_path/ - OK -> result: 301
-    2017-12-24 02:34:32,885 INFO     www.goldcar.com - (From desktop) - Redirect Location for https://www.goldcar.com/any_path/ - OK -> result: https://www.goldcar.es/en/
-    2017-12-24 02:34:35,367 INFO     www.goldcar.com - SSL Qualys grade - OK -> result: A
+    $ rasengan -c rasengan.yml 
+    2017-12-26 03:38:01,250 INFO     www.apsl.net - DNS Check - OK -> result: ['apsl.net.']
+    2017-12-26 03:38:01,309 INFO     apsl.net - DNS Check - OK -> result: ['148.251.84.231']
+    2017-12-26 03:38:01,722 INFO     www.apsl.net - [desktop] - Status Code for http://www.apsl.net/ - OK -> result: 301
+    2017-12-26 03:38:01,722 INFO     apsl.net - [desktop] - Status Code for http://apsl.net/ - OK -> result: 301
+    2017-12-26 03:38:01,723 INFO     www.apsl.net - [desktop] - Redirect Location for http://www.apsl.net/ - OK -> result: https://www.apsl.net/                                
+    2017-12-26 03:38:01,723 INFO     apsl.net - [desktop] - Redirect Location for http://apsl.net/ - OK -> result: https://www.apsl.net/
+    2017-12-26 03:38:01,820 INFO     www.apsl.net - SSL Expires at 2018-01-17 23:59:59
+    2017-12-26 03:38:01,936 INFO     www.apsl.net - [desktop] - Status Code for https://www.apsl.net/ - OK -> result: 200
+    2017-12-26 03:38:01,938 INFO     www.apsl.net - [desktop] - Page content for https://www.apsl.net/ - OK -> Exists the phrase: Expertos en desarrollos web
+    2017-12-26 03:38:01,958 INFO     apsl.net - [desktop] - Status Code for https://apsl.net/ - OK -> result: 301
+    2017-12-26 03:38:01,960 INFO     www.apsl.net - [mobile] - Status Code for https://www.apsl.net/ - OK -> result: 200
+    2017-12-26 03:38:01,960 INFO     apsl.net - [desktop] - Redirect Location for https://apsl.net/ - OK -> result: https://www.apsl.net/
+    2017-12-26 03:38:01,962 INFO     www.apsl.net - [mobile] - Page content for https://www.apsl.net/ - OK -> Exists the phrase: Expertos en desarrollos web
+    2017-12-26 03:38:03,353 INFO     www.apsl.net - SSL Qualys grade - OK -> result: F
 
     (rasengan) $ echo $?
     0
+
+    (rasengan) $ rasengan -c rasengan.yml --mrpe
+    Checks OK: 11 -- 
+
 
 ## Future work
 

@@ -116,11 +116,16 @@ def check_url(domain, data, timeout=1):
     )
 
     user_agent = data.get('user_agent', 'desktop')
-    text_from = '(From {})'.format(user_agent)
+    if user_agent in user_agents:
+        ua = user_agents[user_agent]
+        text_from = '[{}]'.format(user_agent)
+    else:
+        ua = user_agent
+        text_from = '[{}]'.format(ua)
 
     try:
         headers = {
-            'User-Agent': user_agents[user_agent]
+            'User-Agent': ua 
         }
         r = requests.get('{}'.format(url), allow_redirects=False, headers=headers, timeout=timeout)
     except:
@@ -150,7 +155,7 @@ def check_qualys(domain, data):
         a = resultsFromCache(domain)
         if a['status'] == 'READY':
             grade = a['endpoints'][0]['grade']
-            check(data['grade'], grade, '{} - SSL Qualys grade'.format(domain), domain)
+            check(grade, data['grade'], '{} - SSL Qualys grade'.format(domain), domain)
         elif a['status'] == 'IN_PROGRESS':
             resume['warnings'] += 1
             resume['domains_warning'].append(domain)
@@ -227,7 +232,7 @@ def rasengan(config, domains, loglevel, workers, mrpe):
         message += " -- "
     
     if resume['warnings'] > 0:
-        message_warning = "Warnings: {}, domains: {}".format(resume['warnings'], ', '.join(resume['domains_warnings']))
+        message_warning = "Warnings: {}, domains: {}".format(resume['warnings'], ', '.join(resume['domains_warning']))
         message += message_warning
         
     if mrpe: 
