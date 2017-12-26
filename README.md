@@ -29,7 +29,7 @@ At this file you can specify the different for a domain:
 |----------------|--------------------------------------------------------------------|
 | `dns`          | Check the DNS resolution, expect domain_type and result            |
 | `ssl`          | Check the SSL status of the domain qualys test and expire date     |
-| `http`         | Request the domain from http, expect status_code, redirect or text. The default value for protocol is https, and default path is '/' |
+| `http`         | Request the domain from http, expect status_code, redirect or text |
 
 
 ## Options in plugins
@@ -44,6 +44,7 @@ At this file you can specify the different for a domain:
     - status_code: 200, 301, 302, 404, etc. Status code in the http request.
     - protocol: http or https, do the request over different http protocol. Default https.
     - redirect: expected redirect URL when you configure status code in 301 or 302. 
+    - path: The url path to check in the domain. Default is '/'. 
     - text: check text in the result page when you expect 200 code.
     - user_agent: use a custom user_agent for the request or stored one from keys: mobile, desktop, google_desktop, google_mobile.
 
