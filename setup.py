@@ -58,7 +58,7 @@ setup(
     """,
     author=get_author('rasengan'),
     author_email=get_email('rasengan'),
-    long_description=codecs.open(os.path.join(os.path.dirname(__file__), 'README.md'), encoding='utf-8').read(),
+    long_description=codecs.open(os.path.join(os.path.dirname(__file__), 'README.rst'), encoding='utf-8').read(),
     description="""
     Is a command-line tool for automated testing of multiple kind of integrations tests for domains, 
     with a simple and flexible YAML definition syntax.
