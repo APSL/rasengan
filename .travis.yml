@@ -7,7 +7,7 @@ matrix:
 cache:
   - pip
 script:
-  - pip install .
+  - pip install . --upgrade
   - rasengan -c rasengan_test.yml
   - rasengan -c rasengan_test.yml --mrpe
 deploy:

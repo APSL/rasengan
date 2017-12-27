@@ -174,7 +174,6 @@ Future work
 ::
 
     - Integrate tavern to check APIs
-    - Check http with authentication
     - Check http response time
     - Manage and show exceptions ocurred in Future threads
 
