@@ -2,7 +2,7 @@ version: 0.2.6
 domains:
   www.apsl.net:
     ssl:
-      days_to_expire: 10
+      days_to_expire: 1
     dns:
       domain_type: CNAME
       expected: 
