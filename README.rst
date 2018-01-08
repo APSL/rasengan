@@ -37,6 +37,12 @@ To install ``rasengan`` we can use the PyPI package:
 
     pip install rasengan
 
+You can use the publish docker image without need to install the python environment:
+Where you have to share the directory where rasengan.yml is like a volume
+
+::
+    docker run -v $PWD:/rasengan rasengan
+
 rasengan.yml
 ------------
 

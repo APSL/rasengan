@@ -1,15 +1,18 @@
 sudo: false
 language: python
+services:
+- docker
 matrix:
   include:
   - python: 3.5
     env: TOXENV=py35
 cache:
-  - pip
+- pip
 script:
-  - pip install . --upgrade
-  - rasengan -c rasengan_test.yml
-  - rasengan -c rasengan_test.yml --mrpe
+- pip install . --upgrade
+- rasengan -c rasengan_test.yml
+- rasengan -c rasengan_test.yml --mrpe
+- docker build . -t rasengan
 deploy:
   provider: pypi
   user: apsl
@@ -20,3 +23,13 @@ deploy:
     tags: true
     branch: master
     python: 3.5
+after_success:
+  - if [ -z "$TRAVIS_TAG" ]; then
+    docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD";
+    docker push apsl/rasengan:$TRAVIS_TAG;
+    fi
+env:
+  global:
+  - secure: NW03c3TWP3TQrI+QSoXBxDEjWTZqTTXwtjABa96BGN8NmIZnLdh8TAApl4+4XuG/kE/c0ilB8jFJFrzHIZSYDJ7/p4RJk6XmZufvABUVwIZJePeG/YIv0+AboXw1CXvpvEHhjnqST88JjwseCz/tzdT7OR9bSYB3qVe1mKOVpPDGI81Qotl4G4NIUeLR3bkR+SXi1vqfFGPwxY9wYP2RksnW8D2mU+TLWg64wf6eSz/G4IsSa1eD3oyJOkw0dvSqH03M30sSQ3ljLvgSjcvBrxcgHP+vhwEE94XCb9/V1NyKIOHqTORnpKgEVG0bxNiJllgDBV7WF0Zzr+dM4el9k0V1C9iSh3yYxXixmo9Q/ThRyaDsjxhc20xqORFNipIDh61/yIV+DmnyYXEXfSUel4UMN31aVchunhCvQoSy4JgqtiSfmElys1rOtPOAKy15XgtE+IoudM8arel/2cG+mbDpKIOxIPKkALK7qHduFUyM5ltsnAHWHJRm6UNmBw6TKAAdzbeNhP+Vq2a9Bmurn4aiUpe+1yLkJD8EZUN7s8bmHgYLRZAEjjsbax52Dr8uinm0BKtkWdxcINLlkogWXddJqtUDte+h6ZnEEcG/tODdlERxPfFo7YQDqOMjqu/eXy14dJFaO06rYQKP99VyLabvI1ukPXy5titl1L9V7+c=
+  - secure: ZyZdYneo50oTIykBqD2CCEB52BLvXtvTCg81iOH1H5F/DjKG81XR3uIr31DI3E/0uNQckG9w2FB+39LaWnvVKE00aBUYlm7JFE/LeBp21dUK8dtkmNQhd5/ByYM1IrKcPQ/olXgLcp0ldPNGYdAZV6suog6N9r/5oPgnmfDP0fW54qBSJC6t8dxMxM3h41lvbpXofRxIM1wtiCTsuMl4vU4YAqIkiNlURzzfPkIXmVdt8tlX1H2NTbqOVR7DWeah87rrew/ejI0XJRvxy08ydhObSzft4A4NEGImKnUoDkCTMVbry8altJd/VV/nP2kI2yg/QK9BvQrU0aIwaiJ1ESGjRRfQS2cm/DerMcsQnmLACC3a2qBx6y923I11XmA8J40SqlTB4hrTk2VPXVeWG6pSjbVY3En031HB0wa9wNgnwNKwvdLjI3P6uxJoYQg+7cvuYwCRyklhbMl8KVvbBrl7BZCzqTgy1gT+q9uk88/CB2CmQk7tz0BQkpYHscbza7B1nUWp66c/uJkntJEgnoD/E6xsmyLnrTcOKEfq7cd5f+tyXd/utGFsegwPREgJoCUjhTeUKOsL7cP6SPgTM7JMVHNuyQE3nkm8CqvEKmiEFWJincSupq4GmIBST2Cd5knHcL23teDhfPF0YE4mjx3+Lpzg2MZm4/AE/QZE27Y=
+  - secure: XSFIbQMwN2QaMB4G9oIRjWrEN2s80V9wbZE2kyRqw944E8LUJLQhjOy9xa4mtqVXE3UOzv5kWB2ndIewstmNH9jMOcDbm0Xgq2UvLHQAkTQAlvBKKMXokf+xLkrCHCkCLHaxEwwXCz8XkX+gVrBT32rRkJuhz9OearJMLaDo86dndl8GyFtdMRE+VZXv+mCo1rJULO0b85AcYowMpbTMZc+/DThSWu+UUnO1geMRd4ro0zy2MvZ6dWBl2TIp5NPwfd5055wP7OpbwQ1Y0Inh4dre6M+89ugc+syo5RKYhhArYJzcYo956prHdb5P9wierZhC+aRrQNl5rgAQmdR+RFg5KlRBp1c8r2sb41f9Msj7ypU2y0aJ5Xj3lr53+VD43ONqHKo7rSwTeQhs13SACRx4C207VzjSrFHGoUrl4/z1GhhBfCHBfdMgZquYjOJoUJvd2kRmcbxcj0enBJPb6Pe4bP17wtg84xilM7zDtU9apZeBzO+n8MgJnmSRFMdlKwRGjB9NZGThrIoPdV7D1av6UYnhXG9eM85TWQ0oi68zYyPLgBiGRZ4nbJmIQ6z/2hXvdmYPde29QLNr0oDQ+m8+JyJ1jQXaMIGVQ13KhNbPphWgb4eetU63rOUphfXB2icx3MvH2UEeP5Va5WzDRf6FypsoVa1DTMkSzl4YpNU=
