@@ -47,6 +47,7 @@ You can use the publish docker image without need to install the python environm
 You have to share the directory where rasengan.yml is like a volume:
 
 ::
+
     docker run -v $PWD:/rasengan apsl/rasengan:0.2.6
 
 We don't provide a 'latest' tag so you have to use always a version tag for the docker image.
