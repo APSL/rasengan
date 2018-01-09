@@ -23,7 +23,7 @@ deploy:
     tags: true
     branch: master
     python: 3.5
-after_success:
+after_deploy:
   - if [ -z "$TRAVIS_TAG" ]; then
     docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD";
     docker push apsl/rasengan:$TRAVIS_TAG;
