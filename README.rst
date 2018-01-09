@@ -7,6 +7,12 @@ Rasengan
 .. image:: https://travis-ci.org/APSL/rasengan.svg?branch=master
     :target: https://travis-ci.org/APSL/rasengan
 
+.. image:: https://img.shields.io/docker/pulls/apsl/rasengan.svg?branch=master
+    :target: https://hub.docker.com/r/apsl/rasengan/
+
+.. image:: https://img.shields.io/docker/stars/apsl/rasengan.svg?branch=master
+    :target: https://hub.docker.com/r/apsl/rasengan/
+
 Overview
 --------
 
