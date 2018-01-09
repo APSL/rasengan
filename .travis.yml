@@ -12,7 +12,6 @@ script:
 - pip install . --upgrade
 - rasengan -c rasengan_test.yml
 - rasengan -c rasengan_test.yml --mrpe
-- docker build . -t rasengan
 deploy:
   provider: pypi
   user: apsl
@@ -25,6 +24,7 @@ deploy:
     python: 3.5
 after_deploy:
   - if [ -z "$TRAVIS_TAG" ]; then
+    docker build . -t apsl/rasengan:$TRAVIS_TAG
     docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD";
     docker push apsl/rasengan:$TRAVIS_TAG;
     fi
