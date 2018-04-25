@@ -21,11 +21,11 @@ kind of integrations tests for domains, with a simple and flexible YAML
 definition syntax. The yaml file can contain multiple domains and we
 could check it in a diferent ways: 
 
-  - Check the DNS resolution 
-  - Checkredirects, status code and expected URL in the redirect 
-  - Check http requests and the content text 
-  - Check http using different user-agents 
-  - Check SSL expiration date 
+  - Check the DNS resolution
+  - Check redirects, status code and expected URL in the redirect
+  - Check http requests and the content text
+  - Check http using different user-agents
+  - Check SSL expiration date
   - Check SSL Qualys grade
 
 The exit of the execution is an error if any of the checks fails. You
