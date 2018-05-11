@@ -11,7 +11,9 @@ import OpenSSL
 import ssl, socket
 from datetime import datetime
 import colorlog
+import urllib3
 
+urllib3.disable_warnings()
 
 resume = {
     'oks': 0,
@@ -125,6 +127,7 @@ def check_url(domain, data, timeout=1):
 
     auth_username = data.get('auth_username', '')
     auth_password = data.get('auth_password', '')
+    ssl_verification = data.get('ssl_verification', True)
     auth = False
     if auth_username:
         auth = (auth_username, auth_password)
@@ -133,8 +136,9 @@ def check_url(domain, data, timeout=1):
         headers = {
             'User-Agent': ua 
         }
-        r = requests.get('{}'.format(url), allow_redirects=False, headers=headers, timeout=timeout, auth=auth)
-    except:
+        r = requests.get('{}'.format(url), allow_redirects=False, headers=headers, timeout=timeout, auth=auth,
+                         verify=ssl_verification)
+    except Exception as e:
         log.error('{} - KO - Problem requesting {}'.format(domain, url))
         resume['errors'] += 1
         resume['domains_error'].append(domain)

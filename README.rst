@@ -94,8 +94,10 @@ Options in plugins
    -  *text*: check text in the result page when you expect 200 code.
    -  *user\_agent*: use a custom user\_agent for the request or stored
       one from keys: mobile, desktop, google\_desktop, google\_mobile.
-   -  *auth\_user*: username in http auth.
+   -  *auth\_username*: username in http auth.
    -  *auth\_password*: password in http auth .
+   -  *ssl\_verification*: Set to 'false' if you want to ignore the ssl verification. By default is 'true'.
+
 Usage
 -----
 
